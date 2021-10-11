@@ -14,22 +14,22 @@ public class CustomerTest {
     }
 
     @Test
-    public void testAdd1() {
+    public void addToCart1() {
         Product item = new Product("apple",0.5,5000);
         Customer person = new Customer("Name", "password1234");
         int desiredQuantity = 2500;
 
-        assertEquals(true, person.add(item, desiredQuantity));
+        assertEquals(true, person.addToCart(item, desiredQuantity));
     }
 
 
     @Test
-    public void testAdd2() {
+    public void addToCart2() {
         Product item = new Product("banana",0.25,1000);
         Customer person = new Customer("Name", "password1234");
         int desiredQuantity = 2000;
 
-        assertEquals(false, person.add(item, desiredQuantity));
+        assertEquals(false, person.addToCart(item, desiredQuantity));
     }
 
 

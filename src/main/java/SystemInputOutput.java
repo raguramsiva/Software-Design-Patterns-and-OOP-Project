@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class SystemInputOutput implements TransactionSystem.InputOutput {
+public class SystemInputOutput implements InputOutput {
 
     BufferedReader reader;
 

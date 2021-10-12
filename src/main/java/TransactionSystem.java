@@ -5,12 +5,6 @@ import java.util.List;
 
 public class TransactionSystem {
 
-    public interface InputOutput {
-        String getInput() throws IOException;
-
-        void sendOutput(Object s);
-    }
-    
     public void initialize(InputOutput inOut) {
 
         List<String> commandlinePrompts = new ArrayList<>();
@@ -18,7 +12,6 @@ public class TransactionSystem {
         commandlinePrompts.add("Enter a username");
         commandlinePrompts.add("Enter a password");
         commandlinePrompts.add("Would you like to see a list of products available?");
-        commandlinePrompts.add("Enter a username");
 
 
         List<String> userInputs = new ArrayList<>();

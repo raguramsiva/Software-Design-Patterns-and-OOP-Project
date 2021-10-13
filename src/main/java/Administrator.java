@@ -5,9 +5,6 @@ public class Administrator extends User{
         super(username, password);
     }
 
-    public void addToInventory(Product newProduct, Inventory inputInventory){
-        inputInventory.setInventory(newProduct);
-    }
 
 
 

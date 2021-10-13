@@ -28,7 +28,7 @@ public class Customer extends User{
         return false;
     }
 
-
+    // Add this to inventory
     public double cartTotal(){
         double total = 0;
         for (Product item : this.shoppingCart.keySet()){

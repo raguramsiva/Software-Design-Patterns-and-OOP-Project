@@ -4,6 +4,10 @@ public class Customer extends User{
 
     HashMap<Product, Integer> shoppingCart;
 
+    boolean isMember = false;
+    Member Membership;
+
+
     public Customer(String username, String password) {
         super(username, password);
         this.shoppingCart = new HashMap<Product,Integer>();
@@ -34,6 +38,15 @@ public class Customer extends User{
         }
         return total;
     }
+
+    private void RegisterMember(String memberNumber, String validDate, String expireDate,
+                                String mobil, String paymentMethod, String address){
+        Member Membership = new Member(memberNumber, validDate, expireDate, mobil, paymentMethod, address);
+        isMember = true;
+    }
+
+
+
 
 
 

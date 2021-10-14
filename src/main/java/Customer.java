@@ -14,21 +14,11 @@ public class Customer extends User{
 
     }
 
-    /**
-     * @param item
-     * @param quantity
-     * @return
-     */
-    public Boolean addToCart(Product item, int quantity){
-        if (quantity <= item.getStock()){
-            item.setStock(-quantity);
-            this.shoppingCart.put(item, quantity);
-            return true;
-        }
-        return false;
+
+    public void add(Product item, int quantity){
+        this.shoppingCart.put(item, quantity);
     }
 
-    // Add this to inventory
     public double cartTotal(){
         double total = 0;
         for (Product item : this.shoppingCart.keySet()){

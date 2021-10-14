@@ -18,6 +18,10 @@ public class Product {
         return this.price;
     }
 
+    public void setPrice(double newPrice) {
+        this.price = newPrice;
+    }
+
     public int getStock() {
         return this.stock;
     }

@@ -14,7 +14,7 @@ public class PromptIterator implements Iterator<String> {
             Scanner myReader = new Scanner(file);
             while (myReader.hasNextLine()) {
                 String prompt = myReader.nextLine();
-                prompts.add(prompt + ": ");
+                prompts.add(prompt);
             }
             myReader.close();
         } catch (FileNotFoundException e) {
@@ -26,6 +26,11 @@ public class PromptIterator implements Iterator<String> {
     public boolean hasNext() {
         return current < prompts.size();
     }
+
+
+
+
+
 
     @Override
     public String next() {
@@ -48,6 +53,8 @@ public class PromptIterator implements Iterator<String> {
     public void remove() {
         throw new UnsupportedOperationException("Not supported."); 
     }
+
+
 
 
 }

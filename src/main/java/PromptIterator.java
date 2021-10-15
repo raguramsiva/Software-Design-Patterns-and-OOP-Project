@@ -7,6 +7,10 @@ public class PromptIterator implements Iterator<String> {
     private int current = 0;
 
 
+    /**
+     * Prompts are read from a file and added to a list.
+     * @param file A file containing prompts
+     */
     public PromptIterator(File file) {
 
         BufferedReader br = null;
@@ -23,36 +27,30 @@ public class PromptIterator implements Iterator<String> {
         }
     }
 
+    /** A method which checks if there is a next prompt.
+     * @return true if there is a next prompt
+     */
     public boolean hasNext() {
         return current < prompts.size();
     }
 
 
-
-
-
-
+    /**
+     * A method which provides the next prompt.
+     * @return next prompt.
+     */
     @Override
     public String next() {
-        String res;
-
-        // List.get(i) throws an IndexOutBoundsException if
-        // we call it with i >= properties.size().
-        // But Iterator's next() needs to throw a
-        // NoSuchElementException if there are no more elements.
+        String result;
         try {
-            res = prompts.get(current);
+            result = prompts.get(current);
         } catch (IndexOutOfBoundsException e) {
             throw new NoSuchElementException();
         }
         current += 1;
-        return res;
+        return result;
     }
 
-    @Override
-    public void remove() {
-        throw new UnsupportedOperationException("Not supported."); 
-    }
 
 
 

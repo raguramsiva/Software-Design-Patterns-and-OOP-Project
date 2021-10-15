@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,6 +7,10 @@ import java.util.Objects;
 
 public class TransactionSystem {
 
+
+    /** A method that takes user inputs from prompts to make transactions.
+     * @param io InputOutput
+     */
     public void initialize(InputOutput io) {
 
         List<String> responses = new ArrayList<>();
@@ -41,7 +44,6 @@ public class TransactionSystem {
                             responses.add(input);
                         }
                     }
-                    io.sendOutput(responses);
                 } catch (IOException e) {
                     io.sendOutput("An error has occurred. Please restart the program.");
                 }
@@ -64,7 +66,7 @@ public class TransactionSystem {
                 String cart = insys.addToCart(c, responses.get(3), Integer.parseInt(responses.get(4)));
                 String total = insys.customerTotal(c);
                 io.sendOutput("");
-                io.sendOutput("Transaction:");
+                io.sendOutput("Transaction Summary:");
                 io.sendOutput(cart);
                 io.sendOutput(total);
             }

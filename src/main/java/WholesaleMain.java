@@ -1,4 +1,4 @@
-public class WholesaleStore {
+public class WholesaleMain {
 
     public static void main(String[] args) {
 

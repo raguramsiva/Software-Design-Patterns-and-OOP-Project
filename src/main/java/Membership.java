@@ -1,4 +1,4 @@
-public class Member {
+public class Membership {
 
     private String MemberNumber;
     private String ValidDate;
@@ -7,16 +7,15 @@ public class Member {
     private String PaymentMethod;
     private String Address;
 
-    public Member(String number, String validDate, String expireDate,
-                  String mobil, String paymentMethod, String address){
+
+    public Membership(String number, String validDate, String expireDate,
+                      String mobil, String paymentMethod, String address){
         this.MemberNumber = number;
         this.ValidDate = validDate;
         this.ExpireDate = expireDate;
         this.Mobil = mobil;
         this.PaymentMethod = paymentMethod;
         this.Address = address;
-
-
 
     }
 
@@ -52,7 +51,21 @@ public class Member {
         return this.PaymentMethod;
     }
 
-    public String getAddress(){
+    public String getAddress() {
         return this.Address;
     }
+
+    public double Discount(Customer c){
+        if (!c.shoppingCart.isEmpty()){
+            return 0.05;
+        }
+        return 0;
+    }
+
+
+
 }
+
+
+
+

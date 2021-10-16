@@ -3,7 +3,7 @@ import java.util.*;
 
 
 public class PromptIterator implements Iterator<String> {
-    private List<String> prompts = new ArrayList<>();
+    private final List<String> prompts = new ArrayList<>();
     private int current = 0;
 
 
@@ -13,7 +13,6 @@ public class PromptIterator implements Iterator<String> {
      */
     public PromptIterator(File file) {
 
-        BufferedReader br = null;
         try {
             Scanner myReader = new Scanner(file);
             while (myReader.hasNextLine()) {

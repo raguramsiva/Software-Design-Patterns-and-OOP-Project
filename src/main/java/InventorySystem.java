@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class InventorySystem {
 
-    private ArrayList<Product> inventory;
+    private final ArrayList<Product> inventory;
 
 
     /**

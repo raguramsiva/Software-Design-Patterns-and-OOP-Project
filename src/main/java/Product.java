@@ -1,6 +1,6 @@
 public class Product {
 
-    private String name;
+    private final String name;
     private double price;
     private int stock;
 
@@ -30,7 +30,6 @@ public class Product {
     }
 
     /** Setter method for price
-     * @return price
      */
     public void setPrice(double newPrice) {
         this.price = newPrice;
@@ -46,7 +45,6 @@ public class Product {
 
 
     /** Setter method for stock quantity
-     * @return stock quantity
      */
     public void setStock(int quantity) {
         this.stock += quantity;

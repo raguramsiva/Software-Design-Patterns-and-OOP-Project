@@ -30,8 +30,18 @@ public class TransactionSystem {
         }
 
 
+        InventorySystem insys = new InventorySystem();
+        //Temporarily adding some default items in inventory. As the program develops, they
+        // will be refactored accordingly using a database.
+        insys.setInventory(insys.createProduct("apple", 1.00, 10000));
+        insys.setInventory(insys.createProduct("banana", 0.50, 2000));
+        insys.setInventory(insys.createProduct("orange", 0.50, 2000));
+
+
+        //We have written the code for the Customer side first. We will write the code for administrator after
+        //Phase 0
         try {
-            if (responses.get(0) != null) {
+            if (Objects.equals(responses.get(0), "customer")) {
                PromptIterator prompts = new PromptIterator(new File("src/main/java/" + responses.get(0) + "_prompts.txt"));
                 try {
                     io.sendOutput(prompts.next());
@@ -51,13 +61,6 @@ public class TransactionSystem {
         } catch (IndexOutOfBoundsException e) {
             io.sendOutput("Please restart the program.");
         }
-
-        InventorySystem insys = new InventorySystem();
-        //Temporarily adding some default items in inventory. As the program develops, they
-        // will be refactored accordingly using a database.
-        insys.setInventory(insys.createProduct("apple", 1.00, 10000));
-        insys.setInventory(insys.createProduct("banana", 0.50, 2000));
-        insys.setInventory(insys.createProduct("orange", 0.50, 2000));
 
 
         try {

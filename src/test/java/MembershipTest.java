@@ -12,20 +12,20 @@ class MembershipTest {
 
     @Test
     void modifyMobil() {
-        MembershipA.ModifyMobil("416-123-4567");
-        assertEquals("416-123-4567", MembershipA.getMobil());
+        MembershipA.modifyMobile("416-123-4567");
+        assertEquals("416-123-4567", MembershipA.getMobile());
 
     }
 
     @Test
     void modifyPayment() {
-        MembershipA.ModifyPayment("Credit");
+        MembershipA.modifyPayment("Credit");
         assertEquals("Credit", MembershipA.getPaymentMethod());
     }
 
     @Test
     void modifyAddress() {
-        MembershipA.ModifyAddress("789 King St.");
+        MembershipA.modifyAddress("789 King St.");
         assertEquals("789 King St.", MembershipA.getAddress());
     }
 

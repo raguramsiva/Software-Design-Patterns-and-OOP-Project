@@ -41,19 +41,19 @@ The `PromptIterator`is able to read from arbitrary text files. Hence, we can alw
 
 As a group, everyone contributed to the Specification and CRC cards during group meetings. 
 
-**Raguram Sivabalan**
+**Raguram Sivabalan:**
 Created the `TransactionSystem` and other classes. Plans on creating a command prompt text file for administrator and write corresponding code in the `initialize` method in `TransactionSystem`.
 
-**Yong Tong Zhu**
+**Yong Tong Zhu:**
 Created the  `Membership` class and `MembershipTest`.  Plans on creating command prompt text files for memberships and write corresponding code in the `initialize` method in `TransactionSystem` for customers.
 
-**Yipu Lu**
+**Yipu Lu:**
 Designed the initial entity and use case classes. Plans on adding a database to obtain a large number of products for the store inventory. 
 
-**Yiyang Du**
+**Yiyang Du:**
 Designed the initial entity and use case classes. Plans on refactoring the `TransactionSystem` class using helper methods and other classes. 
 
-**Shijia Ye**
+**Shijia Ye:**
 Designed the initial entity and use case classes. Plans on adding code to add product categories to the store inventory (i.e. produce, frozen goods, etc. )
 
 

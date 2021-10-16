@@ -21,10 +21,7 @@ public class Customer extends User{
      * @param quantity number of products
      */
     public void add(Product item, int quantity){
-        if (!this.shoppingCart.containsKey(item)) {
-            this.shoppingCart.put(item, quantity);
-        }
-        this.shoppingCart.put(item, this.shoppingCart.get(item) + quantity);
+        this.shoppingCart.put(item, quantity);
     }
 
 

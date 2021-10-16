@@ -37,7 +37,7 @@ The Skeleton Program has all 11 classes/interfaces contained in the CRC cards. T
 
 # What has worked well in the design so far
 
-The `PromptIterator`is able to read from arbitrary text files. Hence, we can always quickly add new text files for administrators, memberships, etc. that can be easily read through. This will allow us to easily extend our program for Phase 1 and Phase 2. We are in a good position to add more command prompt text files for administrators and customers with memberships. And we can easily refactor the `TransactionSystem` class accordingly. So our program is in a solid position to be easily extended in accordance with Clean Architecture. 
+The `PromptIterator` is designed to be able to read from arbitrary text files. Hence, we can always quickly add new text files for administrators, memberships, etc. that can be easily read through. This will allow us to easily extend our program for Phase 1 and Phase 2. We are in a good position to add more command prompt text files for administrators and customers with memberships. And we can easily refactor the `TransactionSystem` class accordingly. So our program is in a solid position to be easily extended in accordance with Clean Architecture. 
 
 
 # What everyone has done and plans on doing

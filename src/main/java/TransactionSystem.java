@@ -26,7 +26,7 @@ public class TransactionSystem {
             }
             while (!input.equals("customer") && !input.equals("administrator"));
         } catch (IOException e) {
-            io.sendOutput("An error has occurred. Please restart the program.");
+            io.sendOutput("Please restart the program.");
         }
 
 
@@ -45,11 +45,11 @@ public class TransactionSystem {
                         }
                     }
                 } catch (IOException e) {
-                    io.sendOutput("An error has occurred. Please restart the program.");
+                    io.sendOutput("Please restart the program.");
                 }
             }
         } catch (IndexOutOfBoundsException e) {
-            io.sendOutput("An error has occurred. Please restart the program.");
+            io.sendOutput("Please restart the program.");
         }
 
         InventorySystem insys = new InventorySystem();
@@ -71,7 +71,7 @@ public class TransactionSystem {
                 io.sendOutput(total);
             }
         } catch (IndexOutOfBoundsException e) {
-            io.sendOutput("An error has occurred. Please restart the program.");
+            io.sendOutput("Please restart the program.");
         }
 
 

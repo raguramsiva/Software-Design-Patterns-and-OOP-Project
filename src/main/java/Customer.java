@@ -18,7 +18,7 @@ public class Customer extends User{
 
     /** Adds a specified quantity of products to customer's shopping cart.
      * @param item a product
-     * @param quantity a number of products
+     * @param quantity number of products
      */
     public void add(Product item, int quantity){
         this.shoppingCart.put(item, quantity);

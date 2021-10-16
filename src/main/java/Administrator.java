@@ -10,16 +10,6 @@ public class Administrator extends User{
     }
 
 
-    /** Creates a product.
-     * @param name product name
-     * @param price product price
-     * @param stock stock quantity
-     * @return Product
-     */
-    public Product createProduct(String name, Double price, int stock){
-        return new Product(name,price,stock);
-    }
-
 
 
 

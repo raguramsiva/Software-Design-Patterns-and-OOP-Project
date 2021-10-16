@@ -11,7 +11,7 @@ public class InventorySystem {
      * An initializer for InventorySystem.
      */
     public InventorySystem(){
-        this.inventory = new ArrayList<Product>();
+        this.inventory = new ArrayList<>();
     }
 
     /** Getter method for inventory.
@@ -41,7 +41,7 @@ public class InventorySystem {
     /** Creates an administrator.
      * @param username Administrator's username
      * @param password Administrator's password
-     * @return Customer
+     * @return Administrator
      */
     public Administrator createAdministrator(String username, String password){
         return new Administrator(username, password);
@@ -72,7 +72,7 @@ public class InventorySystem {
 
     /** Checks whether a string is the name of a product in the inventory.
      * @param name product name
-     * @return Boolean (True if available; false otherwise)
+     * @return Boolean (True if string is a name of a product in inventory; false otherwise)
      */
     public Boolean availability(String name){
         return this.productList().contains(name);
@@ -81,7 +81,7 @@ public class InventorySystem {
 
     /** Finds the product associated with a product name, if it exists.
      * @param name product name
-     * @return product if found; null otherwise
+     * @return product associated with name; null otherwise
      */
     public Product findProduct(String name){
         for (Product p : this.inventory){

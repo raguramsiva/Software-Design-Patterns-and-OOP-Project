@@ -2,15 +2,6 @@ import org.junit.*;
 
 public class CustomerTest {
 
-    @Before
-    public void setUp() throws Exception {
-
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
-
     @Test
     public void add() {
         Product item = new Product("apple",0.5,5000);

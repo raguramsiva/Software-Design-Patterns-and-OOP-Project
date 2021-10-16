@@ -16,7 +16,6 @@ public class SystemInputOutput implements InputOutput {
 
     /** A method that gets input.
      * @return input
-     * @throws IOException
      */
     public String getInput() throws IOException {
         return this.reader.readLine();

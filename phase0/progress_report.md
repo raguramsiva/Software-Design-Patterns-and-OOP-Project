@@ -8,7 +8,7 @@ An inventory management system for a wholesale business similar to Costco. There
 
 # Brief Summary of CRC cards
 
-The program contains **4 Entity Classes**, **2 Use Case classes**, **2 Controller classes** and **3 other Interface Adapters**. 
+The program contains **4 Entity Classes**, **2 Use Case classes**, **2 Controller classes**, **1 Gateway class** and **2 User Interface classes**. 
 
 **Entity Classes**: `User`, `Administrator`, `Customer`, `Product`
 
@@ -16,9 +16,9 @@ The program contains **4 Entity Classes**, **2 Use Case classes**, **2 Controlle
 
 **Controller Classes**: `TransactionSystem`, `WholesaleMain`
 
-**Other Interface Adapters**: `PromptIterator` (Gateway Class), `InputOutput`, `SystemInputOutput`
+**Gateway Class**: `PromptIterator` 
 
-**Note:** Clearly controllers are part of interface adapters, but they are listed separately above for emphasis since Phase0 requires at least one controller.
+**User Interface classes**: `InputOutput`, `SystemInputOutput`
 
 **Note**:  For the presentation, have the CRC card pdf open.  
 

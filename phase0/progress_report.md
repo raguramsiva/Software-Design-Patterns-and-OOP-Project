@@ -61,5 +61,7 @@ Designed the initial entity and use case classes. Plans on refactoring the `Tran
 Designed the initial entity and use case classes. Plans on adding code to add product categories to the store inventory (i.e. produce, frozen goods, etc.)
 
 
+# Open Question
 
+How would one convert a command line interface to some other graphical user interface using java or android code?
 

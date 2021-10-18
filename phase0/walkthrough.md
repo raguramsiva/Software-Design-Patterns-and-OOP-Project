@@ -4,6 +4,8 @@
 **Walkthrough Scenario:**  A customer enters their username, password, a product name, and a desired quantity of that product. The program will add the specified quantity of the product to the customer's shopping cart if the product is available and in stock. The program will provide a transaction summary. 
 
 For example, the customer can enter the following inputs when prompted.
+    
+    "customer"
 
     "Bob24"
 

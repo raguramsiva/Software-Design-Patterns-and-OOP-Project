@@ -28,7 +28,7 @@ public class TransactionSystem {
         } catch (IOException e) {
             io.sendOutput("Please restart the program.");
         }
-
+                   
 
         InventorySystem insys = new InventorySystem();
         //Temporarily adding some default items in inventory. As the program develops, they

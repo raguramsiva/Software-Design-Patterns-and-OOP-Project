@@ -32,6 +32,8 @@ The program contains **4 Entity Classes**, **2 Use Case classes**, **2 Controlle
 
 The Skeleton Program has all 11 classes/interfaces contained in the CRC cards. The `TransactionSystem` has code sufficient for the walkthrough scenario involving a customer making a purchase of a product in the store inventory. A `customer_prompts.txt` file contains all the prompts necessary for the walkthrough scenario.
 
+**Note**: The skeleton program has some style warnings regarding getter/setter methods that have not been used yet. Instead of removing them, these methods are kept for future use in Phase 1 and 2. 
+
 **Note**:  During the presentation, open the project files in IntelliJ and run the main method to demonstrate the walkthrough scenario. 
 
 

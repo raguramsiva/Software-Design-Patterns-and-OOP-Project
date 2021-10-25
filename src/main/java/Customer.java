@@ -3,7 +3,7 @@ import java.util.HashMap;
 public class Customer extends User{
 
 
-    HashMap<Product, Integer> shoppingCart;
+    private final Cart cart;
 
 
     /** An initializer for Customer. Each instance of customer has a personal shopping cart.
@@ -12,7 +12,7 @@ public class Customer extends User{
      */
     public Customer(String username, String password) {
         super(username, password);
-        this.shoppingCart = new HashMap<>();
+        this.cart = new Cart();
 
     }
 
@@ -21,7 +21,7 @@ public class Customer extends User{
      * @param quantity number of products
      */
     public void add(Product item, int quantity){
-        this.shoppingCart.put(item, quantity);
+        cart.shoppingCart.put(item, quantity);
     }
 
 
@@ -30,8 +30,8 @@ public class Customer extends User{
      */
     public double cartTotal(){
         double total = 0;
-        for (Product item : this.shoppingCart.keySet()){
-            int quantity = this.shoppingCart.get(item);
+        for (Product item : cart.shoppingCart.keySet()){
+            int quantity = cart.shoppingCart.get(item);
             double price = item.getPrice();
             total += price * quantity;
         }

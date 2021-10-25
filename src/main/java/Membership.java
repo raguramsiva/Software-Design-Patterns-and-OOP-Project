@@ -92,8 +92,9 @@ public class Membership {
     /** If a member has product in the shopping cart, a 0.05 discount will apply to him/her.
      * @return the discount rate
      */
+
     public double discount(Customer c){
-        if (!c.shoppingCart.isEmpty()){
+        if (c.cartTotal() != 0){
             return 0.05;
         }
         return 0;

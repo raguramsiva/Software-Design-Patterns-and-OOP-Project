@@ -2,4 +2,3 @@ Enter a username:
 Enter a password:
 Enter a product you would like to purchase:
 Enter the quantity of product you would like to purchase:
-test

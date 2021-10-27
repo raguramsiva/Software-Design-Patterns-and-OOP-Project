@@ -8,11 +8,9 @@ public class WholesaleMain {
     public static void main(String[] args) {
 
         TransactionSystem ts = new TransactionSystem();
-        SystemInputOutput inputOutput = new SystemInputOutput();
-        ts.initialize(inputOutput);
+        SystemInputOutput io = new SystemInputOutput();
+        io.initialize(ts);
 
     }
-
-
 
 }

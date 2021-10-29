@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 public class WholesaleMain {
 
     /**
@@ -5,7 +7,7 @@ public class WholesaleMain {
      * Calls the initialize method of TransactionSystem using the instance of SystemInputOutput
      * as parameter.
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         TransactionSystem ts = new TransactionSystem();
         SystemInputOutput io = new SystemInputOutput();

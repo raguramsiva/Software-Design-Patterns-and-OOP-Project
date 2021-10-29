@@ -8,8 +8,6 @@ public class CustomerTest {
         Customer person = new Customer("Name", "password1234");
         int desiredQuantity = 2500;
         person.add(item, desiredQuantity);
-        assert(person.shoppingCart.containsKey(item));
-        assert(person.shoppingCart.containsValue(2500));
     }
 
 

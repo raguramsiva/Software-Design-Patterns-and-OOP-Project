@@ -10,7 +10,6 @@ public class SystemInputOutput implements InputOutput {
 
     BufferedReader reader;
 
-    private final List<String> responses = new ArrayList<>();
 
     /**
      * An initializer for SystemInputOutput.
@@ -34,24 +33,17 @@ public class SystemInputOutput implements InputOutput {
         System.out.println(s);
     }
 
-    public String chooseUser(){
+    public String chooseUser() throws IOException {
         this.sendOutput("Type 'customer' or 'administrator' to continue. ");
-        try {
-            String input;
-            do {
-                input = this.getInput();
-                if (input.equals("customer") || input.equals("administrator")) {
-                    return input;
-                }
-            }
-            while (!input.equals("customer") && !input.equals("administrator"));
-        } catch (IOException e) {
-            this.sendOutput("Please restart the program.");
+        String input = "";
+        while (!input.equals("customer") && !input.equals("administrator")) {
+            input = this.getInput();
         }
-        return null;
+        return input;
     }
 
-    public void promptAnswers(String fileName){
+    public List<String> promptAnswers(String fileName){
+        List<String> responses = new ArrayList<>();
         PromptIterator prompts = new PromptIterator(new File("src/main/java/" + fileName + "_prompts.txt"));
         try {
             this.sendOutput(prompts.next());
@@ -67,30 +59,25 @@ public class SystemInputOutput implements InputOutput {
         } catch (IOException e) {
             this.sendOutput("Please restart the program.");
         }
+        return responses;
     }
 
 
-    public void initialize(TransactionSystem ts) {
+    public void initialize(TransactionSystem ts) throws IOException {
         String choice = chooseUser();
-        responses.add(choice);
 
-        try {
-            if (Objects.equals(responses.get(0), "customer")) {
-                promptAnswers(responses.get(0));
-            }
+        List<String> responses = promptAnswers(choice);
 
-            ArrayList<String> transaction = ts.initializeTransaction(responses);
-            this.sendOutput("");
-            this.sendOutput("Transaction Summary:");
-            this.sendOutput(transaction.get(0));
-            this.sendOutput(transaction.get(1));
+        ArrayList<String> transaction = ts.initializeTransaction(responses);
+        this.sendOutput("");
+        this.sendOutput("Transaction Summary:");
+        this.sendOutput(transaction.get(0));
+        this.sendOutput(transaction.get(1));
 
-        } catch (IndexOutOfBoundsException e) {
-            this.sendOutput("Please restart the program.");
         }
 
     }
 
 
-}
+
 

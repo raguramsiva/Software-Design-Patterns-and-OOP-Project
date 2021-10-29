@@ -9,7 +9,6 @@ import java.util.Objects;
 public class TransactionSystem {
 
 
-
     public ArrayList<String> initializeTransaction(List<String> responses) {
 
 
@@ -31,21 +30,18 @@ public class TransactionSystem {
 
 
         try {
-            if (Objects.equals(responses.get(0), "customer")) {
-                Customer c = um.createCustomer(responses.get(1),responses.get(2));
-                String cart = insys.addToCart(c, responses.get(3), Integer.parseInt(responses.get(4)));
-                String total = insys.customerTotal(c);
-                ArrayList<String> output = new ArrayList<>();
-                output.add(cart);
-                output.add(total);
-                return output;
+            Customer c = um.createCustomer(responses.get(0),responses.get(1));
+            String cart = insys.addToCart(c, responses.get(2), Integer.parseInt(responses.get(3)));
+            String total = insys.customerTotal(c);
+            ArrayList<String> output = new ArrayList<>();
+            output.add(cart);
+            output.add(total);
+            return output;
             }
-        } catch (IndexOutOfBoundsException e) {
+        catch (IndexOutOfBoundsException e) {
         }
 
         return null;
-
-
 
 
     }

@@ -10,7 +10,7 @@ public class SystemInputOutput implements InputOutput {
 
     BufferedReader reader;
 
-    private List<String> responses = new ArrayList<>();
+    private final List<String> responses = new ArrayList<>();
 
     /**
      * An initializer for SystemInputOutput.

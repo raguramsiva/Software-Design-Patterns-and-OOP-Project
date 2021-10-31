@@ -13,6 +13,8 @@ public class TransactionSystem {
 
 
         InventorySystem insys = new InventorySystem();
+        DatabaseInput db = new DatabaseInput();
+        db.inputData(insys);
 
         //Temporarily adding some default items in inventory. As the program develops, they
         // will be refactored accordingly using a database.
@@ -25,8 +27,6 @@ public class TransactionSystem {
         //Phase 0
 
         UserManager um = new UserManager();
-
-
 
 
         try {

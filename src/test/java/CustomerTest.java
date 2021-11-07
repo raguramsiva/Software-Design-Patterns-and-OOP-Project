@@ -1,3 +1,5 @@
+import Entities.Product;
+import Users.Customer;
 import org.junit.*;
 
 public class CustomerTest {

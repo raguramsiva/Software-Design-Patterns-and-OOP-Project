@@ -1,3 +1,6 @@
+package Database;
+
+import Uses.InventorySystem;
 
 import java.util.Scanner;
 import java.io.*;
@@ -7,9 +10,9 @@ public class DatabaseInput {
 
 
     /**
-     * DatabaseInput will read the files from each inventory database
-     * and store the data in to the assigned InventorySystem.
-     * @param Inventory The InventorySystem contain the information of inventories.
+     * Database.DatabaseInput will read the files from each inventory database
+     * and store the data in to the assigned Uses.InventorySystem.
+     * @param Inventory The Uses.InventorySystem contain the information of inventories.
      */
 
     public void inputData(InventorySystem Inventory){
@@ -21,7 +24,7 @@ public class DatabaseInput {
 
     /** A method help to store data from database.
      * @param FileName The file's path name.
-     * @param Inventory The InventorySystem stores the data.
+     * @param Inventory The Uses.InventorySystem stores the data.
      */
 
     private void InputDatabase(File FileName, InventorySystem Inventory) {

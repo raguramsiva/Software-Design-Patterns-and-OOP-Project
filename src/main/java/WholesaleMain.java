@@ -1,10 +1,13 @@
+import Transactions.TransactionSystem;
+import UI.SystemInputOutput;
+
 import java.io.IOException;
 
 public class WholesaleMain {
 
     /**
-     * Main method of program creates instances of TransactionSystem and SystemInputOutput
-     * Calls the initialize method of TransactionSystem using the instance of SystemInputOutput
+     * Main method of program creates instances of Transactions.TransactionSystem and UI.SystemInputOutput
+     * Calls the initialize method of Transactions.TransactionSystem using the instance of UI.SystemInputOutput
      * as parameter.
      */
     public static void main(String[] args) throws IOException {

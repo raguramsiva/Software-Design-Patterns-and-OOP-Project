@@ -1,0 +1,5 @@
+Enter a username:
+Enter a password:
+Enter a product you would like to modify or add to inventory:
+Enter the price of the product:
+Enter the quantity of product you would like to add to inventory: 

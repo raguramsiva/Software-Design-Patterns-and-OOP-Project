@@ -1,3 +1,9 @@
+package Uses;
+
+import Users.Administrator;
+import Users.Customer;
+import Users.User;
+
 import java.util.ArrayList;
 
 public class UserManager {
@@ -11,9 +17,9 @@ public class UserManager {
     /**
      * Creates a customer.
      *
-     * @param username Customer's username
-     * @param password Customer's password
-     * @return Customer
+     * @param username Users.Customer's username
+     * @param password Users.Customer's password
+     * @return Users.Customer
      */
 
     public Customer createCustomer (String username, String password){
@@ -22,9 +28,9 @@ public class UserManager {
 
 
         /** Creates an administrator.
-         * @param username Administrator's username
-         * @param password Administrator's password
-         * @return Administrator
+         * @param username Users.Administrator's username
+         * @param password Users.Administrator's password
+         * @return Users.Administrator
          */
 
         public Administrator createAdministrator (String username, String password){

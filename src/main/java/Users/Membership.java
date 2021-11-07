@@ -1,3 +1,7 @@
+package Users;
+
+import Users.Customer;
+
 public class Membership {
 
     private final String memberNumber;
@@ -7,7 +11,7 @@ public class Membership {
     private String paymentMethod;
     private String address;
 
-    /** An initializer for Membership.
+    /** An initializer for Users.Membership.
      * @param memberNumber A member's memberNumber
      * @param validDate A member's membership validDate
      * @param expireDate A member's membership expireDate

@@ -1,10 +1,15 @@
+package UI;
+
+import Prompts.PromptIterator;
+import Transactions.TransactionSystem;
+import UI.InputOutput;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class SystemInputOutput implements InputOutput {
 
@@ -12,7 +17,7 @@ public class SystemInputOutput implements InputOutput {
 
 
     /**
-     * An initializer for SystemInputOutput.
+     * An initializer for UI.SystemInputOutput.
      */
     public SystemInputOutput() {
         this.reader = new BufferedReader(new InputStreamReader(System.in));
@@ -33,10 +38,15 @@ public class SystemInputOutput implements InputOutput {
         System.out.println(s);
     }
 
+
     public String chooseUser() throws IOException {
         this.sendOutput("Type 'customer' or 'administrator' to continue. ");
         String input = "";
-        while (!input.equals("customer") && !input.equals("administrator")) {
+        while (!input.equalsIgnoreCase("customer") && !input.equalsIgnoreCase("administrator")) {
+            if (input.equalsIgnoreCase("quit")){
+                this.sendOutput("\nThank you, come again!");
+                System.exit(0);
+            }
             input = this.getInput();
         }
         return input;
@@ -44,15 +54,15 @@ public class SystemInputOutput implements InputOutput {
 
     public List<String> promptAnswers(String fileName){
         List<String> responses = new ArrayList<>();
-        PromptIterator prompts = new PromptIterator(new File("src/main/java/" + fileName + "_prompts.txt"));
+        PromptIterator prompts = new PromptIterator(new File("src/main/java/Prompts/" + fileName + "_prompts.txt"));
         try {
             this.sendOutput(prompts.next());
             String input = this.getInput();
             responses.add(input);
-            while (!input.equals("quit") && prompts.hasNext()) {
+            while (!input.equalsIgnoreCase("quit") && prompts.hasNext()) {
                 this.sendOutput(prompts.next());
                 input = this.getInput();
-                if (!input.equals("quit")) {
+                if (!input.equalsIgnoreCase("quit")) {
                     responses.add(input);
                 }
             }
@@ -65,14 +75,13 @@ public class SystemInputOutput implements InputOutput {
 
     public void initialize(TransactionSystem ts) throws IOException {
         String choice = chooseUser();
-
         List<String> responses = promptAnswers(choice);
 
-        ArrayList<String> transaction = ts.initializeTransaction(responses);
-        this.sendOutput("");
-        this.sendOutput("Transaction Summary:");
-        this.sendOutput(transaction.get(0));
-        this.sendOutput(transaction.get(1));
+        ArrayList<String> transaction = ts.initializeTransaction(responses, choice);
+
+        for (String s : transaction) {
+            this.sendOutput(s);
+        }
 
         }
 

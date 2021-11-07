@@ -1,12 +1,16 @@
-import java.util.HashMap;
+package Users;
 
-public class Customer extends User{
+import Entities.Cart;
+import Entities.Product;
+import Users.User;
+
+public class Customer extends User {
 
 
     private final Cart cart;
 
 
-    /** An initializer for Customer. Each instance of customer has a personal shopping cart.
+    /** An initializer for Users.Customer. Each instance of customer has a personal shopping cart.
      * @param username A customer's username
      * @param password A customer's password
      */
@@ -21,7 +25,7 @@ public class Customer extends User{
      * @param quantity number of products
      */
     public void add(Product item, int quantity){
-        cart.shoppingCart.put(item, quantity);
+        cart.setShoppingCart(item, quantity);
     }
 
 
@@ -30,8 +34,8 @@ public class Customer extends User{
      */
     public double cartTotal(){
         double total = 0;
-        for (Product item : cart.shoppingCart.keySet()){
-            int quantity = cart.shoppingCart.get(item);
+        for (Product item : cart.getShoppingCart().keySet()){
+            int quantity = cart.getShoppingCart().get(item);
             double price = item.getPrice();
             total += price * quantity;
         }

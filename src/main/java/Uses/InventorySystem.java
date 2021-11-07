@@ -1,3 +1,9 @@
+package Uses;
+
+import Entities.Product;
+import Users.Administrator;
+import Users.Customer;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -8,7 +14,7 @@ public class InventorySystem {
 
 
     /**
-     * An initializer for InventorySystem.
+     * An initializer for Uses.InventorySystem.
      */
     public InventorySystem(){
         this.inventory = new ArrayList<>();
@@ -33,7 +39,7 @@ public class InventorySystem {
      * @param name product name
      * @param price product price
      * @param stock stock quantity
-     * @return Product
+     * @return Entities.Product
      */
     public Product createProduct(String name, Double price, int stock){
         return new Product(name,price,stock);
@@ -112,14 +118,15 @@ public class InventorySystem {
     public String addToInventory(Administrator a, String name, double price, int quantity){
         if (!this.availability(name)){
             this.setInventory(createProduct(name, price, quantity));
-            return "Product has been successfully added to inventory.";
+            return "Product - " + name + " has been successfully added to inventory with price $" + price + " and quantity " + quantity;
         }
         else {
             Product p = findProduct(name);
             p.setStock(quantity);
-            return "Inventory stock has been updated.";
+            return "Entities.Product - " + name + " has been successfully modified in inventory with price $" + price + " and quantity " + quantity;
         }
     }
+
 
 
 }

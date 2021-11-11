@@ -1,0 +1,59 @@
+[
+
+  {
+    "name" : "Paper Towel - 6 Packs",
+    "price" : 4.50,
+    "unit" : "1 each",
+    "quantity" : 50
+  },
+
+  {
+    "name" : "Hypoallergenic - 12 Packs",
+    "price" : 5.00,
+    "unit" : "1 each",
+    "quantity" : 50
+  },
+
+  {
+    "name" : "Tissue - 6 Packs",
+    "price" : 4.50,
+    "unit" : "1 each",
+    "quantity" : 50
+  },
+
+  {
+    "name" : "Sandwich Bags",
+    "price" : 2.00,
+    "unit" : "1 each",
+    "quantity" : 50
+  },
+
+  {
+    "name" : "Yard Waste Bags - 10 Pack",
+    "price" : 5.00,
+    "unit" : "1 each",
+    "quantity" : 50
+  },
+
+  {
+    "name" : "Aluminum Foil 50 feet",
+    "price" : 3.00,
+    "unit" : "1 each",
+    "quantity" : 50
+  },
+
+  {
+    "name" : "Garbage Bags - 40 Packs",
+    "price" : 4.50,
+    "unit" : "1 each",
+    "quantity" : 50
+  },
+
+  {
+    "name" : "Dishwashing Liquid",
+    "price" : 1.30,
+    "unit" : "1 each",
+    "quantity" : 50
+  }
+
+]

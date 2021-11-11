@@ -1,0 +1,102 @@
+[
+
+  {
+    "name" : "Ground Beef",
+    "price" : 6.5,
+    "unit" : "500g",
+    "quantity" : 50
+  },
+
+  {
+    "name" : "Beef Rib Steaks",
+    "price" : 10.00,
+    "unit" : "300g",
+    "quantity" : 50
+  },
+
+  {
+    "name" : "Beef Strips",
+    "price" : 20.00,
+    "unit" : "2kg",
+    "quantity" : 50
+  },
+
+  {
+    "name" : "Beef Burgers",
+    "price" : 12.00,
+    "unit" : "1kg",
+    "quantity" : 50
+  },
+
+  {
+    "name" : "Pork Loin Half",
+    "price" : 20.00,
+    "unit" : "1kg",
+    "quantity" : 50
+  },
+
+  {
+    "name" : "Pork Sausages",
+    "price" : 5.00,
+    "unit" : "500g",
+    "quantity" : 50
+  },
+
+  {
+    "name" : "Lamb Leg",
+    "price" : 45.00,
+    "unit" : "3kg",
+    "quantity" : 50
+  },
+
+
+  {
+    "name" : "Chicken Breast",
+    "price" : 15.00,
+    "unit" : "1kg",
+    "quantity" : 50
+  },
+
+  {
+    "name" : "Chicken Leg With Bone",
+    "price" : 3.00,
+    "unit" : "1kg",
+    "quantity" : 50
+  },
+
+  {
+    "name" : "Chicken Leg Without Bone",
+    "price" : 4.00,
+    "unit" : "1kg",
+    "quantity" : 50
+  },
+
+  {
+    "name" : "Whole Chicken",
+    "price" : 10.00,
+    "unit" : "2kg",
+    "quantity" : 50
+  },
+
+  {
+    "name" : "Chicken Leg With Bone",
+    "price" : 3.00,
+    "unit" : "1kg",
+    "quantity" : 50
+  },
+
+  {
+    "name" : "Frozen Duck",
+    "price" : 12.00,
+    "unit" : "1kg",
+    "quantity" : 50
+  },
+
+  {
+    "name" : "Hot Dogs",
+    "price" : 2.50,
+    "unit" : "450g",
+    "quantity" : 50
+  }
+
+]

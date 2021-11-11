@@ -2,9 +2,12 @@ package Database;
 
 import Uses.InventorySystem;
 
-import java.util.Scanner;
 import java.io.*;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 public class DatabaseInput {
 
@@ -16,10 +19,9 @@ public class DatabaseInput {
      */
 
     public void inputData(InventorySystem Inventory){
-        InputDatabase(new File("src/main/java/Database/Meat Database"), Inventory);
-        InputDatabase(new File("src/main/java/Database/Vegetables and Fruits Database"), Inventory);
-        InputDatabase(new File("src/main/java/Database/Household Supplies Database"), Inventory);
-
+        inputDatabase(new File("src/main/java/Database/Household_Supplies_Data.json"), Inventory);
+        inputDatabase(new File("src/main/java/Database/Meat_Data.json"), Inventory);
+        inputDatabase(new File("src/main/java/Database/Fruits_and_Vegetables.json"), Inventory);
     }
 
     /** A method help to store data from database.
@@ -27,25 +29,24 @@ public class DatabaseInput {
      * @param Inventory The Uses.InventorySystem stores the data.
      */
 
-    private void InputDatabase(File FileName, InventorySystem Inventory) {
+    private void inputDatabase(File FileName, InventorySystem Inventory) {
         try {
-            Scanner ReadDatabase;
-            try {
-                ReadDatabase = new Scanner(FileName);
-                while (ReadDatabase.hasNext()) {
-                    String ProductName = ReadDatabase.nextLine();
-                    double Price = Double.parseDouble(ReadDatabase.nextLine());
-                    ReadDatabase.nextLine();
-                    int Stock = Integer.parseInt(ReadDatabase.nextLine());
-                    Inventory.setInventory(Inventory.createProduct(ProductName, Price, Stock));
-                    if (ReadDatabase.hasNext()) {
-                        ReadDatabase.nextLine();
-                    }
-                }
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
+            JSONParser parser = new JSONParser();
+
+            JSONArray products = (JSONArray) parser.parse(new FileReader(FileName));
+
+            for (Object p : products)
+            {
+                JSONObject product = (JSONObject) p;
+
+                String name = (String) product.get("name");
+                Double price = (Double) product.get("price");
+                Long quantity = (Long) product.get("quantity");
+                Integer stock = quantity.intValue();
+                Inventory.setInventory(Inventory.createProduct(name, price, stock));
             }
-        } catch (NumberFormatException e) {
+
+        } catch (NumberFormatException | ParseException | IOException e) {
             e.printStackTrace();
         }
     }

@@ -79,6 +79,19 @@ public class InventorySystem {
         return null;
     }
 
+    /**
+     * @param amount A double representing a monetary value.
+     * @return amount rounded to two decimal places to represent a monetary value
+     * in dollars and cents.
+     */
+    public String round(double amount){
+        int multiple = (int) (100 * amount);
+        String str = String.valueOf(multiple);
+        String dollars = str.substring(0, str.length()-2);
+        String cents = str.substring(str.length()-2, str.length());
+        return dollars + "." + cents;
+    }
+
     /** Adds a specified quantity of product to a customer's cart if the product is
      * available and in stock.
      * @param c A customer
@@ -92,11 +105,12 @@ public class InventorySystem {
                 if (p != null && quantity <= p.getStock()){
                     c.add(p, quantity);
                     p.setStock(-quantity);
-                    return "You have added " + quantity + " units of " + p.getName() + " priced at $" + p.getPrice() + " each.";
+                    return "You have added " + quantity + " units of " + p.getName() + " priced at $" + round(p.getPrice()) + " each.";
                 }
             }
             return "The item is not available or there is not enough stock to fulfill your request.";
         }
+
 
     /** Returns the customer's cart total.
      * @param c A customer
@@ -104,8 +118,7 @@ public class InventorySystem {
      */
     public String customerTotal(Customer c){
         double total = c.cartTotal();
-        double rounded = Math.round(total * 100.0) / 100.0;
-        return "Your total is $" + rounded + ".";
+        return "Your total is $" + round(total) + ".";
     }
 
     /** Allows an administrator to add a product to the inventory.
@@ -118,12 +131,12 @@ public class InventorySystem {
     public String addToInventory(Administrator a, String name, double price, int quantity){
         if (!this.availability(name)){
             this.setInventory(createProduct(name, price, quantity));
-            return "Product - " + name + " has been successfully added to inventory with price $" + price + " and quantity " + quantity;
+            return "Product - " + name + " has been successfully added to inventory with price $" + round(price) + " and quantity " + quantity;
         }
         else {
             Product p = findProduct(name);
             p.setStock(quantity);
-            return "Entities.Product - " + name + " has been successfully modified in inventory with price $" + price + " and quantity " + quantity;
+            return "Entities.Product - " + name + " has been successfully modified in inventory with price $" + round(price) + " and quantity " + quantity;
         }
     }
 

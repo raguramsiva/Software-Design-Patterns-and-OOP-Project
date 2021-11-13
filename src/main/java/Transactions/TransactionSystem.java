@@ -56,6 +56,7 @@ public class TransactionSystem {
         try {
             Administrator a = um.createAdministrator(responses.get(0), responses.get(1));
             String inventoryAction = insys.addToInventory(a, responses.get(2), Double.parseDouble(responses.get(3)), Integer.parseInt(responses.get(4)));
+            db.writeDatabase(responses.get(2), Double.parseDouble(responses.get(3)), Integer.parseInt(responses.get(4)));
             ArrayList<String> output = new ArrayList<>();
             output.add("");
             output.add("Transaction Summary:");

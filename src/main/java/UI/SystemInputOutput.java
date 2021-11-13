@@ -74,6 +74,7 @@ public class SystemInputOutput implements InputOutput {
 
 
     public void initialize(TransactionSystem ts) throws IOException {
+
         String choice = chooseUser();
         List<String> responses = promptAnswers(choice);
 
@@ -83,9 +84,10 @@ public class SystemInputOutput implements InputOutput {
             this.sendOutput(s);
         }
 
-        }
 
     }
+
+}
 
 
 

@@ -19,9 +19,15 @@ public class DatabaseInput {
      */
 
     public void inputData(InventorySystem Inventory){
-        inputDatabase(new File("src/main/java/Database/Household_Supplies_Data.json"), Inventory);
-        inputDatabase(new File("src/main/java/Database/Meat_Data.json"), Inventory);
-        inputDatabase(new File("src/main/java/Database/Fruits_and_Vegetables.json"), Inventory);
+
+        File path = new File("src/main/java/Database/Data");
+
+        File [] files = path.listFiles();
+        assert files != null;
+        for (File f : files){
+            inputDatabase(new File(String.valueOf(f)), Inventory);
+        }
+
     }
 
     /** A method help to store data from database.
@@ -42,7 +48,7 @@ public class DatabaseInput {
                 String name = (String) product.get("name");
                 Double price = (Double) product.get("price");
                 Long quantity = (Long) product.get("quantity");
-                Integer stock = quantity.intValue();
+                int stock = quantity.intValue();
                 Inventory.setInventory(Inventory.createProduct(name, price, stock));
             }
 
@@ -50,4 +56,73 @@ public class DatabaseInput {
             e.printStackTrace();
         }
     }
+
+    public void writeDatabase(String name, double price, int quantity){
+
+        JSONObject item = new JSONObject();
+        item.put("name", name);
+        item.put("price", price);
+        item.put("quantity", quantity);
+        item.put("unit", "1 each");
+
+        Boolean check = false;
+
+        try {
+            JSONParser parser = new JSONParser();
+
+            File path = new File("src/main/java/Database/Data");
+            File [] files = path.listFiles();
+
+            for (File f : files){
+                JSONArray products = (JSONArray) parser.parse(new FileReader(f));
+
+
+                for (Object p : products) {
+                    JSONObject product = (JSONObject) p;
+                    if (name.equals(product.get("name"))) {
+                        check = true;
+                        product.put("name", name);
+                        product.put("price", price);
+                        product.put("quantity", quantity);
+                        product.put("unit", "1 each");
+                        FileWriter file = new FileWriter(f);
+                        file.write(products.toJSONString());
+                        file.flush();
+                        file.close();
+                    }
+                }
+
+
+            }
+
+            if (!check){
+                JSONArray newProducts = (JSONArray) parser.parse(new FileReader("src/main/java/Database/Data/New_Products.json"));
+                newProducts.add(item);
+                FileWriter newFile = new FileWriter("src/main/java/Database/Data/New_Products.json");
+                newFile.write(newProducts.toJSONString());
+                newFile.flush();
+                newFile.close();
+            }
+
+
+
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+
 }
+
+
+
+
+
+

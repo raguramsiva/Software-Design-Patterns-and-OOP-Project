@@ -27,13 +27,15 @@ public class UserManager {
     }
 
 
-        /** Creates an administrator.
-         * @param username Users.Administrator's username
-         * @param password Users.Administrator's password
-         * @return Users.Administrator
-         */
+    /** Creates an administrator.
+     * @param username Users.Administrator's username
+     * @param password Users.Administrator's password
+     * @return Users.Administrator
+     */
 
-        public Administrator createAdministrator (String username, String password){
-            return new Administrator(username, password);
-        }
+    public Administrator createAdministrator (String username, String password){
+        return new Administrator(username, password);
+    }
+
+
 }

@@ -2,14 +2,18 @@ import Entities.Product;
 import Users.Customer;
 import org.junit.*;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class CustomerTest {
 
+
     @Test
-    public void add() {
-        Product item = new Product("apple",0.5,5000);
-        Customer person = new Customer("Name", "password1234");
-        int desiredQuantity = 2500;
-        person.add(item, desiredQuantity);
+    public void cartTotalTest() {
+        Product item = new Product("apple",0.50,5000);
+        Customer c = new Customer("Name", "password1234");
+        c.add(item,10);
+        assertEquals(5.00, c.cartTotal());
+
     }
 
 

@@ -141,7 +141,7 @@ public class InventorySystem {
         else {
             Product p = findProduct(name);
             p.setStock(quantity);
-            return "Entities.Product - " + name + " has been successfully modified in inventory with price $" + round(price) + " and quantity " + quantity + ".";
+            return "Product - " + name + " has been successfully modified in inventory with price $" + round(price) + " and quantity " + quantity + ".";
         }
     }
 

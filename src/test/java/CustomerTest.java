@@ -1,5 +1,5 @@
-import Entities.Product;
-import Users.Customer;
+import entities.Product;
+import users.Customer;
 import org.junit.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

@@ -1,17 +1,23 @@
-package Uses;
+package uses;
 
-import Users.Administrator;
-import Users.Customer;
-import Users.User;
+import users.Administrator;
+import users.Customer;
+import users.User;
 
 import java.util.ArrayList;
 
 public class UserManager {
 
-    private ArrayList<User> accounts;
+
+
+    private final ArrayList<User> accounts;
 
     public UserManager() {
         this.accounts = new ArrayList<>();
+    }
+
+    public ArrayList<User> getAccounts() {
+        return accounts;
     }
 
     /**
@@ -23,7 +29,9 @@ public class UserManager {
      */
 
     public Customer createCustomer (String username, String password){
-        return new Customer(username, password);
+        Customer c = new Customer(username, password);
+        accounts.add(c);
+        return c;
     }
 
 
@@ -34,7 +42,9 @@ public class UserManager {
      */
 
     public Administrator createAdministrator (String username, String password){
-        return new Administrator(username, password);
+        Administrator a = new Administrator(username, password);
+        accounts.add(a);
+        return a;
     }
 
 

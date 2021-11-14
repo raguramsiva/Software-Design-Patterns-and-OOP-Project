@@ -1,6 +1,4 @@
-package Users;
-
-import Users.User;
+package users;
 
 public class Administrator extends User {
 

@@ -1,5 +1,5 @@
-import Transactions.TransactionSystem;
-import UI.SystemInputOutput;
+import transactions.TransactionSystem;
+import ui.SystemInputOutput;
 
 import java.io.IOException;
 

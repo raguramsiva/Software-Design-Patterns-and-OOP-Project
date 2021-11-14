@@ -8,17 +8,17 @@ An inventory management system for a wholesale business similar to Costco. There
 
 # Brief Summary of CRC cards
 
-The program contains **4 Entity Classes**, **2 Use Case classes**, **2 Controller classes**, **1 Gateway class** and **2 Users.User Interface classes**. 
+The program contains **4 Entity Classes**, **2 Use Case classes**, **2 Controller classes**, **1 Gateway class** and **2 users.User Interface classes**. 
 
-**Entity Classes**: `Users.User`, `Users.Administrator`, `Users.Customer`, `Entities.Product`
+**Entity Classes**: `users.User`, `users.Administrator`, `users.Customer`, `entities.Product`
 
-**Use Case Classes**: `Uses.InventorySystem`, `Users.Membership`
+**Use Case Classes**: `uses.InventorySystem`, `uses.Membership`
 
-**Controller Classes**: `Transactions.TransactionSystem`, `WholesaleMain`
+**Controller Classes**: `transactions.TransactionSystem`, `WholesaleMain`
 
-**Gateway Class**: `Prompts.PromptIterator` 
+**Gateway Class**: `prompts.PromptIterator` 
 
-**Users.User Interface classes**: `UI.InputOutput`, `UI.SystemInputOutput`
+**users.User Interface classes**: `ui.InputOutput`, `ui.SystemInputOutput`
 
 **Note**:  For the presentation, have the CRC card pdf open.  
 
@@ -30,7 +30,7 @@ The program contains **4 Entity Classes**, **2 Use Case classes**, **2 Controlle
 
 # Brief Summary of Skeleton Program
 
-The Skeleton Program has all 11 classes/interfaces contained in the CRC cards. The `Transactions.TransactionSystem` has code sufficient for the walkthrough scenario involving a customer making a purchase of a product in the store inventory. A `customer_prompts.txt` file contains all the prompts necessary for the walkthrough scenario.
+The Skeleton Program has all 11 classes/interfaces contained in the CRC cards. The `transactions.TransactionSystem` has code sufficient for the walkthrough scenario involving a customer making a purchase of a product in the store inventory. A `customer_prompts.txt` file contains all the prompts necessary for the walkthrough scenario.
 
 **Note**: The skeleton program has some style warnings regarding getter/setter methods that have not been used yet. Instead of removing them, these methods are kept for future use in Phase 1 and 2. 
 
@@ -39,7 +39,7 @@ The Skeleton Program has all 11 classes/interfaces contained in the CRC cards. T
 
 # What has worked well in the design so far
 
-The `Prompts.PromptIterator` is designed to be able to read from arbitrary text files. Hence, we can always quickly add new text files for administrators, memberships, etc. that can be easily read through. This will allow us to easily extend our program for Phase 1 and Phase 2. We are in a good position to add more command prompt text files for administrators and customers with memberships. And we can easily refactor the `Transactions.TransactionSystem` class accordingly. So our program is in a solid position to be easily extended in accordance with Clean Architecture. 
+The `prompts.PromptIterator` is designed to be able to read from arbitrary text files. Hence, we can always quickly add new text files for administrators, memberships, etc. that can be easily read through. This will allow us to easily extend our program for Phase 1 and Phase 2. We are in a good position to add more command prompt text files for administrators and customers with memberships. And we can easily refactor the `transactions.TransactionSystem` class accordingly. So our program is in a solid position to be easily extended in accordance with Clean Architecture. 
 
 
 # What everyone has done and plans on doing
@@ -48,16 +48,16 @@ As a group, everyone contributed to the Specification and CRC cards during group
 basic entity and use case classes. 
 
 **Raguram Sivabalan:**
-Created the `Transactions.TransactionSystem` class and other basic classes. Plans on creating a command prompt text file for administrator and write corresponding code in the `initialize` method in `Transactions.TransactionSystem`.
+Created the `transactions.TransactionSystem` class and other basic classes. Plans on creating a command prompt text file for administrator and write corresponding code in the `initialize` method in `transactions.TransactionSystem`.
 
 **Yong Tong Zhu:**
-Created the  `Users.Membership` class and `MembershipTest`.  Plans on creating command prompt text files for customers with memberships and write corresponding code in the `initialize` method in `Transactions.TransactionSystem`.
+Created the  `uses.Membership` class and `MembershipTest`.  Plans on creating command prompt text files for customers with memberships and write corresponding code in the `initialize` method in `transactions.TransactionSystem`.
 
 **Yipu Lu:**
 Designed the initial entity and use case classes. Plans on adding a database to obtain a large number of products for the store inventory. 
 
 **Yiyang Du:**
-Designed the initial entity and use case classes. Plans on refactoring the `Transactions.TransactionSystem` class using helper methods and other classes. 
+Designed the initial entity and use case classes. Plans on refactoring the `transactions.TransactionSystem` class using helper methods and other classes. 
 
 **Shijia Ye:**
 Designed the initial entity and use case classes. Plans on adding code to add product categories to the store inventory (i.e. produce, frozen goods, etc.)

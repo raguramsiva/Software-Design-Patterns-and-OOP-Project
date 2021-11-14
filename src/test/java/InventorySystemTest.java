@@ -1,12 +1,11 @@
-import Entities.Product;
-import Users.Customer;
-import Users.Administrator;
-import Uses.InventorySystem;
+import entities.Product;
+import users.Administrator;
+import uses.InventorySystem;
 import org.junit.*;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class InventorySystemTest {
 
@@ -16,7 +15,6 @@ public class InventorySystemTest {
     Product item3 = new Product("banana",1.50,4000);
 
     InventorySystem inventorySystem = new InventorySystem();
-    Customer c = new Customer("user1234", "pass67!");
     Administrator a = new Administrator("bob10", "412313!");
 
     @Test
@@ -24,9 +22,9 @@ public class InventorySystemTest {
         inventorySystem.setInventory(item1);
         inventorySystem.setInventory(item3);
         List<String> products = inventorySystem.productList();
-        assertEquals(true, products.contains(item1.getName()));
-        assertEquals(false, products.contains(item2.getName()));
-        assertEquals(true, products.contains(item3.getName()));
+        assertTrue(products.contains(item1.getName()));
+        assertFalse(products.contains(item2.getName()));
+        assertTrue(products.contains(item3.getName()));
 
     }
 
@@ -36,7 +34,8 @@ public class InventorySystemTest {
         double price = 2.99;
         int quantity = 100;
 
-        String expected = "Product - " + name + " has been successfully added to inventory with price $" + inventorySystem.round(price) + " and quantity " + quantity + ".";
+        String expected = "Product - " + name + " has been successfully added to inventory with price $" + inventorySystem.round(price) + " and quantity " + quantity + ". Action " +
+                "was taken by administrator: " + a.getUsername();
         String actual = inventorySystem.addToInventory(a, name, price, quantity);
 
         assertEquals(expected, actual);

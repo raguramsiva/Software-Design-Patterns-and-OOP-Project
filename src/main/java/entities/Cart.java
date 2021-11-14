@@ -1,6 +1,4 @@
-package Entities;
-
-import Entities.Product;
+package entities;
 
 import java.util.HashMap;
 

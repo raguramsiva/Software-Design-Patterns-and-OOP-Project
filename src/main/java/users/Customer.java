@@ -1,8 +1,7 @@
-package Users;
+package users;
 
-import Entities.Cart;
-import Entities.Product;
-import Users.User;
+import entities.Cart;
+import entities.Product;
 
 public class Customer extends User {
 

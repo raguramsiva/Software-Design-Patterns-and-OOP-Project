@@ -1,4 +1,4 @@
-package Prompts;
+package prompts;
 
 import java.io.*;
 import java.util.*;

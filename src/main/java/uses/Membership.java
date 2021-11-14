@@ -1,6 +1,6 @@
-package Users;
+package uses;
 
-import Users.Customer;
+import users.Customer;
 
 public class Membership {
 

@@ -1,8 +1,8 @@
-package UI;
+package ui;
 
-import Prompts.PromptIterator;
-import Transactions.TransactionSystem;
-import UI.InputOutput;
+import transactions.TransactionSystem;
+import prompts.PromptIterator;
+
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -17,7 +17,7 @@ public class SystemInputOutput implements InputOutput {
 
 
     /**
-     * An initializer for UI.SystemInputOutput.
+     * An initializer for ui.SystemInputOutput.
      */
     public SystemInputOutput() {
         this.reader = new BufferedReader(new InputStreamReader(System.in));
@@ -40,7 +40,7 @@ public class SystemInputOutput implements InputOutput {
 
 
     public String chooseUser() throws IOException {
-        this.sendOutput("Type 'customer' or 'administrator' to continue. ");
+        this.sendOutput("Type 'customer' or 'administrator' to continue. Type 'quit' to exit the program.");
         String input = "";
         while (!input.equalsIgnoreCase("customer") && !input.equalsIgnoreCase("administrator")) {
             if (input.equalsIgnoreCase("quit")){

@@ -1,4 +1,4 @@
-package Users;
+package users;
 
 public abstract class User {
 
@@ -6,9 +6,9 @@ public abstract class User {
     private final String password;
 
 
-    /** An initializer for Users.User
-     * @param username Users.User's username
-     * @param password Users.User's password
+    /** An initializer for Uses.User
+     * @param username Uses.User's username
+     * @param password Uses.User's password
      */
     public User(String username, String password) {
         this.username = username;

@@ -1,13 +1,15 @@
-package Database;
+package database;
 
-import Uses.InventorySystem;
+import uses.InventorySystem;
 
 import java.io.*;
+
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+@SuppressWarnings("unchecked")
 
 public class DatabaseInput {
 
@@ -20,7 +22,7 @@ public class DatabaseInput {
 
     public void inputData(InventorySystem Inventory){
 
-        File path = new File("src/main/java/Database/Data");
+        File path = new File("src/main/java/database/data");
 
         File [] files = path.listFiles();
         assert files != null;
@@ -59,20 +61,22 @@ public class DatabaseInput {
 
     public void writeDatabase(String name, double price, int quantity){
 
+
         JSONObject item = new JSONObject();
         item.put("name", name);
         item.put("price", price);
         item.put("quantity", quantity);
         item.put("unit", "1 each");
 
-        Boolean check = false;
+        boolean check = false;
 
         try {
             JSONParser parser = new JSONParser();
 
-            File path = new File("src/main/java/Database/Data");
+            File path = new File("src/main/java/database/data");
             File [] files = path.listFiles();
 
+            assert files != null;
             for (File f : files){
                 JSONArray products = (JSONArray) parser.parse(new FileReader(f));
 
@@ -96,22 +100,16 @@ public class DatabaseInput {
             }
 
             if (!check){
-                JSONArray newProducts = (JSONArray) parser.parse(new FileReader("src/main/java/Database/Data/New_Products.json"));
+                JSONArray newProducts = (JSONArray) parser.parse(new FileReader("src/main/java/database/data/New_Products.json"));
                 newProducts.add(item);
-                FileWriter newFile = new FileWriter("src/main/java/Database/Data/New_Products.json");
+                FileWriter newFile = new FileWriter("src/main/java/database/data/New_Products.json");
                 newFile.write(newProducts.toJSONString());
                 newFile.flush();
                 newFile.close();
             }
 
 
-
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
+        } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
 

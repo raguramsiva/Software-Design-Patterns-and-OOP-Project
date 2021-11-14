@@ -1,26 +1,25 @@
-package Transactions;
+package transactions;
 
-import Database.DatabaseInput;
-import Users.Administrator;
-import Users.Customer;
-import Uses.UserManager;
-import Uses.InventorySystem;
+import database.DatabaseInput;
+import users.Administrator;
+import users.Customer;
+import uses.UserManager;
+import uses.InventorySystem;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-
 public class TransactionSystem {
 
-    private InventorySystem insys = new InventorySystem();
-    private DatabaseInput db = new DatabaseInput();
-    private UserManager um = new UserManager();
+    private final InventorySystem inventorySystem = new InventorySystem();
+    private final DatabaseInput db = new DatabaseInput();
+    private final UserManager um = new UserManager();
 
 
     public ArrayList<String> initializeTransaction(List<String> responses, String choice) {
 
-        db.inputData(insys);
+        db.inputData(inventorySystem);
 
         if (choice.equalsIgnoreCase("customer")) {
             return customerTransaction(responses);
@@ -37,8 +36,19 @@ public class TransactionSystem {
     public ArrayList<String> customerTransaction(List<String> responses) {
         try {
             Customer c = um.createCustomer(responses.get(0), responses.get(1));
-            String cartAction = insys.addToCart(c, responses.get(2), Integer.parseInt(responses.get(3)));
-            String total = insys.customerTotal(c);
+            String cartAction = inventorySystem.addToCart(c, responses.get(2), Integer.parseInt(responses.get(3)));
+            String total = inventorySystem.customerTotal(c);
+
+
+            if (inventorySystem.findProduct(responses.get(2)) != null){
+                if (inventorySystem.findProduct(responses.get(2)).getStock() > 0){
+                    String name = responses.get(2);
+                    double price = inventorySystem.findProduct(responses.get(2)).getPrice();
+                    int stock = inventorySystem.findProduct(responses.get(2)).getStock();
+                    db.writeDatabase(name, price, stock);
+                }
+            }
+
             ArrayList<String> output = new ArrayList<>();
             output.add("");
             output.add("Transaction Summary:");
@@ -46,7 +56,7 @@ public class TransactionSystem {
             output.add(total);
             return output;
             }
-        catch (IndexOutOfBoundsException e) {
+        catch (IndexOutOfBoundsException ignored) {
         }
 
         return null;
@@ -55,7 +65,7 @@ public class TransactionSystem {
     public ArrayList<String> administratorTransaction(List<String> responses) {
         try {
             Administrator a = um.createAdministrator(responses.get(0), responses.get(1));
-            String inventoryAction = insys.addToInventory(a, responses.get(2), Double.parseDouble(responses.get(3)), Integer.parseInt(responses.get(4)));
+            String inventoryAction = inventorySystem.addToInventory(a, responses.get(2), Double.parseDouble(responses.get(3)), Integer.parseInt(responses.get(4)));
             db.writeDatabase(responses.get(2), Double.parseDouble(responses.get(3)), Integer.parseInt(responses.get(4)));
             ArrayList<String> output = new ArrayList<>();
             output.add("");
@@ -63,7 +73,7 @@ public class TransactionSystem {
             output.add(inventoryAction);
             return output;
         }
-        catch (IndexOutOfBoundsException e) {
+        catch (IndexOutOfBoundsException ignored) {
         }
 
         return null;

@@ -1,8 +1,8 @@
-package Uses;
+package uses;
 
-import Entities.Product;
-import Users.Administrator;
-import Users.Customer;
+import entities.Product;
+import users.Administrator;
+import users.Customer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,17 +14,10 @@ public class InventorySystem {
 
 
     /**
-     * An initializer for Uses.InventorySystem.
+     * An initializer for uses.InventorySystem.
      */
     public InventorySystem(){
         this.inventory = new ArrayList<>();
-    }
-
-    /** Getter method for inventory.
-     * @return inventory
-     */
-    public ArrayList<Product> getInventory() {
-        return this.inventory;
     }
 
     /** Setter method for inventory.
@@ -88,7 +81,7 @@ public class InventorySystem {
         int multiple = (int) (100 * amount);
         String str = String.valueOf(multiple);
         String dollars = str.substring(0, str.length()-2);
-        String cents = str.substring(str.length()-2, str.length());
+        String cents = str.substring(str.length()-2);
         return dollars + "." + cents;
     }
 
@@ -136,12 +129,13 @@ public class InventorySystem {
     public String addToInventory(Administrator a, String name, double price, int quantity){
         if (!this.availability(name)){
             this.setInventory(createProduct(name, price, quantity));
-            return "Product - " + name + " has been successfully added to inventory with price $" + round(price) + " and quantity " + quantity + ".";
+            return "Product - " + name + " has been successfully added to inventory with price $" + round(price) + " and quantity " + quantity + ". Action " +
+                    "was taken by administrator: " + a.getUsername();
         }
         else {
             Product p = findProduct(name);
             p.setStock(quantity);
-            return "Entities.Product - " + name + " has been successfully modified in inventory with price $" + round(price) + " and quantity " + quantity + ".";
+            return "Product - " + name + " has been successfully modified in inventory with price $" + round(price) + " and quantity " + quantity + ".";
         }
     }
 

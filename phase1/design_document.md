@@ -18,9 +18,19 @@ Store memberships are available which can provide store discounts to customers. 
 
 We added a database class that can read and write data from JSON files which contain products that will be injected into our inventory. Products are organized by product categories (i.e. fruits and vegetables, household products, etc.).
 
-Our program now has **data persistence**. Whenever an administrator adds a product to the inventory, the product is also added to the database. Similarly, whenever an administrator modifies the price or stock quantity of an existing product in the inventory, the database is updated accordingly. When a customer successfully adds a product of a specified quantity to their shopping cart, the stock quantity of that product within the database is updated accordingly. 
+Our program now has **data persistence**. Whenever an administrator adds a product to the inventory, the product is also added to the database in `New_Products.json`. Similarly, whenever an administrator modifies the price or stock quantity of an existing product in the inventory, the database `.json` files are updated accordingly. When a customer successfully adds a product of a specified quantity to their shopping cart, the stock quantity of that product within the database is updated accordingly. 
 
 Note: Initially the data files were `.txt` files, but we later switched to `.json` files after TA advice. 
+
+## How to Use the Program 
+
+First enter 'customer' or 'administrator'. 
+
+If 'customer' is chosen, enter a username and password. Then enter a product name and desired quantity. If the product is available and in stock, the desired quantity of product will be successfully added to cart. If the product is unavailable, or there is insufficient stock, the product is not added to cart. A transaction summary will then be provided.
+
+If 'administrator' is chosen, enter a username and password. Then enter a product name, price, and stock quantity. If the product is a new product, then the product will be added to the inventory and will be added
+to the database in `New_Products.json`. If the product already exists in the inventory and database, then the user inputted price and stock quantity of that product will be updated in the database in the corresponding `.json` file. A transaction summary will then be provided. 
+
 
 
 ## UML Class Diagram
@@ -33,7 +43,7 @@ A UML class diagram is provided within the `phase1` folder in `UML_diagram.pdf` 
 
 2. We decided to change our `TransactionSystem` class by using the Facade Design Pattern. In Phase 0, the `TransactionSystem`  had too many responsibilities.  We now delegate responsibilities to the classes `UserManager`, `DatabaseInput`, `InventorySystem` in accordance with the Facade Design Pattern.  
 
-3. We decided not to rely too much on a command line interface moving forward since we would like to have a GUI with buttons, dropdown menus, etc within a web application. It isn't practical for a user to be expected to always correctly type in commands. It is also impractical to deal with exceptions from a command line interface when users provide incorrect inputs. Hence, we kept the command line interface somewhat minimal in Phase 1. However, we will still use the PromptIterator to give users instructors for our program in a GUI in Phase 2. 
+3. We decided not to rely too much on a command line interface moving forward since we would like to have a GUI with buttons, dropdown menus, etc within a web application. It isn't practical for a user to be expected to always correctly type in commands. It is also impractical to deal with exceptions from a command line interface when users provide incorrect inputs. Hence, we kept the command line interface somewhat minimal in Phase 1. However, we will still use the `PromptIterator`  to give users instructors for our program in a GUI in Phase 2. 
 
 ## How our Project adheres to Clean Architecture
 

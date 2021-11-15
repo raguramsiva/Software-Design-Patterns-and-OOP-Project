@@ -59,6 +59,9 @@ Moving forward, we can easily replace our command line UI with a GUI without hav
 
 **Facade Pattern:** We used the Facade Design Pattern for our TransactionSystem class. In phase 0, the TransactionSystem class was initially responsible for multiple actors and had multiple responsibilities (creating users, inventory management, etc.). Now, with the Facade Design Pattern, we now consider `TransactionSystem` class as a Facade class, and delegate responsibilities to the following classes: `InventorySystem`, `UserManager`, and `DatabaseInput`.  The `InventorySystem` class creates an inventory, `DatabaseInput` injects products into this inventory, and `UserManager` creates and manages users. 
 
+## Design Patterns We Plan to Implement
+
+We plan on implementing the Template Design Pattern to allow for various store memberships (gold membership, silver membership, etc.) which provide customers with discounts and other perks. Memberships are related in terms of functionality, but will differ in the amount of discount provided, etc. Hence, the Template Design Pattern would seem appropriate. 
 
 ## Packaging Strategy
 

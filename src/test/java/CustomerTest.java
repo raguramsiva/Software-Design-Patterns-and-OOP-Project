@@ -1,6 +1,7 @@
+
 import entities.Product;
-import users.Customer;
 import org.junit.*;
+import users.Customer;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

@@ -96,6 +96,7 @@ We also chose this packaging strategy to allow us to easily catch any obvious vi
 
 2.  Our use of JSON files allow us to easily create new product categories for our inventory. And our `DatabaseInput` class iterates through every `.json` file within the `database/data` directory. Hence, we can always create a new product category by creating  a `.json` file and simply drop it in the `database/data` directory without having to add any additional java code. 
 
+3. Our Main method is nice and short with only 3 lines.
 
 **What each group member has been working on and plans to work on next**
 

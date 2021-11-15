@@ -39,6 +39,10 @@ public class SystemInputOutput implements InputOutput {
     }
 
 
+    /** A method to select a user type.
+     * @return A string indicating a user type.
+     * @throws IOException
+     */
     public String chooseUser() throws IOException {
         this.sendOutput("Type 'customer' or 'administrator' to continue. Type 'quit' to exit the program.");
         String input = "";
@@ -52,6 +56,10 @@ public class SystemInputOutput implements InputOutput {
         return input;
     }
 
+    /** A method that outputs prompts to a user and gathers user inputted responses.
+     * @param fileName A name of a file containing prompts.
+     * @return A list of responses inputted by user.
+     */
     public List<String> promptAnswers(String fileName){
         List<String> responses = new ArrayList<>();
         PromptIterator prompts = new PromptIterator(new File("src/main/java/Prompts/" + fileName + "_prompts.txt"));
@@ -73,6 +81,10 @@ public class SystemInputOutput implements InputOutput {
     }
 
 
+    /** A method to initialize a user transaction.
+     * @param ts An instance of TransactionSystem
+     * @throws IOException
+     */
     public void initialize(TransactionSystem ts) throws IOException {
 
         String choice = chooseUser();

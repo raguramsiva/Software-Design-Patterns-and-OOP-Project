@@ -41,7 +41,7 @@ A UML class diagram is provided within the `phase1` folder in `UML_diagram.pdf` 
 
 1. We decided to use text files and a text reader/writer as a database to store the products of our inventory. After TA advice, we switched to JSON. We made this decision so that we can quickly attain data persistence for Phase 1.  Any changes in our inventory (i.e. price or stock quantity of a product) is reflected in our database class, and the underlying JSON files. These changes persist across runs of our program. 
 
-2. We decided to change our `TransactionSystem` class by using the Facade Design Pattern. In Phase 0, the `TransactionSystem`  had too many responsibilities.  We now delegate responsibilities to the classes `UserManager`, `DatabaseInput`, `InventorySystem` in accordance with the Facade Design Pattern.  
+2. We decided to change and refactor our `TransactionSystem` class by using the Facade Design Pattern. In Phase 0, the `TransactionSystem`  had too many responsibilities.  We now delegate responsibilities to the classes `UserManager`, `DatabaseInput`, `InventorySystem` in accordance with the Facade Design Pattern.  
 
 3. We decided not to rely too much on a command line interface moving forward since we would like to have a GUI with buttons, dropdown menus, etc within a web application. It isn't practical for a user to be expected to always correctly type in commands. It is also impractical to deal with exceptions from a command line interface when users provide incorrect inputs. Hence, we kept the command line interface somewhat minimal in Phase 1. However, we will still use the `PromptIterator`  to give users instructors for our program in a GUI in Phase 2. 
 

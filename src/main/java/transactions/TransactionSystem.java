@@ -50,7 +50,7 @@ public class TransactionSystem {
 
 
             if (inventorySystem.findProduct(responses.get(2)) != null){
-                if (inventorySystem.findProduct(responses.get(2)).getStock() > 0){
+                if (inventorySystem.findProduct(responses.get(2)).getStock() >= 0){
                     String name = responses.get(2);
                     double price = inventorySystem.findProduct(responses.get(2)).getPrice();
                     int stock = inventorySystem.findProduct(responses.get(2)).getStock();

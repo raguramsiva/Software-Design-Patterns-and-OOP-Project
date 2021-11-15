@@ -7,7 +7,7 @@ public class WholesaleMain {
 
     /**
      * Main method of program creates instances of Transactions.TransactionSystem and UI.SystemInputOutput
-     * Calls the initialize method of Transactions.TransactionSystem using the instance of UI.SystemInputOutput
+     * Calls the initialize method of UI.SystemInputOutput using the instance of Transactions.TransactionSystem
      * as parameter.
      */
     public static void main(String[] args) throws IOException {

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>C:/Users/Raguram Sivabalan/IdeaProjects/course-project-group-009/src/main/java</OriginalElement>
+  <nodes>
+    <node x="937.75" y="1353.0">ui.SystemInputOutput</node>
+    <node x="75.25" y="341.0">users.Customer</node>
+    <node x="614.764227642276" y="175.5">users.User</node>
+    <node x="284.83333333333337" y="375.0">users.Administrator</node>
+    <node x="790.875" y="1596.0">WholesaleMain</node>
+    <node x="779.7232384823843" y="926.0">database.DatabaseInput</node>
+    <node x="588.2500000000001" y="1111.0">transactions.TransactionSystem</node>
+    <node x="1168.25" y="1133.0">prompts.PromptIterator</node>
+    <node x="27.25" y="175.0">entities.Cart</node>
+    <node x="486.58299457994576" y="0.0">entities.Product</node>
+    <node x="414.25000000000006" y="648.5">uses.UserManager</node>
+    <node x="740.25" y="582.5">uses.InventorySystem</node>
+    <node x="50.25" y="549.0">uses.Membership</node>
+    <node x="967.25" y="1166.5">ui.InputOutput</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="transactions.TransactionSystem" target="entities.Product" relationship="DEPENDENCY">
+      <point x="-179.5000000000001" y="0.0" />
+      <point x="9.75" y="1206.0" />
+      <point x="9.75" y="149.0" />
+      <point x="584.583" y="149.0" />
+      <point x="5.4200542081161984E-6" y="61.5" />
+    </edge>
+    <edge source="users.Customer" target="entities.Product" relationship="DEPENDENCY">
+      <point x="-90.0" y="0.0" />
+      <point x="9.75" y="403.0" />
+      <point x="9.75" y="149.0" />
+      <point x="584.583" y="149.0" />
+      <point x="5.4200542081161984E-6" y="61.5" />
+    </edge>
+    <edge source="WholesaleMain" target="transactions.TransactionSystem" relationship="CREATE">
+      <point x="0.0" y="-39.5" />
+      <point x="100.12499999999989" y="95.0" />
+    </edge>
+    <edge source="transactions.TransactionSystem" target="uses.InventorySystem" relationship="TO_ONE">
+      <point x="-5.526761517615796" y="-95.0" />
+      <point x="-151.52676151761568" y="128.0" />
+    </edge>
+    <edge source="uses.InventorySystem" target="entities.Product" relationship="CREATE">
+      <point x="173.5" y="0.0" />
+      <point x="1175.75" y="710.5" />
+      <point x="1175.75" y="61.5" />
+      <point x="98.0" y="0.0" />
+    </edge>
+    <edge source="ui.SystemInputOutput" target="ui.InputOutput" relationship="REALIZATION">
+      <point x="0.0" y="-95.5" />
+      <point x="0.0" y="39.5" />
+    </edge>
+    <edge source="uses.UserManager" target="users.User" relationship="DEPENDENCY">
+      <point x="5.25" y="-62.0" />
+      <point x="572.5" y="556.5" />
+      <point x="716.0" y="556.5" />
+      <point x="716.0" y="462.5" />
+      <point x="747.75" y="462.5" />
+      <point x="57.485772357724045" y="50.5" />
+    </edge>
+    <edge source="uses.UserManager" target="users.Administrator" relationship="CREATE">
+      <point x="-145.49999999999994" y="-62.0" />
+      <point x="36.416666666666686" y="28.0" />
+    </edge>
+    <edge source="transactions.TransactionSystem" target="database.DatabaseInput" relationship="TO_ONE">
+      <point x="147.4732384823842" y="-95.0" />
+      <point x="0.0" y="61.5" />
+    </edge>
+    <edge source="transactions.TransactionSystem" target="uses.UserManager" relationship="TO_ONE">
+      <point x="-172.0" y="-95.0" />
+      <point x="28.500000000000114" y="62.0" />
+    </edge>
+    <edge source="database.DatabaseInput" target="uses.InventorySystem" relationship="DEPENDENCY">
+      <point x="-1.4732384823843176" y="-61.5" />
+      <point x="0.0" y="128.0" />
+    </edge>
+    <edge source="uses.InventorySystem" target="users.Administrator" relationship="DEPENDENCY">
+      <point x="30.0" y="-128.0" />
+      <point x="943.75" y="486.0" />
+      <point x="385.333" y="486.0" />
+      <point x="-3.3333333334439885E-4" y="28.0" />
+    </edge>
+    <edge source="users.Customer" target="entities.Cart" relationship="TO_ONE">
+      <point x="-15.0" y="-62.0" />
+      <point x="-15.0" y="51.0" />
+    </edge>
+    <edge source="uses.InventorySystem" target="users.Customer" relationship="DEPENDENCY">
+      <point x="0.0" y="-128.0" />
+      <point x="913.75" y="507.0" />
+      <point x="165.25" y="507.0" />
+      <point x="0.0" y="62.0" />
+    </edge>
+    <edge source="transactions.TransactionSystem" target="users.Administrator" relationship="DEPENDENCY">
+      <point x="179.4999999999999" y="-57.0" />
+      <point x="1104.75" y="1149.0" />
+      <point x="1104.75" y="486.0" />
+      <point x="385.333" y="486.0" />
+      <point x="-3.3333333334439885E-4" y="28.0" />
+    </edge>
+    <edge source="uses.UserManager" target="users.Customer" relationship="CREATE">
+      <point x="-9.75" y="-62.0" />
+      <point x="557.5" y="357.5" />
+      <point x="90.0" y="-45.5" />
+    </edge>
+    <edge source="uses.UserManager" target="users.User" relationship="TO_MANY">
+      <point x="108.01400000000001" y="-62.0" />
+      <point x="-15.000227642275945" y="50.5" />
+    </edge>
+    <edge source="WholesaleMain" target="ui.SystemInputOutput" relationship="CREATE">
+      <point x="77.0" y="0.0" />
+      <point x="1057.75" y="1635.5" />
+      <point x="0.0" y="95.5" />
+    </edge>
+    <edge source="transactions.TransactionSystem" target="users.Customer" relationship="DEPENDENCY">
+      <point x="-179.5000000000001" y="-15.0" />
+      <point x="32.75" y="1191.0" />
+      <point x="32.75" y="507.0" />
+      <point x="165.25" y="507.0" />
+      <point x="0.0" y="62.0" />
+    </edge>
+    <edge source="users.Customer" target="users.User" relationship="GENERALIZATION">
+      <point x="0.0" y="-62.0" />
+      <point x="165.25" y="309.0" />
+      <point x="690.264" y="309.0" />
+      <point x="-2.2764227594507247E-4" y="50.5" />
+    </edge>
+    <edge source="users.Administrator" target="users.User" relationship="GENERALIZATION">
+      <point x="-3.3333333334439885E-4" y="-28.0" />
+      <point x="385.333" y="309.0" />
+      <point x="690.264" y="309.0" />
+      <point x="-2.2764227594507247E-4" y="50.5" />
+    </edge>
+    <edge source="uses.InventorySystem" target="entities.Product" relationship="TO_MANY">
+      <point x="15.0" y="-128.0" />
+      <point x="928.75" y="293.0" />
+      <point x="557.5" y="293.0" />
+      <point x="-27.082994579945762" y="61.5" />
+    </edge>
+    <edge source="transactions.TransactionSystem" target="uses.InventorySystem" relationship="CREATE">
+      <point x="-20.526761517615796" y="-95.0" />
+      <point x="-166.52676151761568" y="128.0" />
+    </edge>
+    <edge source="users.Customer" target="entities.Cart" relationship="CREATE">
+      <point x="-30.0" y="-62.0" />
+      <point x="-30.0" y="51.0" />
+    </edge>
+    <edge source="transactions.TransactionSystem" target="database.DatabaseInput" relationship="CREATE">
+      <point x="162.4732384823842" y="-95.0" />
+      <point x="15.0" y="61.5" />
+    </edge>
+    <edge source="uses.Membership" target="users.Customer" relationship="DEPENDENCY">
+      <point x="0.0" y="-161.5" />
+      <point x="221.75" y="507.0" />
+      <point x="165.25" y="507.0" />
+      <point x="0.0" y="62.0" />
+    </edge>
+    <edge source="entities.Cart" target="entities.Product" relationship="DEPENDENCY">
+      <point x="0.0" y="-51.0" />
+      <point x="165.25" y="149.0" />
+      <point x="584.583" y="149.0" />
+      <point x="5.4200542081161984E-6" y="61.5" />
+    </edge>
+    <edge source="ui.SystemInputOutput" target="transactions.TransactionSystem" relationship="DEPENDENCY">
+      <point x="-117.99999999999989" y="-95.5" />
+      <point x="172.0" y="95.0" />
+    </edge>
+    <edge source="uses.InventorySystem" target="users.User" relationship="DEPENDENCY">
+      <point x="-173.5" y="-85.0" />
+      <point x="716.0" y="625.5" />
+      <point x="716.0" y="462.5" />
+      <point x="747.75" y="462.5" />
+      <point x="57.485772357724045" y="50.5" />
+    </edge>
+    <edge source="ui.SystemInputOutput" target="prompts.PromptIterator" relationship="CREATE">
+      <point x="112.5" y="-95.5" />
+      <point x="-79.0" y="73.0" />
+    </edge>
+    <edge source="transactions.TransactionSystem" target="uses.UserManager" relationship="CREATE">
+      <point x="-157.0" y="-95.0" />
+      <point x="43.500000000000114" y="62.0" />
+    </edge>
+    <edge source="entities.Cart" target="entities.Product" relationship="TO_MANY">
+      <point x="0.0" y="51.0" />
+      <point x="165.25" y="293.0" />
+      <point x="557.5" y="293.0" />
+      <point x="-27.082994579945762" y="61.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.9721238938053098" showDependencies="true" x="670.0" y="445.18889394629036" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

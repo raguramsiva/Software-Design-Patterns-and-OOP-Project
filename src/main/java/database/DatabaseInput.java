@@ -15,33 +15,34 @@ public class DatabaseInput {
 
 
     /**
-     * Database.DatabaseInput will read the files from each inventory database
-     * and store the data in to the assigned Uses.InventorySystem.
-     * @param Inventory The Uses.InventorySystem contain the information of inventories.
+     * Database.DatabaseInput will read multiple files and store
+     * the data in to the assigned Uses.InventorySystem.
+     * @param inventory The Uses.InventorySystem contain the information of inventories.
      */
 
-    public void inputData(InventorySystem Inventory){
+    public void inputData(InventorySystem inventory){
 
         File path = new File("src/main/java/database/data");
 
         File [] files = path.listFiles();
         assert files != null;
         for (File f : files){
-            inputDatabase(new File(String.valueOf(f)), Inventory);
+            inputDatabase(new File(String.valueOf(f)), inventory);
         }
 
     }
 
-    /** A method help to store data from database.
-     * @param FileName The file's path name.
-     * @param Inventory The Uses.InventorySystem stores the data.
+    /**
+     * Database.DatabaseInput will a file and store
+     * the data in to the assigned Uses.InventorySystem.
+     * @param inventory The Uses.InventorySystem contain the information of inventories.
      */
 
-    private void inputDatabase(File FileName, InventorySystem Inventory) {
+    private void inputDatabase(File fileName, InventorySystem inventory) {
         try {
             JSONParser parser = new JSONParser();
 
-            JSONArray products = (JSONArray) parser.parse(new FileReader(FileName));
+            JSONArray products = (JSONArray) parser.parse(new FileReader(fileName));
 
             for (Object p : products)
             {
@@ -51,7 +52,7 @@ public class DatabaseInput {
                 Double price = (Double) product.get("price");
                 Long quantity = (Long) product.get("quantity");
                 int stock = quantity.intValue();
-                Inventory.setInventory(Inventory.createProduct(name, price, stock));
+                inventory.setInventory(inventory.createProduct(name, price, stock));
             }
 
         } catch (NumberFormatException | ParseException | IOException e) {
@@ -59,6 +60,14 @@ public class DatabaseInput {
         }
     }
 
+    /**
+     * Writes a product to the data files in database/data if product does
+     * not already exist in database. Otherwise, updates the price and stock
+     * quantity of an existing product in the inventory.
+     * @param name name of a product
+     * @param price price of a produce
+     * @param quantity stock quantity of a product
+     */
     public void writeDatabase(String name, double price, int quantity){
 
 
@@ -96,7 +105,6 @@ public class DatabaseInput {
                     }
                 }
 
-
             }
 
             if (!check){
@@ -107,7 +115,6 @@ public class DatabaseInput {
                 newFile.flush();
                 newFile.close();
             }
-
 
         } catch (IOException | ParseException e) {
             e.printStackTrace();

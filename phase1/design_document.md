@@ -62,7 +62,7 @@ Moving forward, we can easily replace our command line UI with a GUI without hav
 
 ## Packaging Strategy
 
-We packaged our classes according to layers of Clean Architecture. Our UI, Database, Controller, Gateway, Use Case and Entity classes are all in separate layers. 
+We packaged our classes according to layers of Clean Architecture. Our UI, database, Controller, Gateway, Use Case and Entity classes are all in separate layers. 
 
 We did this to simplify the number of import statements that we required. Within any class, import statements are only made to other classes within the same layer, or the first inner layer. For instance, our database class `DatabaseInput` has one import statement, namely  `import uses.InventorySystem` which imports the use case class `InventorySystem` from the `uses` package. 
 
@@ -86,7 +86,7 @@ We also chose this packaging strategy to allow us to easily catch any obvious vi
 
 **What each group member has been working on and plans to work on next**
 
-**Raguram Sivabalan:** Inverted the dependency between our UI class and main controller so that the UI class `SystemInputOutput` is now dependant on the controller class `TransactionSystem`.  Modified the Database class so that data is read from `.json` files as opposed to `.txt` files. Implemented the Facade design pattern for our `TransactionSystem` class which now delegates responsibilities to the following classes: `InventorySystem`, `UserManager`, and `DatabaseInput`. 
+**Raguram Sivabalan:** Inverted the dependency between our UI class and main controller so that the UI class `SystemInputOutput` is now dependant on the controller class `TransactionSystem`.  Modified the database class so that data is read from `.json` files as opposed to `.txt` files. Implemented the Facade design pattern for our `TransactionSystem` class which now delegates responsibilities to the following classes: `InventorySystem`, `UserManager`, and `DatabaseInput`. 
 
 Plans to work on GUI with dropdown menus and buttons. Also plans on creating an account or password manager for users of our program that will persist across program runs. 
 

@@ -15,7 +15,7 @@
 
 **What each group member has been working on and plans to work on next**
 
-**Raguram Sivabalan:** Inverted the dependency between our UI class and main controller so that the UI class `SystemInputOutput` is now dependant on the controller class `TransactionSystem`.  Modified the Database class so that data is read from `.json` files as opposed to `.txt` files. Implemented the Facade design pattern for our `TransactionSystem` class which now delegates responsibilities to the following classes: `InventorySystem`, `UserManager`, and `DatabaseInput`. 
+**Raguram Sivabalan:** Inverted the dependency between our UI class and main controller so that the UI class `SystemInputOutput` is now dependant on the controller class `TransactionSystem`.  Modified the database class so that data is read from `.json` files as opposed to `.txt` files. Implemented the Facade design pattern for our `TransactionSystem` class which now delegates responsibilities to the following classes: `InventorySystem`, `UserManager`, and `DatabaseInput`. 
 
 Plans to work on GUI with dropdown menus and buttons. Also plans on creating an account or password manager for users of our program that will persist across program runs. 
 

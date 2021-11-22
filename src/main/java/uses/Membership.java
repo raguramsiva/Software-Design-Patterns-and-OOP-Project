@@ -10,6 +10,7 @@ public class Membership {
     private String Mobil;
     private String paymentMethod;
     private String address;
+    private String MemberType;
 
     /** An initializer for Users.Membership.
      * @param memberNumber A member's memberNumber
@@ -103,6 +104,18 @@ public class Membership {
         }
         return 0;
     }
+
+    public double MemberDiscount(){
+        return 1;
+    }
+
+    public void setMemberType(String type){
+        MemberType = type;
+    }
+
+
+
+
 
 
 

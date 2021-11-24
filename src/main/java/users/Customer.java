@@ -2,11 +2,13 @@ package users;
 
 import entities.Cart;
 import entities.Product;
+import uses.Membership;
 
 public class Customer extends User {
 
 
     private final Cart cart;
+    private Membership MemberInfo;
 
 
     /** An initializer for Users.Customer. Each instance of customer has a personal shopping cart.
@@ -40,6 +42,26 @@ public class Customer extends User {
         }
         return total;
     }
+
+    /** Apply a new membership for a customer.
+     *
+     * @param member The type of the Membership.
+     */
+    public void ApplyMembership(Membership member){
+        MemberInfo = member;
+    }
+
+    /** Modify the membership information for a customer.
+     *
+     * @param member The type of the Membership.
+     */
+    public void ModifyMembership(Membership member){
+        MemberInfo = member;
+    }
+
+
+
+
 
 
 

@@ -10,9 +10,6 @@ public class UserManager {
 
     private UserManager um;
 
-    private UserFileReaderWriter uf = new UserFileReaderWriter();
-    private IUserSystemPresenter up;
-
     private final ArrayList<User> accounts;
 
     public UserManager() {
@@ -48,16 +45,6 @@ public class UserManager {
         Administrator a = new Administrator(username, password);
         accounts.add(a);
         return a;
-    }
-
-    public void register(String username, String password){
-        Customer c.register(username,password);
-
-    }
-
-    public void exit() {
-        uf.saveUserToFile(UserManager.userlist);
-
     }
 
 

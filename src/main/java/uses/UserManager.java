@@ -4,21 +4,17 @@ import users.Administrator;
 import users.Customer;
 import users.User;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
-public class UserManager {
+public class UserManager implements Serializable {
 
     private UserManager um;
 
-    private final ArrayList<User> accounts;
+    private final Map<String, User> users = new HashMap<>();
 
-    public UserManager() {
-        this.accounts = new ArrayList<>();
-    }
-
-    public ArrayList<User> getAccounts() {
-        return accounts;
-    }
 
     /**
      * Creates a customer.
@@ -30,7 +26,7 @@ public class UserManager {
 
     public Customer createCustomer (String username, String password){
         Customer c = new Customer(username, password);
-        accounts.add(c);
+        users.put(c.getUsername(), c);
         return c;
     }
 
@@ -43,8 +39,25 @@ public class UserManager {
 
     public Administrator createAdministrator (String username, String password){
         Administrator a = new Administrator(username, password);
-        accounts.add(a);
+        users.put(a.getUsername(), a);
         return a;
+    }
+
+
+    /**
+     * Add user to this user list.
+     * @param user the user to add
+     */
+    public void add(User user) {
+        users.put(user.getUsername(), user);
+    }
+
+    /**
+     * Return the User associated with username.
+     * @param username the username of the user to get.
+     */
+    public User getUser(String username) {
+        return users.get(username);
     }
 
 

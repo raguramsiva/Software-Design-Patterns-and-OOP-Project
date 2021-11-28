@@ -1,6 +1,8 @@
 package users;
 
-public abstract class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
 
     private final String username;
     private final String password;
@@ -27,5 +29,14 @@ public abstract class User {
      */
     public String getPassword() {
         return password;
+    }
+
+    /**
+     * Method which determines whether a string matches user's password.
+     * @param password a string
+     * @return true if password matches the user's password
+     */
+    public boolean passwordMatches(String password) {
+        return this.password.equals(password);
     }
 }

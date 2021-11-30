@@ -2,7 +2,7 @@ package uses;
 
 import users.Customer;
 
-public class Membership {
+public abstract class Membership {
 
     private final String memberNumber;
     private final String validDate;
@@ -105,13 +105,13 @@ public class Membership {
         return 0;
     }
 
-    public double MemberDiscount(){
-        return 1;
-    }
+    public abstract double MemberDiscount();
 
     public void setMemberType(String type){
-        MemberType = type;
+        this.MemberType = type;
     }
+
+    public String MemberState() {return this.MemberType;}
 
 
 

@@ -1,3 +1,4 @@
+import uses.GoldMember;
 import uses.Membership;
 import org.junit.jupiter.api.Test;
 
@@ -6,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class MembershipTest {
 
 
-    Membership MembershipA = new Membership("1234", "2021.01.01", "2022.01.01",
+    GoldMember MembershipA = new GoldMember("1234", "2021.01.01", "2022.01.01",
             "647-123-4567", "Master Card", "123 King St.");
 
 

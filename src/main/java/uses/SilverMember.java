@@ -18,5 +18,13 @@ public class SilverMember extends Membership {
         super.setMemberType("Silver Membership");
     }
 
+    /** The discount rate for the silver membership.
+     *
+     * @return The discount rate.
+     */
+    @Override
+    public double MemberDiscount() {
+        return 1;
+    }
 
 }

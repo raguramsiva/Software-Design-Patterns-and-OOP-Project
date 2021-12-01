@@ -30,7 +30,7 @@ public class SystemInputOutput implements InputOutput {
         return this.reader.readLine();
     }
 
-    /** A method that prints an output. 
+    /** A method that prints an output.
      * @param s output
      */
     @Override
@@ -100,7 +100,4 @@ public class SystemInputOutput implements InputOutput {
     }
 
 }
-
-
-
 

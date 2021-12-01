@@ -1,3 +1,5 @@
+import gateway.DatabaseGateway;
+import prompts.PromptIterator;
 import transactions.TransactionSystem;
 import ui.SystemInputOutput;
 
@@ -12,8 +14,9 @@ public class WholesaleMain {
      */
     public static void main(String[] args) throws IOException {
 
-        TransactionSystem ts = new TransactionSystem();
         SystemInputOutput io = new SystemInputOutput();
+        DatabaseGateway gateway = new DatabaseGateway();
+        TransactionSystem ts = new TransactionSystem(gateway);
         io.initialize(ts);
 
     }

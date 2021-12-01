@@ -119,6 +119,7 @@ public class InventorySystem {
         return "Your total is $0.00" + ".";
     }
 
+
     /** Allows an administrator to add a product to the inventory.
      * @param a An administrator
      * @param name A product name

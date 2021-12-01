@@ -1,6 +1,6 @@
 package transactions;
 
-import database.DatabaseInput;
+import gateway.DatabaseGatewayBoundary;
 import uses.UserManager;
 import uses.InventorySystem;
 import users.Administrator;
@@ -12,9 +12,13 @@ import java.util.List;
 
 public class TransactionSystem {
 
+    private final DatabaseGatewayBoundary gateway;
     private final InventorySystem inventorySystem = new InventorySystem();
-    private final DatabaseInput db = new DatabaseInput();
     private final UserManager um = new UserManager();
+
+    public TransactionSystem(DatabaseGatewayBoundary gateway) {
+        this.gateway = gateway;
+    }
 
 
     /** A method to initialize a transaction.
@@ -24,7 +28,7 @@ public class TransactionSystem {
      */
     public ArrayList<String> initializeTransaction(List<String> responses, String choice) {
 
-        db.inputData(inventorySystem);
+        gateway.inputData(inventorySystem);
 
         if (choice.equalsIgnoreCase("customer")) {
             return customerTransaction(responses);
@@ -54,7 +58,7 @@ public class TransactionSystem {
                     String name = responses.get(2);
                     double price = inventorySystem.findProduct(responses.get(2)).getPrice();
                     int stock = inventorySystem.findProduct(responses.get(2)).getStock();
-                    db.writeDatabase(name, price, stock);
+                    gateway.writeDatabase(name, price, stock);
                 }
             }
 
@@ -80,7 +84,7 @@ public class TransactionSystem {
         try {
             Administrator a = um.createAdministrator(responses.get(0), responses.get(1));
             String inventoryAction = inventorySystem.addToInventory(a, responses.get(2), Double.parseDouble(responses.get(3)), Integer.parseInt(responses.get(4)));
-            db.writeDatabase(responses.get(2), Double.parseDouble(responses.get(3)), Integer.parseInt(responses.get(4)));
+            gateway.writeDatabase(responses.get(2), Double.parseDouble(responses.get(3)), Integer.parseInt(responses.get(4)));
             ArrayList<String> output = new ArrayList<>();
             output.add("");
             output.add("Transaction Summary:");

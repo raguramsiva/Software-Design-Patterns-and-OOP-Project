@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 
-public class PromptIterator implements Iterator<String> {
+public class PromptIterator implements PromptIteratorBoundary {
     private final List<String> prompts = new ArrayList<>();
     private int current = 0;
 
@@ -31,6 +31,7 @@ public class PromptIterator implements Iterator<String> {
     /** A method which checks if there is a next prompt.
      * @return true if there is a next prompt
      */
+    @Override
     public boolean hasNext() {
         return current < prompts.size();
     }

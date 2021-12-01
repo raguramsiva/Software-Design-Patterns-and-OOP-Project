@@ -1,4 +1,4 @@
-package database;
+package gateway;
 
 import uses.InventorySystem;
 
@@ -11,7 +11,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 @SuppressWarnings("unchecked")
 
-public class DatabaseInput {
+public class DatabaseGateway implements DatabaseGatewayBoundary {
 
 
     /**
@@ -20,9 +20,10 @@ public class DatabaseInput {
      * @param inventory The Uses.InventorySystem contain the information of inventories.
      */
 
+    @Override
     public void inputData(InventorySystem inventory){
 
-        File path = new File("src/main/java/database/data");
+        File path = new File("src/main/java/database");
 
         File [] files = path.listFiles();
         assert files != null;
@@ -38,7 +39,8 @@ public class DatabaseInput {
      * @param inventory The Uses.InventorySystem contain the information of inventories.
      */
 
-    private void inputDatabase(File fileName, InventorySystem inventory) {
+    @Override
+    public void inputDatabase(File fileName, InventorySystem inventory) {
         try {
             JSONParser parser = new JSONParser();
 
@@ -68,6 +70,7 @@ public class DatabaseInput {
      * @param price price of a produce
      * @param quantity stock quantity of a product
      */
+    @Override
     public void writeDatabase(String name, double price, int quantity){
 
 
@@ -82,7 +85,7 @@ public class DatabaseInput {
         try {
             JSONParser parser = new JSONParser();
 
-            File path = new File("src/main/java/database/data");
+            File path = new File("src/main/java/database");
             File [] files = path.listFiles();
 
             assert files != null;

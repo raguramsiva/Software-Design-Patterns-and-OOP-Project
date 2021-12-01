@@ -18,7 +18,7 @@ public class DatabaseGatewayTest {
     @Test
     public void inputDatabaseTest() {
         gateway.inputDatabase(new File("src/main/java/database/Fruits_and_Vegetables.json"), inventoryOne);
-        assertTrue(inventoryOne.availability("Peaches"));
+        assertTrue(inventoryOne.availability("Peach"));
         assertFalse(inventoryOne.availability("Paper Towel - 6 Packs"));
     }
 
@@ -26,7 +26,7 @@ public class DatabaseGatewayTest {
     @Test
     public void inputDataTest() {
         gateway.inputData(inventoryTwo);
-        assertTrue(inventoryTwo.availability("Peaches"));
+        assertTrue(inventoryTwo.availability("Peach"));
         assertTrue(inventoryTwo.availability("Paper Towel - 6 Packs"));
         assertTrue(inventoryTwo.availability("Canon EOS Camera"));
     }

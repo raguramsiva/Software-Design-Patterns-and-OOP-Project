@@ -41,7 +41,6 @@ public class SystemInputOutput implements InputOutput {
 
     /** A method to select a user type.
      * @return A string indicating a user type.
-     * @throws IOException
      */
     public String chooseUser() throws IOException {
         this.sendOutput("Type 'customer' or 'administrator' to continue. Type 'quit' to exit the program.");

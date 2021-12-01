@@ -4,7 +4,8 @@ import java.io.*;
 import java.util.*;
 
 
-public class PromptIterator implements PromptIteratorBoundary {
+public class PromptIterator implements Iterator<String> {
+
     private final List<String> prompts = new ArrayList<>();
     private int current = 0;
 

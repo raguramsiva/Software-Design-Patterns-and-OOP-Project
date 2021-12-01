@@ -1,4 +1,5 @@
 import gateway.DatabaseGateway;
+import prompts.PromptIterator;
 import transactions.TransactionSystem;
 import ui.SystemInputOutput;
 

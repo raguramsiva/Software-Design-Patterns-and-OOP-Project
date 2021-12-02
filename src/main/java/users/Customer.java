@@ -44,6 +44,10 @@ public class Customer extends User {
         return total;
     }
 
+    /** Total after the discount.
+     *
+     * @param total The total cost in cart.
+     */
     public double AfterMemberDiscount(double total){
         total *= MemberInfo.MemberDiscount();
         return total;

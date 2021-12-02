@@ -38,8 +38,14 @@ public class Customer extends User {
         for (Product item : cart.getShoppingCart().keySet()){
             int quantity = cart.getShoppingCart().get(item);
             double price = item.getPrice();
-            total += price * quantity;
+            total += price * quantity ;
         }
+
+        return total;
+    }
+
+    public double AfterMemberDiscount(double total){
+        total *= MemberInfo.MemberDiscount();
         return total;
     }
 
@@ -51,13 +57,6 @@ public class Customer extends User {
         MemberInfo = member;
     }
 
-    /** Modify the membership information for a customer.
-     *
-     * @param member The type of the Membership.
-     */
-    public void ModifyMembership(Membership member){
-        MemberInfo = member;
-    }
 
 
 

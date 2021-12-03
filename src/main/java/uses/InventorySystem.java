@@ -113,8 +113,9 @@ public class InventorySystem {
      */
     public String customerTotal(Customer c){
         double total = c.cartTotal();
+        total = c.AfterMemberDiscount(total);
         if (total > 0){
-            return "Your total is $" + round(total) + ".";
+            return "Your total after membership discount is $" + round(total) + ".";
         }
         return "Your total is $0.00" + ".";
     }

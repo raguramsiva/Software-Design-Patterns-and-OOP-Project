@@ -1,0 +1,5 @@
+
+Enter a number to select the corresponding product category.
+
+Inventory Product Categories
+------------------------------------------------------------------------

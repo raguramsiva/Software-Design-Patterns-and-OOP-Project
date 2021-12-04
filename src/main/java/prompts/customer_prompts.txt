@@ -2,7 +2,7 @@ Enter a username:
 Enter a password:
 Enter a product you would like to purchase:
 Enter the quantity of product you would like to purchase:
-Enter mobile number:
-Enter payment method:
-Enter shipping address:
-Enter membership you would like to purchase:(Silver Membership/ Gold Membership/ Platinum Membership)
+Enter a mobile number:
+Enter a payment method:
+Enter a shipping address:
+Enter a membership you would like to purchase: (Silver Membership/ Gold Membership/ Platinum Membership)

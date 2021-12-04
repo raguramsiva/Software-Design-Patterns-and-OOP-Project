@@ -1,5 +1,6 @@
 package ui;
 
+import login.LoginSystem;
 import transactions.TransactionSystem;
 import prompts.PromptIterator;
 
@@ -13,13 +14,15 @@ import java.util.List;
 
 public class SystemInputOutput implements InputOutput {
 
+    private final LoginSystem loginSystem;
     BufferedReader reader;
 
 
     /**
      * An initializer for ui.SystemInputOutput.
      */
-    public SystemInputOutput() {
+    public SystemInputOutput() throws IOException, ClassNotFoundException {
+        this.loginSystem = new LoginSystem();
         this.reader = new BufferedReader(new InputStreamReader(System.in));
     }
 
@@ -37,6 +40,34 @@ public class SystemInputOutput implements InputOutput {
     public void sendOutput(Object s) {
         System.out.println(s);
     }
+
+    public void initializeLogin(){
+        PromptIterator prompts = new PromptIterator(new File("src/main/java/Prompts/login_prompts.txt"));
+        List<String> responses = getStrings(prompts);
+        this.loginSystem.controller.runLogin(responses.get(0), responses.get(1));
+
+    }
+
+    private List<String> getStrings(PromptIterator prompts) {
+        List<String> responses = new ArrayList<>();
+        try {
+            this.sendOutput(prompts.next());
+            String input = this.getInput();
+            responses.add(input);
+            while (!input.equalsIgnoreCase("quit") && prompts.hasNext()) {
+                this.sendOutput(prompts.next());
+                input = this.getInput();
+                if (!input.equalsIgnoreCase("quit")) {
+                    responses.add(input);
+                }
+            }
+        } catch (IOException e) {
+            this.sendOutput("Please restart the program.");
+        }
+        return responses;
+    }
+
+
 
 
     /** A method to select a user type.
@@ -60,23 +91,8 @@ public class SystemInputOutput implements InputOutput {
      * @return A list of responses inputted by user.
      */
     public List<String> promptAnswers(String fileName){
-        List<String> responses = new ArrayList<>();
         PromptIterator prompts = new PromptIterator(new File("src/main/java/Prompts/" + fileName + "_prompts.txt"));
-        try {
-            this.sendOutput(prompts.next());
-            String input = this.getInput();
-            responses.add(input);
-            while (!input.equalsIgnoreCase("quit") && prompts.hasNext()) {
-                this.sendOutput(prompts.next());
-                input = this.getInput();
-                if (!input.equalsIgnoreCase("quit")) {
-                    responses.add(input);
-                }
-            }
-        } catch (IOException e) {
-            this.sendOutput("Please restart the program.");
-        }
-        return responses;
+        return getStrings(prompts);
     }
 
 
@@ -86,6 +102,7 @@ public class SystemInputOutput implements InputOutput {
      */
     public void initialize(TransactionSystem ts) throws IOException {
 
+        initializeLogin();
         String choice = chooseUser();
         List<String> responses = promptAnswers(choice);
 

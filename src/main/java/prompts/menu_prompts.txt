@@ -1,0 +1,11 @@
+
+Welcome to Wholesale 009!
+
+Enter a number to select the corresponding menu option.
+------------------------------------------------------------------------
+Menu Options
+
+[1] View Product Categories
+[2] Make a Transaction
+
+Enter a menu option:

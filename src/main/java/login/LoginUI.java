@@ -5,7 +5,8 @@ import java.util.Scanner;
 /**
  * A beautiful user interface for logging in.
  */
-public class CmdLineUI {
+public class LoginUI {
+
     public void runLogin(LoginController controller) {
         System.out.println("Username: ");
         Scanner scanner = new Scanner(System.in);

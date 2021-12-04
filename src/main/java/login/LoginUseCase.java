@@ -29,7 +29,7 @@ public class LoginUseCase implements LoginInputBoundary {
 
     public LoginResult logIn(String username, String password) {
         User user = users.getUser(username);
-        if (user.passwordMatches(password)){
+        if (user != null && user.passwordMatches(password)){
             return LoginResult.SUCCESS;
         }else{
             return LoginResult.FAILURE;

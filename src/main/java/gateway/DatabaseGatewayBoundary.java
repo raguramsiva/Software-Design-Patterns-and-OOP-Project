@@ -12,7 +12,7 @@ public interface DatabaseGatewayBoundary {
      *
      * @param inventory
      */
-    void inputData(InventorySystem inventory);
+    void inputDatabase(InventorySystem inventory);
 
     /**
      * Read a data file and input product information
@@ -21,7 +21,7 @@ public interface DatabaseGatewayBoundary {
      * @param inventory
      */
 
-    void inputDatabase(File fileName, InventorySystem inventory);
+    void inputData(File fileName, InventorySystem inventory);
 
     /**
      * Writes a product to the data files in database/data if product does

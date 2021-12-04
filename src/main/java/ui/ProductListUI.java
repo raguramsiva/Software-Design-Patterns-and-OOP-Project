@@ -1,16 +1,9 @@
 package ui;
 
-import entities.Product;
+
 import gateway.DatabaseGateway;
-import login.LoginController;
-import login.LoginUI;
-import login.LoginUseCase;
-import login.UserReadWriter;
-import uses.UserManager;
 
 import java.io.File;
-import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class ProductListUI {
@@ -51,14 +44,14 @@ public class ProductListUI {
         ArrayList<ArrayList<Object>> list = presenter.createProductList(files[num-1]);
 
         System.out.println("---------------------------------------------------------------------------------------------");
-        System.out.printf("%15s %20s %20s", "Product Name", "Price", "Stock Quantity");
+        System.out.printf("%-30s %-30s %-30s", "Product Name", "Price", "Stock Quantity");
         System.out.println();
         System.out.println("---------------------------------------------------------------------------------------------");
 
 
         for(ArrayList<Object> l: list)
         {
-            System.out.format("%15s %20s %20s", l.get(0), l.get(1), l.get(2));
+            System.out.format("%-30s %-30s %-30s", l.get(0), l.get(1), l.get(2));
             System.out.println();
         }
         System.out.println("----------------------------------------------------------------------------------------------");

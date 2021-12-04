@@ -3,7 +3,6 @@ import uses.InventorySystem;
 import org.junit.Test;
 
 
-import javax.xml.crypto.Data;
 import java.io.File;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -17,7 +16,7 @@ public class DatabaseGatewayTest {
 
     @Test
     public void inputDatabaseTest() {
-        gateway.inputDatabase(new File("src/main/java/database/Fruits_and_Vegetables.json"), inventoryOne);
+        gateway.inputData(new File("src/main/java/database/Fruits_and_Vegetables.json"), inventoryOne);
         assertTrue(inventoryOne.availability("Peach"));
         assertFalse(inventoryOne.availability("Paper Towel - 6 Packs"));
     }
@@ -25,7 +24,7 @@ public class DatabaseGatewayTest {
 
     @Test
     public void inputDataTest() {
-        gateway.inputData(inventoryTwo);
+        gateway.inputDatabase(inventoryTwo);
         assertTrue(inventoryTwo.availability("Peach"));
         assertTrue(inventoryTwo.availability("Paper Towel - 6 Packs"));
         assertTrue(inventoryTwo.availability("Canon EOS Camera"));

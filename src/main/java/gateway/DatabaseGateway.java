@@ -21,14 +21,14 @@ public class DatabaseGateway implements DatabaseGatewayBoundary {
      */
 
     @Override
-    public void inputData(InventorySystem inventory){
+    public void inputDatabase(InventorySystem inventory){
 
         File path = new File("src/main/java/database");
 
         File [] files = path.listFiles();
         assert files != null;
         for (File f : files){
-            inputDatabase(new File(String.valueOf(f)), inventory);
+            inputData(new File(String.valueOf(f)), inventory);
         }
 
     }
@@ -40,7 +40,7 @@ public class DatabaseGateway implements DatabaseGatewayBoundary {
      */
 
     @Override
-    public void inputDatabase(File fileName, InventorySystem inventory) {
+    public void inputData(File fileName, InventorySystem inventory) {
         try {
             JSONParser parser = new JSONParser();
 

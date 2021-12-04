@@ -82,6 +82,10 @@ public class InventorySystem {
         String str = String.valueOf(multiple);
         String dollars = str.substring(0, str.length()-2);
         String cents = str.substring(str.length()-2);
+
+        if (dollars.equals("")){
+            return "0." + cents;
+        }
         return dollars + "." + cents;
     }
 
@@ -103,6 +107,19 @@ public class InventorySystem {
         }
 
         return "The item is not available or there is not enough stock to fulfill your request.";
+
+    }
+
+    public ArrayList<ArrayList<Object>> productStringList(){
+        ArrayList<ArrayList<Object>> productStrings = new ArrayList<>();
+        for (Product p : this.inventory){
+            ArrayList<Object> temp = new ArrayList<>();
+            temp.add(p.getName());
+            temp.add("$" + round(p.getPrice()));
+            temp.add(p.getStock());
+            productStrings.add(temp);
+        }
+        return productStrings;
 
     }
 

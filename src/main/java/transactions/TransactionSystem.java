@@ -31,7 +31,7 @@ public class TransactionSystem {
      */
     public ArrayList<String> initializeTransaction(List<String> responses, String choice) {
 
-        gateway.inputData(inventorySystem);
+        gateway.inputDatabase(inventorySystem);
 
         if (choice.equalsIgnoreCase("customer")) {
             return customerTransaction(responses);
@@ -55,7 +55,7 @@ public class TransactionSystem {
         try {
             ArrayList<String> output = new ArrayList<>();
             Customer c = um.createCustomer(responses.get(0), responses.get(1));
-            if (CheckInVaildInput(responses, 7)) {
+            if (checkInvalidInput(responses, 7)) {
                 output.add("Invalid membership input, please try again latter.");
                 return output;
             }
@@ -75,7 +75,7 @@ public class TransactionSystem {
                     gateway.writeDatabase(name, price, stock);
                 }
             }
-            //ArrayList<String> output = new ArrayList<>();
+
             output.add("");
             output.add("Transaction Summary:");
             output.add(cartAction);
@@ -118,7 +118,7 @@ public class TransactionSystem {
      * @param IndexOfMember The index of the responses for the MemberShip
      * @return A boolean represent the validation of the input.
      */
-    public boolean CheckInVaildInput(List<String> responses, int IndexOfMember) {
+    public boolean checkInvalidInput(List<String> responses, int IndexOfMember) {
         return !responses.get(IndexOfMember).equals("Silver Membership") &&
                 !responses.get(IndexOfMember).equals("Gold Membership") &&
                 !responses.get(IndexOfMember).equals("Platinum Membership");

@@ -1,18 +1,16 @@
 package ui;
 
-import entities.Product;
 import gateway.DatabaseGateway;
 import prompts.PromptIterator;
 import transactions.TransactionSystem;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MenuUI{
+
+    public static final String PRESS_ANY_KEY = "Press any key to return to the previous menu.";
 
 
     public void initializeMenu() throws IOException, ClassNotFoundException {
@@ -23,27 +21,49 @@ public class MenuUI{
             System.out.println(menuPrompts.next());
             }
 
+        int choice = -1;
+
         Scanner scanner = new Scanner(System.in);
-        int choice = scanner.nextInt();
 
-        switch (choice) {
-            case 1:
-                PromptIterator categoryPrompts = new PromptIterator(new File("src/main/java/prompts/product_category_prompts.txt"));
-                while (categoryPrompts.hasNext()) {
-                    System.out.println(categoryPrompts.next());
-                }
-                ProductListUI productListUI = new ProductListUI();
-                productListUI.createCategories();
-                int categoryChoice = scanner.nextInt();
-                productListUI.productCategory(categoryChoice);
-                break;
+        while (choice <= 0){
+            choice = scanner.nextInt();
+            switch (choice) {
+                case 1:
+                    initializeProductListUI();
+                    System.out.println(PRESS_ANY_KEY);
+                    scanner.next();
+                    initializeMenu();
+                    break;
 
-            case 2:
-                SystemInputOutput io = new SystemInputOutput();
-                DatabaseGateway gateway = new DatabaseGateway();
-                TransactionSystem ts = new TransactionSystem(gateway);
-                io.initialize(ts);
+                case 2:
+                    initializeSystemIO();
+                    break;
+            }
         }
+
+
+
+
+    }
+
+    public void initializeProductListUI(){
+        PromptIterator categoryPrompts = new PromptIterator(new File("src/main/java/prompts/product_category_prompts.txt"));
+        while (categoryPrompts.hasNext()) {
+            System.out.println(categoryPrompts.next());
+        }
+        ProductListUI productListUI = new ProductListUI();
+        productListUI.createCategories();
+        Scanner scanner = new Scanner(System.in);
+        int categoryChoice = scanner.nextInt();
+        productListUI.productCategory(categoryChoice);
+    }
+
+
+    public void initializeSystemIO() throws IOException, ClassNotFoundException {
+        SystemInputOutput io = new SystemInputOutput();
+        DatabaseGateway gateway = new DatabaseGateway();
+        TransactionSystem ts = new TransactionSystem(gateway);
+        io.initialize(ts);
     }
 
 

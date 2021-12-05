@@ -26,7 +26,7 @@ public class TransactionSystem {
      * A method to initialize a transaction.
      *
      * @param responses list of a user inputs.
-     * @param choice    A string indicating user type.
+     * @param choice    A string indicating user type (customer or administrator).
      * @return A list of strings representing transaction messages.
      */
     public ArrayList<String> initializeTransaction(List<String> responses, String choice) {
@@ -34,15 +34,16 @@ public class TransactionSystem {
         gateway.inputDatabase(inventorySystem);
 
         if (choice.equalsIgnoreCase("customer")) {
-            return customerTransaction(responses);
+            CustomerTransaction c = new CustomerTransaction();
+            return c.createTransaction(gateway, inventorySystem, um, responses);
         }
 
         if (choice.equalsIgnoreCase("administrator")) {
-            return administratorTransaction(responses);
+            AdministratorTransaction a = new AdministratorTransaction();
+            return a.createTransaction(gateway, inventorySystem, um, responses);
         }
 
         return null;
-
     }
 
     /**

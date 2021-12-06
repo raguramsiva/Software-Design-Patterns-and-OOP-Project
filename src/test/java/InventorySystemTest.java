@@ -48,7 +48,13 @@ public class InventorySystemTest {
     }
 
     @Test
-    public void findProductTest21() {
+    public void findProductTest2() {
+        inventorySystem.setInventory(item1);
+        assertNotEquals(inventorySystem.findProduct("apple"), item2);
+    }
+
+    @Test
+    public void findProductTest3() {
         assertNull(inventorySystem.findProduct("apple"));
     }
 

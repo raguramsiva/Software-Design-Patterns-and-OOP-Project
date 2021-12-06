@@ -45,7 +45,7 @@ public class ProductListUI {
         assert files != null;
 
         DatabaseAccess gateway = new DatabaseAccess();
-        ProductListPresenter presenter = new ProductListPresenter(gateway);
+        ProductList presenter = new ProductList(gateway);
 
         ArrayList<ArrayList<Object>> list = presenter.createProductList(files[num-1]);
 

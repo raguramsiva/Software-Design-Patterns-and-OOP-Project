@@ -82,7 +82,7 @@ public class SystemInputOutput implements InputOutput {
      * @return A string indicating a user type.
      */
     public String chooseUser() throws IOException {
-        this.sendOutput("Type 'customer' or 'administrator' to continue. Type 'quit' to exit the program.");
+        this.sendOutput("\nType 'customer' or 'administrator' to continue. Type 'quit' to exit the program.");
         String input = "";
         while (!input.equalsIgnoreCase("customer") && !input.equalsIgnoreCase("administrator")) {
             if (input.equalsIgnoreCase("quit")){

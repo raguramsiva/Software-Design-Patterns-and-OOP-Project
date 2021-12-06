@@ -6,7 +6,7 @@ import uses.InventorySystem;
 import java.io.File;
 import java.util.ArrayList;
 
-public class ProductListPresenter {
+public class ProductList {
 
     private final DatabaseAccessBoundary access;
     private final InventorySystem inventory;
@@ -14,7 +14,7 @@ public class ProductListPresenter {
     /** A constructor for ProductList
      * @param access DatabaseAccessBoundary
      */
-    public ProductListPresenter(DatabaseAccessBoundary access) {
+    public ProductList(DatabaseAccessBoundary access) {
         this.access = access;
         this.inventory = new InventorySystem();
     }

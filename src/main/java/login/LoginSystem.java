@@ -8,14 +8,14 @@ import java.io.IOException;
 
 public class LoginSystem {
 
-    private final UserReadWriter readWriter = new UserReadWriter();
-    private final UserManager users;
-    private final LoginUseCase useCase;
     public final LoginController controller;
 
+    /** A constructor for LoginSystem.
+     */
     public LoginSystem() throws IOException, ClassNotFoundException {
-        this.users = readWriter.readFromFile("src/main/java/login/users.ser");
-        this.useCase = new LoginUseCase(users);
+        UserReadWriter readWriter = new UserReadWriter();
+        UserManager users = readWriter.readFromFile("src/main/java/login/users.ser");
+        LoginUseCase useCase = new LoginUseCase(users);
         this.controller = new LoginController(useCase);
     }
 

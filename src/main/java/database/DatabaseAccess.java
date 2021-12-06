@@ -1,6 +1,5 @@
 package database;
 
-import database.DatabaseAccessBoundary;
 import uses.InventorySystem;
 
 import java.io.*;

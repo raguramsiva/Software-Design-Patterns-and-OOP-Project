@@ -111,7 +111,9 @@ public abstract class Membership {
         this.MemberType = type;
     }
 
-    public String MemberState() {return this.MemberType;}
+    public String MemberState() {
+        return this.MemberType;
+    }
 
 
 

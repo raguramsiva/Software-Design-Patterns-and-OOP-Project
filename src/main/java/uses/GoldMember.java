@@ -1,6 +1,6 @@
 package uses;
 
-public class GoldMember<MembershipType> extends Membership {
+public class GoldMember extends Membership {
     /**
      * An initializer for Users.Membership.
      *
@@ -18,7 +18,7 @@ public class GoldMember<MembershipType> extends Membership {
     }
 
 
-    /** The discount rate for the golden membership.
+    /** The discount rate for the golden membership - 5 percent discount.
      *
      * @return The discount rate.
      */

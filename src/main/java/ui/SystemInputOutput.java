@@ -41,12 +41,21 @@ public class SystemInputOutput implements InputOutput {
         System.out.println(s);
     }
 
+
+    /**
+     * A method to initialize login system.
+     */
     public void initializeLogin(){
         PromptIterator prompts = new PromptIterator(new File("src/main/java/Prompts/login_prompts.txt"));
         List<String> responses = getStrings(prompts);
         this.loginSystem.controller.runLogin(responses.get(0), responses.get(1));
     }
 
+
+    /** A method to get user responses to provided prompts.
+     * @param prompts a PromptIterator
+     * @return A list of strings containing user responses.
+     */
     private List<String> getStrings(PromptIterator prompts) {
         List<String> responses = new ArrayList<>();
         try {
@@ -97,7 +106,6 @@ public class SystemInputOutput implements InputOutput {
 
     /** A method to initialize a user transaction.
      * @param ts An instance of TransactionSystem
-     * @throws IOException
      */
     public void initialize(TransactionSystem ts) throws IOException {
 

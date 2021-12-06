@@ -27,7 +27,7 @@ public class CustomerTransaction implements TransactionFactory{
                 return output;
             }
             ApplyMembership apply = new ApplyMembership();
-            apply.NewMembership(c, responses.get(4), responses.get(5), responses.get(6), responses.get(7));
+            apply.newMembership(c, responses.get(4), responses.get(5), responses.get(6), responses.get(7));
             String cartAction = is.addToCart(c, responses.get(2), Integer.parseInt(responses.get(3)));
 
 

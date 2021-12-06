@@ -110,6 +110,9 @@ public class InventorySystem {
 
     }
 
+    /** A method to return an array list of strings containing product information
+     * @return An array list of strings
+     */
     public ArrayList<ArrayList<Object>> productStringList(){
         ArrayList<ArrayList<Object>> productStrings = new ArrayList<>();
         for (Product p : this.inventory){
@@ -130,7 +133,7 @@ public class InventorySystem {
      */
     public String customerTotal(Customer c){
         double total = c.cartTotal();
-        total = c.AfterMemberDiscount(total);
+        total = c.afterMemberDiscount(total);
         if (total > 0){
             return "Your total after membership discount is $" + round(total) + ".";
         }

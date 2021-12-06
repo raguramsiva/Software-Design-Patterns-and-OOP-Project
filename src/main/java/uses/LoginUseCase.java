@@ -16,9 +16,12 @@ public class LoginUseCase implements LoginInputBoundary {
 
 
     public enum LoginResult {
-        SUCCESS, FAILURE
+        LOGIN, SIGNUP
     }
 
+    /** A constructor for LoginUseCase
+     * @param users A UserManager
+     */
     public LoginUseCase(UserManager users) {
         this.users = users;
         try {
@@ -28,12 +31,17 @@ public class LoginUseCase implements LoginInputBoundary {
         }
     }
 
+    /** A method to initiate a logIn
+     * @param username a username
+     * @param password a password
+     * @return LoginResult
+     */
     public LoginResult logIn(String username, String password) {
         User user = users.getUser(username);
         if (user != null && user.passwordMatches(password)){
-            return LoginResult.SUCCESS;
+            return LoginResult.LOGIN;
         }else{
-            return LoginResult.FAILURE;
+            return LoginResult.SIGNUP;
         }
     }
 }

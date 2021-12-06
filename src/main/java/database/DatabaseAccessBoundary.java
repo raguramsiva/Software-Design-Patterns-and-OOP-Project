@@ -10,7 +10,7 @@ public interface DatabaseAccessBoundary {
      * Read multiple data files and input product information
      * into inventory.
      *
-     * @param inventory
+     * @param inventory an InventorySystem
      */
     void inputDatabase(InventorySystem inventory);
 
@@ -18,7 +18,7 @@ public interface DatabaseAccessBoundary {
      * Read a data file and input product information
      * into inventory.
      *
-     * @param inventory
+     * @param inventory an InventorySystem
      */
 
     void inputData(File fileName, InventorySystem inventory);

@@ -39,9 +39,9 @@ public class TransactionSystemTest {
 
         expected.add("");
         expected.add("Transaction Summary:");
-        expected.add("You have added 10 units of Cucumber priced at $0.85 each.");
+        expected.add("You have added 10 units of Cucumber priced at $0.75 each.");
         expected.add("You have added 1 units of Silver Membership priced at $50.00 each.");
-        expected.add("Your total after membership discount is $58.50.");
+        expected.add("Your total after membership discount is $57.50.");
 
         ArrayList<String> actual = ts.initializeTransaction(responses, "Customer");
 

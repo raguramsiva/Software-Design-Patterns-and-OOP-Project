@@ -1,7 +1,8 @@
-package login;
+package uses;
 
+import controllers.LoginInputBoundary;
+import login.UserReadWriter;
 import users.User;
-import uses.UserManager;
 
 import java.io.IOException;
 

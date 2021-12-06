@@ -48,7 +48,7 @@ public class Customer extends User {
      *
      * @param total The total cost in cart.
      */
-    public double AfterMemberDiscount(double total){
+    public double afterMemberDiscount(double total){
         total *= MemberInfo.MemberDiscount();
         return total;
     }
@@ -57,7 +57,7 @@ public class Customer extends User {
      *
      * @param member The type of the Membership.
      */
-    public void ApplyMembership(Membership member){
+    public void applyMembership(Membership member){
         MemberInfo = member;
     }
 

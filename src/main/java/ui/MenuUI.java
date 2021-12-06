@@ -13,6 +13,9 @@ public class MenuUI{
     public static final String PRESS_ANY_KEY = "Enter any key to return to the previous menu.";
 
 
+    /**
+     * A method to initialize the Main Menu.
+     */
     public void initializeMenu() throws IOException, ClassNotFoundException {
 
         PromptIterator menuPrompts = new PromptIterator(new File("src/main/java/prompts/menu_prompts.txt"));
@@ -46,6 +49,9 @@ public class MenuUI{
 
     }
 
+    /**
+     * A method to initialize the Product List UI
+     */
     public void initializeProductListUI(){
         PromptIterator categoryPrompts = new PromptIterator(new File("src/main/java/prompts/product_category_prompts.txt"));
         while (categoryPrompts.hasNext()) {
@@ -59,6 +65,9 @@ public class MenuUI{
     }
 
 
+    /**
+     * A method to initialize SystemInputOutput
+     */
     public void initializeSystemIO() throws IOException, ClassNotFoundException {
         SystemInputOutput io = new SystemInputOutput();
         DatabaseAccess gateway = new DatabaseAccess();

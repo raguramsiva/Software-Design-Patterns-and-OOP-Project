@@ -23,7 +23,7 @@ public class TransactionSystem {
      * A method to initialize a transaction.
      *
      * @param responses list of a user inputs.
-     * @param choice    A string indicating user type (customer or administrator).
+     * @param choice  A string indicating user type (customer or administrator).
      * @return A list of strings representing transaction messages.
      */
     public ArrayList<String> initializeTransaction(List<String> responses, String choice) {

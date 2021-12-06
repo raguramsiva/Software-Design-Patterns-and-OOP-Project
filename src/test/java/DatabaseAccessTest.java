@@ -23,11 +23,17 @@ public class DatabaseAccessTest {
 
 
     @Test
-    public void inputDataTest() {
+    public void inputDataTest1() {
         gateway.inputDatabase(inventoryTwo);
         assertTrue(inventoryTwo.availability("Peach"));
         assertTrue(inventoryTwo.availability("Paper Towel - 6 Packs"));
         assertTrue(inventoryTwo.availability("Canon EOS Camera"));
+    }
+
+    @Test
+    public void inputDataTest2() {
+        gateway.inputDatabase(inventoryTwo);
+        assertFalse(inventoryTwo.availability("random"));
     }
 
 

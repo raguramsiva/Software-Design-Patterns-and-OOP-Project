@@ -1,5 +1,6 @@
 import entities.Product;
 import users.Administrator;
+import users.Customer;
 import uses.InventorySystem;
 import org.junit.*;
 
@@ -29,6 +30,31 @@ public class InventorySystemTest {
     }
 
     @Test
+    public void productAvailabilityTest1() {
+        inventorySystem.setInventory(item1);
+        assertTrue(inventorySystem.availability("apple"));
+    }
+
+    @Test
+    public void productAvailabilityTest2() {
+        inventorySystem.setInventory(item1);
+        assertFalse(inventorySystem.availability("orange"));
+    }
+
+    @Test
+    public void findProductTest1() {
+        inventorySystem.setInventory(item1);
+        assertEquals(inventorySystem.findProduct("apple"), item1);
+    }
+
+    @Test
+    public void findProductTest21() {
+        assertNull(inventorySystem.findProduct("apple"));
+    }
+
+
+
+    @Test
     public void addToInventoryTest(){
         String name = "Vanilla Ice Cream";
         double price = 2.99;
@@ -40,7 +66,6 @@ public class InventorySystemTest {
 
         assertEquals(expected, actual);
     }
-
 
 
 

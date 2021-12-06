@@ -1,6 +1,5 @@
 package uses;
 
-import users.Customer;
 
 public class PlatinumMember extends Membership{
     /**
@@ -20,7 +19,7 @@ public class PlatinumMember extends Membership{
     }
 
 
-    /** Discount rate of the platinum membership.
+    /** Discount rate of the platinum membership - 10 percent discount.
      *
      * @return Discount rate
      */

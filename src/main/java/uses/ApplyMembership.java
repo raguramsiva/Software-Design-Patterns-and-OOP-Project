@@ -16,9 +16,8 @@ public class ApplyMembership {
      * @param memberType The type of the membership
      *
      */
-
-    public void NewMembership(Customer customer, String mobile, String payment,
-                                 String address, String memberType){
+    public void newMembership(Customer customer, String mobile, String payment,
+                              String address, String memberType){
         number += 1;
         String MemberNumber = String.valueOf(number);
         Membership member = null;
@@ -37,7 +36,7 @@ public class ApplyMembership {
         }
 
 
-        customer.ApplyMembership(member);
+        customer.applyMembership(member);
 
 
     }

@@ -15,8 +15,11 @@ public class ProductListUI {
     }
 
 
+    /**
+     * A method to create every product category where each category contains
+     * a list of products.
+     */
     public void createCategories(){
-        ArrayList<String> categories = new ArrayList<>();
         File path = new File("src/main/java/database/data");
         File [] files = path.listFiles();
         assert files != null;
@@ -32,6 +35,9 @@ public class ProductListUI {
     }
 
 
+    /** A method to create a product category containing a list of products.
+     * @param num The index of the product category in the data directory
+     */
     public void productCategory(int num){
 
         File path = new File("src/main/java/database/data");

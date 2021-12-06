@@ -16,7 +16,7 @@ public class DatabaseAccessTest {
 
     @Test
     public void inputDatabaseTest() {
-        gateway.inputData(new File("src/main/java/database/Fruits_and_Vegetables.json"), inventoryOne);
+        gateway.inputData(new File("src/main/java/database/data/Fruits_and_Vegetables.json"), inventoryOne);
         assertTrue(inventoryOne.availability("Peach"));
         assertFalse(inventoryOne.availability("Paper Towel - 6 Packs"));
     }

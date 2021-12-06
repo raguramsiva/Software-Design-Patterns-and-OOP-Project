@@ -1,5 +1,6 @@
-package gateway;
+package database;
 
+import database.DatabaseAccessBoundary;
 import uses.InventorySystem;
 
 import java.io.*;
@@ -11,7 +12,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 @SuppressWarnings("unchecked")
 
-public class DatabaseGateway implements DatabaseGatewayBoundary {
+public class DatabaseAccess implements DatabaseAccessBoundary {
 
 
     /**
@@ -23,7 +24,7 @@ public class DatabaseGateway implements DatabaseGatewayBoundary {
     @Override
     public void inputDatabase(InventorySystem inventory){
 
-        File path = new File("src/main/java/database");
+        File path = new File("src/main/java/database/data");
 
         File [] files = path.listFiles();
         assert files != null;
@@ -85,7 +86,7 @@ public class DatabaseGateway implements DatabaseGatewayBoundary {
         try {
             JSONParser parser = new JSONParser();
 
-            File path = new File("src/main/java/database");
+            File path = new File("src/main/java/database/data");
             File [] files = path.listFiles();
 
             assert files != null;

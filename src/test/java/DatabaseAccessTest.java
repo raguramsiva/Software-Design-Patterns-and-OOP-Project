@@ -1,4 +1,4 @@
-import gateway.DatabaseGateway;
+import database.DatabaseAccess;
 import uses.InventorySystem;
 import org.junit.Test;
 
@@ -7,9 +7,9 @@ import java.io.File;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class DatabaseGatewayTest {
+public class DatabaseAccessTest {
 
-    DatabaseGateway gateway = new DatabaseGateway();
+    DatabaseAccess gateway = new DatabaseAccess();
     InventorySystem inventoryOne = new InventorySystem();
     InventorySystem inventoryTwo = new InventorySystem();
 

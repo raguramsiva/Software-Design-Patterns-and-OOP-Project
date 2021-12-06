@@ -1,7 +1,7 @@
 package ui;
 
 
-import gateway.DatabaseGateway;
+import database.DatabaseAccess;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ public class ProductListUI {
 
     public void createCategories(){
         ArrayList<String> categories = new ArrayList<>();
-        File path = new File("src/main/java/database");
+        File path = new File("src/main/java/database/data");
         File [] files = path.listFiles();
         assert files != null;
         int count = files.length;
@@ -34,11 +34,11 @@ public class ProductListUI {
 
     public void productCategory(int num){
 
-        File path = new File("src/main/java/database");
+        File path = new File("src/main/java/database/data");
         File [] files = path.listFiles();
         assert files != null;
 
-        DatabaseGateway gateway = new DatabaseGateway();
+        DatabaseAccess gateway = new DatabaseAccess();
         ProductListPresenter presenter = new ProductListPresenter(gateway);
 
         ArrayList<ArrayList<Object>> list = presenter.createProductList(files[num-1]);

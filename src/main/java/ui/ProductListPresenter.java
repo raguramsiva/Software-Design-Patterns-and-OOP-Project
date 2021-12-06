@@ -8,16 +8,16 @@ import java.util.ArrayList;
 
 public class ProductListPresenter {
 
-    private final DatabaseAccessBoundary gateway;
+    private final DatabaseAccessBoundary access;
     private final InventorySystem inventory;
 
-    public ProductListPresenter(DatabaseAccessBoundary gateway) {
-        this.gateway = gateway;
+    public ProductListPresenter(DatabaseAccessBoundary access) {
+        this.access = access;
         this.inventory = new InventorySystem();
     }
 
     public ArrayList<ArrayList<Object>> createProductList(File filename){
-       this.gateway.inputData(filename, this.inventory);
+       this.access.inputData(filename, this.inventory);
         return this.inventory.productStringList();
     }
 

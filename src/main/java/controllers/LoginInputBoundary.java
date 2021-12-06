@@ -1,4 +1,6 @@
-package login;
+package controllers;
+
+import uses.LoginUseCase;
 
 public interface LoginInputBoundary {
 

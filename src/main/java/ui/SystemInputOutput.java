@@ -1,7 +1,7 @@
 package ui;
 
 import login.LoginSystem;
-import transactions.TransactionSystem;
+import controllers.TransactionSystem;
 import prompts.PromptIterator;
 
 
@@ -45,7 +45,6 @@ public class SystemInputOutput implements InputOutput {
         PromptIterator prompts = new PromptIterator(new File("src/main/java/Prompts/login_prompts.txt"));
         List<String> responses = getStrings(prompts);
         this.loginSystem.controller.runLogin(responses.get(0), responses.get(1));
-
     }
 
     private List<String> getStrings(PromptIterator prompts) {

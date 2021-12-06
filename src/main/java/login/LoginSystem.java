@@ -1,5 +1,7 @@
 package login;
 
+import controllers.LoginController;
+import uses.LoginUseCase;
 import uses.UserManager;
 
 import java.io.IOException;
@@ -17,12 +19,4 @@ public class LoginSystem {
         this.controller = new LoginController(useCase);
     }
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
-        UserReadWriter readWriter = new UserReadWriter();
-        UserManager users = readWriter.readFromFile("src/main/java/login/users.ser");
-        LoginUseCase useCase = new LoginUseCase(users);
-        LoginController controller = new LoginController(useCase);
-        LoginUI ui = new LoginUI();
-        ui.runLogin(controller);
-    }
 }

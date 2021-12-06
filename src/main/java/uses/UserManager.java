@@ -52,6 +52,7 @@ public class UserManager implements Serializable {
         users.put(user.getUsername(), user);
     }
 
+
     /**
      * Return the User associated with username.
      * @param username the username of the user to get.

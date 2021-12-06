@@ -1,6 +1,6 @@
 package ui;
 
-import gateway.DatabaseGateway;
+import database.DatabaseAccess;
 import prompts.PromptIterator;
 import transactions.TransactionSystem;
 
@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class MenuUI{
 
-    public static final String PRESS_ANY_KEY = "Press any key to return to the previous menu.";
+    public static final String PRESS_ANY_KEY = "Enter any key to return to the previous menu.";
 
 
     public void initializeMenu() throws IOException, ClassNotFoundException {
@@ -61,7 +61,7 @@ public class MenuUI{
 
     public void initializeSystemIO() throws IOException, ClassNotFoundException {
         SystemInputOutput io = new SystemInputOutput();
-        DatabaseGateway gateway = new DatabaseGateway();
+        DatabaseAccess gateway = new DatabaseAccess();
         TransactionSystem ts = new TransactionSystem(gateway);
         io.initialize(ts);
     }

@@ -1,11 +1,8 @@
 package transactions;
 
-import gateway.DatabaseGatewayBoundary;
-import uses.ApplyMembership;
+import database.DatabaseAccessBoundary;
 import uses.UserManager;
 import uses.InventorySystem;
-import users.Administrator;
-import users.Customer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,11 +10,11 @@ import java.util.List;
 
 public class TransactionSystem {
 
-    private final DatabaseGatewayBoundary gateway;
+    private final DatabaseAccessBoundary gateway;
     private final InventorySystem inventorySystem = new InventorySystem();
     private final UserManager um = new UserManager();
 
-    public TransactionSystem(DatabaseGatewayBoundary gateway) {
+    public TransactionSystem(DatabaseAccessBoundary gateway) {
         this.gateway = gateway;
     }
 

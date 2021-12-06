@@ -1,10 +1,8 @@
-import gateway.DatabaseGateway;
+import database.DatabaseAccess;
 import org.junit.Test;
 import transactions.TransactionSystem;
 
 
-import javax.xml.crypto.Data;
-import java.io.IOException;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -34,7 +32,7 @@ public class TransactionSystemTest {
         responses.add(address);
         responses.add(membership);
 
-        DatabaseGateway gw = new DatabaseGateway();
+        DatabaseAccess gw = new DatabaseAccess();
         TransactionSystem ts = new TransactionSystem(gw);
 
         ArrayList<String> expected = new ArrayList<>();

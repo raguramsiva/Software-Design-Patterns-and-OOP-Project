@@ -1,7 +1,4 @@
-import gateway.DatabaseGateway;
-import transactions.TransactionSystem;
 import ui.MenuUI;
-import ui.SystemInputOutput;
 
 import java.io.IOException;
 

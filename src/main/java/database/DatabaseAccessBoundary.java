@@ -1,10 +1,10 @@
-package gateway;
+package database;
 
 import uses.InventorySystem;
 
 import java.io.File;
 
-public interface DatabaseGatewayBoundary {
+public interface DatabaseAccessBoundary {
 
     /**
      * Read multiple data files and input product information

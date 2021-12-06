@@ -14,7 +14,7 @@ public class GoldMember extends Membership {
     public GoldMember(String memberNumber, String validDate, String expireDate,
                       String mobil, String paymentMethod, String address) {
         super(memberNumber, validDate, expireDate, mobil, paymentMethod, address);
-        super.setMemberType("Gold Membership");
+        super.setMobileType("Gold Membership");
     }
 
 

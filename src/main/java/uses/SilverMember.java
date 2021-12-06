@@ -15,7 +15,7 @@ public class SilverMember extends Membership {
     public SilverMember(String memberNumber, String validDate, String expireDate,
                         String mobil, String paymentMethod, String address) {
         super(memberNumber, validDate, expireDate, mobil, paymentMethod, address);
-        super.setMemberType("Silver Membership");
+        super.setMobileType("Silver Membership");
     }
 
     /** The discount rate for the silver membership - 0 percent discount.

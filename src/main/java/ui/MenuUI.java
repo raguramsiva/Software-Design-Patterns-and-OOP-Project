@@ -57,11 +57,11 @@ public class MenuUI{
         while (categoryPrompts.hasNext()) {
             System.out.println(categoryPrompts.next());
         }
-        ProductListUI productListUI = new ProductListUI();
-        productListUI.createCategories();
+        ProductCategoryUI productCategoryUI = new ProductCategoryUI();
+        productCategoryUI.createCategories();
         Scanner scanner = new Scanner(System.in);
         int categoryChoice = scanner.nextInt();
-        productListUI.productCategory(categoryChoice);
+        productCategoryUI.productCategory(categoryChoice);
     }
 
 

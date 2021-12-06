@@ -6,12 +6,12 @@ import database.DatabaseAccess;
 import java.io.File;
 import java.util.ArrayList;
 
-public class ProductListUI {
+public class ProductCategoryUI {
 
     /**
      * A constructor for ProductListUI.
      */
-    public ProductListUI() {
+    public ProductCategoryUI() {
     }
 
 

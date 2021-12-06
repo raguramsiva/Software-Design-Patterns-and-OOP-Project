@@ -18,7 +18,7 @@ Customers and administrators can each make transactions. Each customer is able t
 
 We added a database class that can read and write data from JSON files which contain products that will be injected into our inventory. Products are organized by product categories (i.e. fruits and vegetables, household products, etc.).  
 
-In phase 2 we expanded on our UI and added a Main Menu, where users can first browse through our product categories, and then choose to make a trandaction. Product categories are viewable for customers and administrators in a table in our command line user interface through our `ProductList`  and `ProductListUI` classes. Customers and administrators can select a category and view its corresponding products (containing name, price and stock information) prior to making a transaction. 
+In phase 2 we expanded on our UI and added a Main Menu, where users can first browse through our product categories, and then choose to make a trandaction. Product categories are viewable for customers and administrators in a table in our command line user interface through our `ProductList`  and `ProductCategoryUI` classes. Customers and administrators can select a category and view its corresponding products (containing name, price and stock information) prior to making a transaction. 
 
 
 

@@ -10,6 +10,17 @@ import java.util.Scanner;
 
 public class MenuUI{
 
+    private static final MenuUI instance = new MenuUI();
+
+    private MenuUI(){}
+
+    /** A method to return a singleton (global instance) of MenuUI
+     * @return global instance of MenuUI
+     */
+    public static MenuUI getInstance(){
+        return instance;
+    }
+
     public static final String PRESS_ANY_KEY = "Enter any key to return to the previous menu.";
 
 

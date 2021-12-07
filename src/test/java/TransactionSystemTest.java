@@ -1,3 +1,4 @@
+import controllers.UseCaseInjector;
 import database.DatabaseAccess;
 import org.junit.Test;
 import controllers.TransactionSystem;
@@ -33,7 +34,8 @@ public class TransactionSystemTest {
         responses.add(membership);
 
         DatabaseAccess gw = new DatabaseAccess();
-        TransactionSystem ts = new TransactionSystem(gw);
+        UseCaseInjector injector = new UseCaseInjector();
+        TransactionSystem ts = new TransactionSystem(gw, injector.injectInventory());
 
         ArrayList<String> expected = new ArrayList<>();
 

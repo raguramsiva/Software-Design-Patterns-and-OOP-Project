@@ -1,8 +1,8 @@
 package controllers;
 
 import database.DatabaseAccessBoundary;
+import uses.InventorySystemBoundary;
 import uses.UserManager;
-import uses.InventorySystem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,11 +11,12 @@ import java.util.List;
 public class TransactionSystem {
 
     private final DatabaseAccessBoundary gateway;
-    private final InventorySystem inventorySystem = new InventorySystem();
+    private final InventorySystemBoundary inventorySystemBoundary;
     private final UserManager um = new UserManager();
 
-    public TransactionSystem(DatabaseAccessBoundary gateway) {
+    public TransactionSystem(DatabaseAccessBoundary gateway, InventorySystemBoundary inventorySystemBoundary) {
         this.gateway = gateway;
+        this.inventorySystemBoundary = inventorySystemBoundary;
     }
 
 
@@ -28,16 +29,16 @@ public class TransactionSystem {
      */
     public ArrayList<String> initializeTransaction(List<String> responses, String choice) {
 
-        gateway.inputDatabase(inventorySystem);
+        gateway.inputDatabase(inventorySystemBoundary);
 
         if (choice.equalsIgnoreCase("customer")) {
             CustomerTransaction c = new CustomerTransaction();
-            return c.createTransaction(gateway, inventorySystem, um, responses);
+            return c.createTransaction(gateway, inventorySystemBoundary, um, responses);
         }
 
         if (choice.equalsIgnoreCase("administrator")) {
             AdministratorTransaction a = new AdministratorTransaction();
-            return a.createTransaction(gateway, inventorySystem, um, responses);
+            return a.createTransaction(gateway, inventorySystemBoundary, um, responses);
         }
 
         return null;

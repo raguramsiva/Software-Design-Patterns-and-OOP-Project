@@ -5,11 +5,10 @@ import users.Customer;
 import users.User;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UserManager implements Serializable {
+public class UserManager implements Serializable{
 
     private UserManager um;
 
@@ -24,7 +23,7 @@ public class UserManager implements Serializable {
      * @return Users.Customer
      */
 
-    public Customer createCustomer (String username, String password){
+    public Customer createCustomer(String username, String password){
         Customer c = new Customer(username, password);
         users.put(c.getUsername(), c);
         return c;
@@ -37,7 +36,7 @@ public class UserManager implements Serializable {
      * @return Users.Administrator
      */
 
-    public Administrator createAdministrator (String username, String password){
+    public Administrator createAdministrator(String username, String password){
         Administrator a = new Administrator(username, password);
         users.put(a.getUsername(), a);
         return a;

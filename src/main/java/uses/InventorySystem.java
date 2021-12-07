@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class InventorySystem {
+public class InventorySystem implements InventorySystemBoundary {
 
     private final ArrayList<Product> inventory;
 
@@ -23,6 +23,7 @@ public class InventorySystem {
     /** Setter method for inventory.
      * @param item The product to be added to inventory.
      */
+    @Override
     public void setInventory(Product item) {
         this.inventory.add(item);
     }
@@ -34,6 +35,7 @@ public class InventorySystem {
      * @param stock stock quantity
      * @return Entities.Product
      */
+    @Override
     public Product createProduct(String name, Double price, int stock){
         return new Product(name,price,stock);
     }
@@ -42,6 +44,7 @@ public class InventorySystem {
     /** Creates a list of all the product names in the inventory.
      * @return A list of product names in the inventory.
      */
+    @Override
     public List<String> productList(){
         ArrayList<String> list = new ArrayList<>();
         for (Product p : this.inventory){
@@ -54,6 +57,7 @@ public class InventorySystem {
      * @param name product name
      * @return Boolean (True if string is a name of a product in inventory; false otherwise)
      */
+    @Override
     public Boolean availability(String name){
         return this.productList().contains(name);
     }
@@ -63,6 +67,7 @@ public class InventorySystem {
      * @param name product name
      * @return product associated with name; null otherwise
      */
+    @Override
     public Product findProduct(String name){
         for (Product p : this.inventory){
             if (Objects.equals(p.getName(), name)){
@@ -77,6 +82,7 @@ public class InventorySystem {
      * @return amount rounded to two decimal places to represent a monetary value
      * in dollars and cents.
      */
+    @Override
     public String round(double amount){
         int multiple = (int) (100 * amount);
         String str = String.valueOf(multiple);
@@ -96,6 +102,7 @@ public class InventorySystem {
      * @param quantity Desired quantity
      * @return String message
      */
+    @Override
     public String addToCart(Customer c, String name, int quantity) {
         if (this.availability(name)) {
             Product p = findProduct(name);
@@ -113,6 +120,7 @@ public class InventorySystem {
     /** A method to return an array list of strings containing product information
      * @return An array list of strings
      */
+    @Override
     public ArrayList<ArrayList<Object>> productStringList(){
         ArrayList<ArrayList<Object>> productStrings = new ArrayList<>();
         for (Product p : this.inventory){
@@ -131,6 +139,7 @@ public class InventorySystem {
      * @param c A customer
      * @return Total
      */
+    @Override
     public String customerTotal(Customer c){
         double total = c.cartTotal();
         total = c.afterMemberDiscount(total);
@@ -148,6 +157,7 @@ public class InventorySystem {
      * @param quantity A stock quantity
      * @return String message.
      */
+    @Override
     public String addToInventory(Administrator a, String name, double price, int quantity){
         if (!this.availability(name)){
             this.setInventory(createProduct(name, price, quantity));

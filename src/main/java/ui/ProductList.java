@@ -1,7 +1,7 @@
 package ui;
 
 import database.DatabaseAccessBoundary;
-import uses.InventorySystem;
+import uses.InventorySystemBoundary;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -9,14 +9,14 @@ import java.util.ArrayList;
 public class ProductList {
 
     private final DatabaseAccessBoundary access;
-    private final InventorySystem inventory;
+    private final InventorySystemBoundary inventory;
 
     /** A constructor for ProductList
      * @param access DatabaseAccessBoundary
      */
-    public ProductList(DatabaseAccessBoundary access) {
+    public ProductList(DatabaseAccessBoundary access, InventorySystemBoundary inventory) {
         this.access = access;
-        this.inventory = new InventorySystem();
+        this.inventory = inventory;
     }
 
     /** A method that creates a list of products from the data directory

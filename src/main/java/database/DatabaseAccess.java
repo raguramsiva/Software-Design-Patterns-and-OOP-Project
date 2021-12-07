@@ -1,6 +1,6 @@
 package database;
 
-import uses.InventorySystem;
+import uses.InventorySystemBoundary;
 
 import java.io.*;
 
@@ -21,7 +21,7 @@ public class DatabaseAccess implements DatabaseAccessBoundary {
      */
 
     @Override
-    public void inputDatabase(InventorySystem inventory){
+    public void inputDatabase(InventorySystemBoundary inventory){
 
         File path = new File("src/main/java/database/data");
 
@@ -40,7 +40,7 @@ public class DatabaseAccess implements DatabaseAccessBoundary {
      */
 
     @Override
-    public void inputData(File fileName, InventorySystem inventory) {
+    public void inputData(File fileName, InventorySystemBoundary inventory) {
         try {
             JSONParser parser = new JSONParser();
 

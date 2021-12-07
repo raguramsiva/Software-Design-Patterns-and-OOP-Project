@@ -1,10 +1,10 @@
 package controllers;
 
 import database.DatabaseAccessBoundary;
-import users.Customer;
 import uses.ApplyMembership;
 import uses.InventorySystemBoundary;
-import uses.UserManager;
+import uses.UserManagerBoundary;
+import users.Customer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +18,7 @@ public class CustomerTransaction implements TransactionFactory{
      * @return A list of strings representing a customer's transaction messages.
      */
     @Override
-    public ArrayList<String> createTransaction(DatabaseAccessBoundary gw, InventorySystemBoundary is, UserManager um, List<String> responses) {
+    public ArrayList<String> createTransaction(DatabaseAccessBoundary gw, InventorySystemBoundary is, UserManagerBoundary um, List<String> responses) {
         try {
             ArrayList<String> output = new ArrayList<>();
             Customer c = um.createCustomer(responses.get(0), responses.get(1));

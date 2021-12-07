@@ -2,7 +2,7 @@ package controllers;
 
 import database.DatabaseAccessBoundary;
 import uses.InventorySystemBoundary;
-import uses.UserManager;
+import uses.UserManagerBoundary;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,11 +12,12 @@ public class TransactionSystem {
 
     private final DatabaseAccessBoundary gateway;
     private final InventorySystemBoundary inventorySystemBoundary;
-    private final UserManager um = new UserManager();
+    private final UserManagerBoundary um;
 
-    public TransactionSystem(DatabaseAccessBoundary gateway, InventorySystemBoundary inventorySystemBoundary) {
+    public TransactionSystem(DatabaseAccessBoundary gateway, InventorySystemBoundary inventorySystemBoundary, UserManagerBoundary um) {
         this.gateway = gateway;
         this.inventorySystemBoundary = inventorySystemBoundary;
+        this.um = um;
     }
 
 

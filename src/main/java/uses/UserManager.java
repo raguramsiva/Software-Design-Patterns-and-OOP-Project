@@ -8,9 +8,10 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UserManager implements Serializable{
+public class UserManager implements Serializable, UserManagerBoundary{
 
-    private UserManager um;
+    private static final long serialVersionUID = -961638664871441436L;
+
 
     private final Map<String, User> users = new HashMap<>();
 
@@ -23,6 +24,7 @@ public class UserManager implements Serializable{
      * @return Users.Customer
      */
 
+    @Override
     public Customer createCustomer(String username, String password){
         Customer c = new Customer(username, password);
         users.put(c.getUsername(), c);
@@ -36,6 +38,7 @@ public class UserManager implements Serializable{
      * @return Users.Administrator
      */
 
+    @Override
     public Administrator createAdministrator(String username, String password){
         Administrator a = new Administrator(username, password);
         users.put(a.getUsername(), a);
@@ -47,6 +50,7 @@ public class UserManager implements Serializable{
      * Add user to this user list.
      * @param user the user to add
      */
+    @Override
     public void add(User user) {
         users.put(user.getUsername(), user);
     }
@@ -56,6 +60,7 @@ public class UserManager implements Serializable{
      * Return the User associated with username.
      * @param username the username of the user to get.
      */
+    @Override
     public User getUser(String username) {
         return users.get(username);
     }

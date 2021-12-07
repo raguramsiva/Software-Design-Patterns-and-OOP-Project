@@ -84,7 +84,7 @@ public class MenuUI{
         SystemInputOutput io = new SystemInputOutput();
         DatabaseAccess gateway = new DatabaseAccess();
         UseCaseInjector injector = new UseCaseInjector();
-        TransactionSystem ts = new TransactionSystem(gateway, injector.injectInventory());
+        TransactionSystem ts = new TransactionSystem(gateway, injector.injectInventory(), injector.injectUserManager());
         io.initialize(ts);
     }
 

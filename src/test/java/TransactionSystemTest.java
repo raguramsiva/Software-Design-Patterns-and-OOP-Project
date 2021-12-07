@@ -35,7 +35,7 @@ public class TransactionSystemTest {
 
         DatabaseAccess gw = new DatabaseAccess();
         UseCaseInjector injector = new UseCaseInjector();
-        TransactionSystem ts = new TransactionSystem(gw, injector.injectInventory());
+        TransactionSystem ts = new TransactionSystem(gw, injector.injectInventory(), injector.injectUserManager());
 
         ArrayList<String> expected = new ArrayList<>();
 

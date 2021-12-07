@@ -1,5 +1,6 @@
 package ui;
 
+import controllers.UseCaseInjector;
 import database.DatabaseAccess;
 import prompts.PromptIterator;
 import controllers.TransactionSystem;
@@ -82,7 +83,8 @@ public class MenuUI{
     public void initializeSystemIO() throws IOException, ClassNotFoundException {
         SystemInputOutput io = new SystemInputOutput();
         DatabaseAccess gateway = new DatabaseAccess();
-        TransactionSystem ts = new TransactionSystem(gateway);
+        UseCaseInjector injector = new UseCaseInjector();
+        TransactionSystem ts = new TransactionSystem(gateway, injector.injectInventory());
         io.initialize(ts);
     }
 

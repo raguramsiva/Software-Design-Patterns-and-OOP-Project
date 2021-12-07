@@ -2,7 +2,7 @@ package controllers;
 
 import database.DatabaseAccessBoundary;
 import users.Administrator;
-import uses.InventorySystem;
+import uses.InventorySystemBoundary;
 import uses.UserManager;
 
 
@@ -19,7 +19,7 @@ public class AdministratorTransaction implements TransactionFactory{
      * @return A list of strings representing an administrator's transaction messages.
      */
     @Override
-    public ArrayList<String> createTransaction(DatabaseAccessBoundary gw, InventorySystem is, UserManager um, List<String> responses) {
+    public ArrayList<String> createTransaction(DatabaseAccessBoundary gw, InventorySystemBoundary is, UserManager um, List<String> responses) {
         try {
             Administrator a = um.createAdministrator(responses.get(0), responses.get(1));
             String inventoryAction = is.addToInventory(a, responses.get(2), Double.parseDouble(responses.get(3)), Integer.parseInt(responses.get(4)));

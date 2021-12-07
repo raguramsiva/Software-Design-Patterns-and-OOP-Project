@@ -1,6 +1,8 @@
 package ui;
 
 
+import controllers.ServiceInjector;
+import controllers.UseCaseInjector;
 import database.DatabaseAccess;
 
 import java.io.File;
@@ -45,7 +47,9 @@ public class ProductCategoryUI {
         assert files != null;
 
         DatabaseAccess gateway = new DatabaseAccess();
-        ProductList presenter = new ProductList(gateway);
+
+        UseCaseInjector injector = new UseCaseInjector();
+        ProductList presenter = new ProductList(gateway, injector.injectInventory());
 
         ArrayList<ArrayList<Object>> list = presenter.createProductList(files[num-1]);
 

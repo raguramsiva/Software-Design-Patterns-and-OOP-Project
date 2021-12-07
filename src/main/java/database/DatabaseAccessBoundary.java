@@ -1,6 +1,6 @@
 package database;
 
-import uses.InventorySystem;
+import uses.InventorySystemBoundary;
 
 import java.io.File;
 
@@ -12,7 +12,7 @@ public interface DatabaseAccessBoundary {
      *
      * @param inventory an InventorySystem
      */
-    void inputDatabase(InventorySystem inventory);
+    void inputDatabase(InventorySystemBoundary inventory);
 
     /**
      * Read a data file and input product information
@@ -21,7 +21,7 @@ public interface DatabaseAccessBoundary {
      * @param inventory an InventorySystem
      */
 
-    void inputData(File fileName, InventorySystem inventory);
+    void inputData(File fileName, InventorySystemBoundary inventory);
 
     /**
      * Writes a product to the data files in database/data if product does

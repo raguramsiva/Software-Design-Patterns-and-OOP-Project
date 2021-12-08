@@ -1,5 +1,4 @@
-﻿
-# Phase 2 Design Document
+﻿# Phase 2 Design Document
 
 ## Updated Specification
   
@@ -47,18 +46,18 @@ A UML class diagram is provided within the `phase2` folder in `UML_diagram.pdf` 
 
 ## Major Design Decisions
 
-1. We decided to continue with a command line user interface for Phase 2. We did this so we can focus our project more on implementing design patterns,  adhering to Clean Architecture and SOLID principles, and adding additional functionality. 
+1. We decided to continue with a command line user interface for Phase 2. We already have a `PromptIterator` class that can iterate through command prompts which is useful in a command-line interface. We also did this so we can focus our project more on implementing design patterns,  adhering to Clean Architecture and SOLID principles, and adding additional functionality. 
 
 2. We decided to expand on our UI by adding a main menu where users can view products contained in the store inventory prior to making a transaction. In phase 1, users had to view products in the .JSON files in our database. Now, products are displayed in our command line UI. 
 
-3. We decided to add a login system where users can login/signup using login credentials. These login credentials are saved and serialized in a `.ser` file. 
+3. We decided to add a login system where users can login/signup using login credentials. These login credentials are saved and serialized in a `.ser` file. So we have additional data persistence.
 
 
 ## How our Project adheres to Clean Architecture
 
 Our dependencies now all point inwards. i.e. Classes in the outer layer all depend on classes within the same layer, or depend on classes in the next inner layer. Our classes are now well encapsulated. 
 
-We created boundary interfaces between certain layers of clean architecture.  For instance, our `DatabaseAccess` class implements a `DatabaseAccessBoundary` interface. And our controller class `TransactionSystem` depends on the interface `DatabaseAccessBoundary`, as opposed to directly depending on the implementing class `DatabaseAccess`. So we use dependency inversion, as required. We have similar boundaries for our login system.
+We created boundary interfaces between certain layers of clean architecture.  For instance, our `DatabaseAccess` class implements a `DatabaseAccessBoundary` interface. And our controller class `TransactionSystem` depends on the interface `DatabaseAccessBoundary`, as opposed to directly depending on the implementing class `DatabaseAccess`. So we use dependency inversion, as required. Our other boundary interfaces include `LoginInputBoundary`, `InventorySystemBoundary` and `UserManagerBoundary`. 
 
 We packaged our code according to layers, and hence our import statements show that each class imports classes within the same layer of clean architecture, or the next inner layer. 
 
@@ -67,35 +66,51 @@ We packaged our code according to layers, and hence our import statements show t
 
 ## How our Project adheres to SOLID principles
 
+### Single Responsibility Principle
 
-**Single Reponsibility Principle**:  Our classes are each responsible for a single function of our program.  Initially, our `TransactionSystem` violated the Single Responsibility Principle and had many responsibilities (creating users, inventory management, etc.). But now responsibilities are separated and delegated to the classes `UserManager`, `DatabaseGateway`, `InventorySystem`.  Now, `TransactionSystem` serves as a facade, in accordance with the Facade Design Pattern. 
 
-**Open/Closed Principle**: Our classes are well encapsulated and hence are open to extension, but closed to modification. We have a `TransactionFactory` interface with a `createTransaction` method. We currently have two transaction classes, `CustomerTransaction`, and `AdministratorTransaction` which implement the `TransactionFactory` interface. In the future, we could extend our program by adding a new transaction class that implements `TransactionFactory` without having to modify any existing code. 
+### Single Responsibility Principle
+
+Our classes are each responsible for a single function of our program.  Initially, our `TransactionSystem` violated the Single Responsibility Principle and had many responsibilities (creating users, inventory management, etc.). But now responsibilities are separated and delegated to the classes `UserManagerBoundary`, `DatabaseAccessBoundary`, `InventorySystemBoundary`.  Now, `TransactionSystem` serves as a facade, in accordance with the Facade Design Pattern. 
+
+### Open/Closed Principle
+
+Our classes are well encapsulated and hence are open to extension, but closed to modification. We have a `TransactionFactory` interface with a `createTransaction` method. We currently have two transaction classes, `CustomerTransaction`, and `AdministratorTransaction` which implement the `TransactionFactory` interface. In the future, we could extend our program by adding a new transaction class that implements `TransactionFactory` without having to modify any existing code. 
 
 We also implemented the Template method for our store memberships. We currently have 3 memberships (Silver, Gold, Platinum), but we can easily add more memberships without modifying existing code. 
 
 We also have product categories in the form of `.json` files. Our `DatabaseAccess` class iterates through each file in the directory containing these `.json` files.  If we wanted to add a new product category, we simply need to add the `.json` file into the `database.data` directory. We do not need to add any additional code since `DatabaseAccess` iterates through this directory. And the new product category associated with this `.json` file will be viewable in our UI. 
 
-**Liskov Substitution Principle** Our main use of inheritance in our program is in our `User` class, which has the `Customer` and `Administrator` classes as child classes.  Any usage of the `User` class is substitutable by a usage of the `Customer` and `Administrator` classes without causing any issues with the rest of our code. 
+### Liskov Substitution Principle
 
-**Interface Segregation Principle** Each interface in our program is quite small, with only a few methods (approximately 1-10 each). And every class that implements an interface in our program always uses every method contained in the interface. No class depends on methods it does not use. There are no unused methods by any implementing classes, therefore adhereing to the interface segregation principle. 
+Our main use of inheritance in our program is in our `User` class, which has the `Customer` and `Administrator` classes as child classes.  Any usage of the `User` class is substitutable by a usage of the `Customer` and `Administrator` classes without causing any issues with the rest of our code. 
 
-**Dependency Inversion Principle**: In Phase 2, we created boundary interfaces between some layers so that certain classes now depend on these boundary interfaces as opposed to directly depending on their implementing classes. For example, our `TransactionSystem` class is dependent on the `DatabaseAccessBoundary` interface, as opposed to the `DatabaseAccess` class which implements this interface. The dependency is inverted through this interface. 
+### Interface Segregation Principle
+
+Each interface in our program is quite small, with only a few methods (approximately 1-10 each). And every class that implements an interface in our program always uses every method contained in the interface. No class depends on methods it does not use. There are no unused methods by any implementing classes, therefore adhereing to the interface segregation principle. 
+
+### Dependency Inversion Principle
+
+In Phase 2, we created boundary interfaces between some layers so that certain classes now depend on these boundary interfaces as opposed to directly depending on their implementing classes. For example, our `TransactionSystem` class is dependent on the `DatabaseAccessBoundary` interface, as opposed to the `DatabaseAccess` class which implements this interface. The dependency is inverted through this interface since our database is in our Frameworks and Driver layer, whereas our `TransactionSystem` is a controller in our Interface Adapters layer. So this dependency inversion was necessary.
 
 
 
 
 ## Design Patterns 
 
-**Iterator Design Pattern:** We used the Iterator Design Pattern for our `PromptIterator` class. It contains `hasNext()` and `next()` methods which allows us to iterate through command prompts which will later be provided to the user of our program. 
+### Iterator Design Pattern
 
-**Facade Design Pattern:** We used the Facade Design Pattern for our controller class, `TransactionSystem` . In phase 0, the `TransactionSystem` class was initially responsible for multiple actors and had multiple responsibilities (creating users, inventory management, etc.). Now, with the Facade Design Pattern, we now consider `TransactionSystem` class as a Facade class, and delegate responsibilities to the following classes: `InventorySystem`, `UserManager`, and `DatabaseGateway`.  The `InventorySystem` class creates an inventory, `DatabaseGateway` injects products into this inventory, and `UserManager` creates and manages users. 
+We used the Iterator Design Pattern for our `PromptIterator` class. It contains `hasNext()` and `next()` methods which allows us to iterate through command prompts which will later be provided to the user of our program. 
 
-**Factory Design Pattern:**
+### Facade Design Pattern
+
+We used the Facade Design Pattern for our controller class, `TransactionSystem` . The `TransactionSystem` class was initially responsible for multiple actors and had multiple responsibilities (creating users, inventory management, etc.). Now, with the Facade Design Pattern, we now consider `TransactionSystem` class as a Facade class, and delegate responsibilities to the following classes: `InventorySystemBoundary`, `UserManagerBoundary`, and `DatabaseAccessBoundary`.  The `InventorySystemBoundary` class creates an inventory, `DatabaseAccessBoundary` injects products into this inventory, and `UserManagerBoundary` creates and manages users. 
+
+###Factory Design Pattern
 
 We have a `TransactionFactory` interface which has a `createTransaction` method. We created `CustomerTransaction` and `AdministratorTransaction` which both implement the `TransactionFactory` interface. Each implementation creates a transaction for a customer and administrator respectively. Our `TransactionSystem` class then creates instances of `CustomerTransaction` and `AdministratorTransaction` and then calls the `createTransaction` method.  In the future, if we wanted to add a new type of transaction, we would simply create a new class that implements `TransactionFactory`.
 
-**Singleton Design Pattern:** We applied the Singleton Design Pattern to our `MenuUI` class to ensure that there was a single instance of `MenuUI` for our program. Within the `MenuUI` class, we made the constructor for `MenuUI` private and created a private static instance of `MenuUI`. We have a `getInstance()` method in that returns the single instance of `MenuUI`. We then call the `getInstance()` method in our `WholesaleMain` class which contains our program's main method and serves as the entrypoint to our program. 
+**Singleton Design Pattern:** We applied the Singleton Design Pattern to our `MenuUI` class to ensure that there was a single instance of `MenuUI` for our program. Within the `MenuUI` class, we made the constructor for `MenuUI` private and created a private static instance of `MenuUI`. We have a `getInstance()` method that returns the single instance of `MenuUI`. We then call the `getInstance()` method in our `WholesaleMain` class which contains our program's main method and serves as the entrypoint to our program. 
 
 **Template Design Pattern:** We implemented the Template Design Pattern to allow for various store memberships (Silver, Gold, Platinum) which provide customers with discounts. Memberships are related in terms of functionality, but will differ in the amount of discount provided. 
 
@@ -106,7 +121,7 @@ We packaged our classes according to layers of Clean Architecture. Our UI, Datab
 
 We did this to simplify the number of import statements that we required. Within any class, import statements are only made to other classes within the same layer, or the first inner layer. 
 
-We also chose this packaging strategy to allow us to easily catch any obvious violations of Clean Architecture. 
+We also chose this packaging strategy to allow us to easily catch any obvious violations of Clean Architecture. Our program has improved since Phases 0 and 1 in terms of adhering to Clean Architecture. 
 
 ## Use of GitHub features
 
@@ -114,16 +129,16 @@ We made sure to make a new branch for each new feature we wanted to add to our p
 
 ## Accessibility Report
 
-The accessibility report is in a separte `.md` file in the `phase2` directory. 
+The accessibility report is in a separate `accessibility.md` file in the `phase2` directory. 
 
 
 ## Phase 2 Progress Report
 
 **Open Questions:**
 
-1. Our program improved since Phase 1 with regards to adhering to Clean Architecture and Solid Principles. We refactored our code quite a bit and created boundary interfaces. Are there any obvious violations of clean architecture remaining in our code?
+1. Our program improved since Phase 1 in regard to adhering to Clean Architecture and Solid Principles. We refactored our code quite a bit and created boundary interfaces. Are there any obvious violations of clean architecture remaining in our code?
 
-2. Are there any additional design patterns that our program might have used?
+2. We used 5 design patterns explicitly in our program. Are there any additional design patterns that our program could have used? 
 
 **What has worked well with our design:**
 
@@ -131,20 +146,20 @@ The accessibility report is in a separte `.md` file in the `phase2` directory.
 
 2. Our `PromptIterator` class which implements the Iterator Design Pattern allow us to easily extend our program by adding new prompts through `.txt` files without having to do any hard coding.  We even use this `PromptIterator` to give users instructions in our command line user interface. 
 
-3. Our use of JSON files allow us to easily create new product categories for our inventory. And our `DatabaseInput` class iterates through every `.json` file within the `database/data` directory. Hence, we can always create a new product category by creating  a `.json` file and simply drop it in the `database/data` directory without having to add any additional java code. 
+3. Our use of JSON files allow us to easily create new product categories for our inventory. And our `DatabaseAccess` class iterates through every `.json` file within the `database/data` directory. Hence, we can always create a new product category by creating  a `.json` file and simply drop it in the `database/data` directory without having to add any additional java code. 
 
 
-**What each group member has been working on since Phase 1**
+## What each group member has been working on since Phase 1
 
 **Raguram Sivabalan:** Added a few boundary interfaces between layers of our program. Implemented the Factory design pattern for the `TransactionSystem`. Implemented the Singleton design pattern for the `MenuUI`. Created the Main Menu for the command line user interface allowing users to view product categories and individual product information in a table. Added test classes and refactored code. 
 
-Pull Request: https://github.com/CSC207-UofT/course-project-group-009/pull/30 
+Pull Request/Github Link: https://github.com/CSC207-UofT/course-project-group-009/pull/30 
 
 This pull request was for creating the main menu of our program and allow users to view product categories in a table within the command line user interface. 
 
 **Yong Tong Zhu:** Implemented the Template Design pattern for the store memberships. Added command-line prompts for the store memberships for customers. Added product categories to the database. Added test classes.
 
-Pull Request: https://github.com/CSC207-UofT/course-project-group-009/pull/29
+Pull Request/Github Link: https://github.com/CSC207-UofT/course-project-group-009/pull/29
 
 This pull request was for implementing the Template design pattern and for creating the command prompts for store memberships for customers in the command line user interface. 
 

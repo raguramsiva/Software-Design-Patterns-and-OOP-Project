@@ -1,5 +1,4 @@
-﻿
-# Project Accessibility Report
+﻿# Project Accessibility Report
 
 **As a group, answer the following questions:**
 
@@ -28,7 +27,7 @@ Our program contrasts essential information like input commands by putting them 
 
 **Principle 5: Tolerance for Error**
 
-This principle does not really apply to our program as our program does not have any hazards or  consequences to accidental or unintended actions. However, since our program is based on a command-line, there is little tolerance for input error as the user must enter a particular command exactly. We could improve this with a GUI with buttons. 
+Since our program is based on a command-line, there is little tolerance for input error as the user must enter a particular command exactly. We could improve this with a GUI with buttons, but currently, our program has low tolerance for error.
 
 
 **Principle 6: Low Physical Effort**
@@ -43,11 +42,11 @@ Our program is based on a command-line interface. Hence, a user must be standing
 
 **2.  Write a paragraph about who you would market your program towards, if you were to sell or license your program to customers. This could be a specific category such as "students" or more vague, such as "people who like games". Try to give a bit more detail along with the category.**  
 
-Our program is an inventory management system for a wholesale company. Hence, we would likely market our program towards wholesalers, small and large businesses. Our customers would ideally be selling large quantities of product and would need to keep accurate track of stock quantities, prices, etc. Our program was inspired by a wholesale business like Costco.   
+Our program is an inventory management system for a wholesale company. Hence, we would likely market our program towards wholesalers, small and large businesses. Our customers would ideally be selling large quantities of products and would need to keep accurate track of stock quantities, prices, etc. Our program was inspired by a wholesale business like Costco.   
       
 
 **3.  Write a paragraph about whether or not your program is less likely to be used by certain demographics. For example, a program that converts txt files to files that can be printed by a braille printer are less likely to be used by people who do not read braille.**
 
-Our program uses JSON files to store data related to products. Each JSON file stores product names, prices, and stock quantities. Each JSON file is associated with a product category. Adding a new product category is accomplished by adding a new JSON file with products. Hence, users of our program would likely need to have some basic understanding of JSON files to be able to add new product categories. They would need to have the name, price, unit, and stock quantity of each product written in the JSON file. Hence, users with limited computer skills may struggle with this aspect of our program. 
+Our program uses JSON files to store data related to products. Each JSON file stores product names, prices, and stock quantities. Each JSON file is associated with a product category. Adding a new product category is accomplished by adding a new JSON file with products. Hence, users of our program would likely need to have some basic understanding of JSON files to be able to add new product categories. They would need to have the name, price, unit, and stock quantity of each product written in the JSON file. It is approximately as difficult as working with an Excel spreadsheet. Hence, users with limited computer skills may struggle with this aspect of our program. 
 
 Furthermore, our program would only be useful to a business demographic that would need to keep track of a large number of products. Hence, our program would not likely be used by demographics without this particular business need. 

@@ -1,0 +1,933 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>C:/Users/Raguram Sivabalan/IdeaProjects/course-project-group-009/src/main/java</OriginalElement>
+  <nodes>
+    <node x="1348.1313416597843" y="1943.0363246727948">ui.MenuUI</node>
+    <node x="1072.5808571051261" y="1592.0">controllers.TransactionSystem</node>
+    <node x="1708.1110670892792" y="1293.5">controllers.UseCaseInjector</node>
+    <node x="868.6522715266781" y="437.5">users.Customer</node>
+    <node x="1963.2921288959344" y="173.84273772204807">users.User</node>
+    <node x="974.5323655705652" y="1959.5">ui.ProductCategoryUI</node>
+    <node x="1207.6894292467982" y="461.0">users.Administrator</node>
+    <node x="597.4291510538383" y="1255.33908045977">database.DatabaseAccess</node>
+    <node x="1293.747851586639" y="2135.013584117032">WholesaleMain</node>
+    <node x="1710.4166666666665" y="1603.0">prompts.PromptIterator</node>
+    <node x="1087.8447378116994" y="1099.0">database.DatabaseAccessBoundary</node>
+    <node x="402.1917450365727" y="437.5">uses.SilverMember</node>
+    <node x="1087.3447378116994" y="229.00000000000003">entities.Cart</node>
+    <node x="1963.2921288959344" y="768.0">uses.UserManager</node>
+    <node x="1434.287036539617" y="1099.0">uses.InventorySystem</node>
+    <node x="2086.583333333333" y="963.0">login.UserReadWriter</node>
+    <node x="1087.3447378116994" y="676.5">uses.InventorySystemBoundary</node>
+    <node x="2310.333333333333" y="1626.5">ui.InputOutput</node>
+    <node x="1695.402271526678" y="1930.951933124347">ui.SystemInputOutput</node>
+    <node x="2104.333333333333" y="1614.0">login.LoginSystem</node>
+    <node x="1152.0940869429887" y="1430.0">controllers.CustomerTransaction</node>
+    <node x="2064.083333333333" y="878.0">login.ReadWriter</node>
+    <node x="1695.402271526678" y="1111.5">controllers.ServiceInjector</node>
+    <node x="1733.2969588000415" y="623.0">uses.UserManagerBoundary</node>
+    <node x="41.5" y="437.5">uses.PlatinumMember</node>
+    <node x="1391.3636170467078" y="1430.0">controllers.AdministratorTransaction</node>
+    <node x="1307.875391999518" y="1309.9636753272052">controllers.TransactionFactory</node>
+    <node x="964.3628253406803" y="-46.99999999999997">entities.Product</node>
+    <node x="670.2412213699383" y="151.25">uses.Membership</node>
+    <node x="900.9022715266781" y="1246.5">ui.ProductList</node>
+    <node x="2069.13437665082" y="1088.0">uses.LoginUseCase</node>
+    <node x="2017.9587955626012" y="1462.0">controllers.LoginController</node>
+    <node x="234.84587251828634" y="437.5">uses.GoldMember</node>
+    <node x="207.5" y="617.6300940438872">uses.ApplyMembership</node>
+    <node x="2058.458795562601" y="1298.5">controllers.LoginInputBoundary</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="controllers.LoginController" target="controllers.LoginInputBoundary" relationship="TO_ONE">
+      <point x="66.75" y="-28.0" />
+      <point x="2218.208795562601" y="1440.0" />
+      <point x="2197.958795562601" y="1440.0" />
+      <point x="46.5" y="15.5" />
+    </edge>
+    <edge source="login.ReadWriter" target="uses.UserManager" relationship="DEPENDENCY">
+      <point x="0.0" y="-15.5" />
+      <point x="2127.583333333333" y="856.0" />
+      <point x="2180.4231048600113" y="856.0" />
+      <point x="2180.4231048600113" y="846.0" />
+      <point x="59.66666666666663" y="39.0" />
+    </edge>
+    <edge source="ui.MenuUI" target="ui.ProductCategoryUI" relationship="CREATE">
+      <point x="0.0" y="-39.0" />
+      <point x="1432.6313416597843" y="1870.0" />
+      <point x="882.027733755946" y="1870.0" />
+      <point x="882.027733755946" y="1570.0" />
+      <point x="1063.0323655705652" y="1570.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="login.LoginSystem" target="controllers.LoginController" relationship="CREATE">
+      <point x="0.0" y="-28.0" />
+      <point x="2197.333333333333" y="1550.0" />
+      <point x="2151.458795562601" y="1550.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="uses.UserManager" target="uses.UserManagerBoundary" relationship="REALIZATION">
+      <point x="-22.375" y="-39.0" />
+      <point x="2030.4171288959342" y="714.0" />
+      <point x="1902.4636254667082" y="714.0" />
+      <point x="67.66666666666669" y="15.5" />
+    </edge>
+    <edge source="users.Customer" target="entities.Product" relationship="DEPENDENCY">
+      <point x="-69.375" y="-39.0" />
+      <point x="891.7772715266781" y="392.0" />
+      <point x="1339.277733755946" y="392.0" />
+      <point x="1339.277733755946" y="382.0" />
+      <point x="1349.527733755946" y="382.0" />
+      <point x="1349.527733755946" y="131.0" />
+      <point x="1021.8628253406803" y="131.0" />
+      <point x="0.0" y="50.0" />
+    </edge>
+    <edge source="uses.InventorySystemBoundary" target="users.Administrator" relationship="DEPENDENCY">
+      <point x="0.0" y="-15.5" />
+      <point x="1198.8447378116994" y="936.0" />
+      <point x="1653.8962955626012" y="936.0" />
+      <point x="1653.8962955626012" y="684.0" />
+      <point x="1795.8427099841529" y="684.0" />
+      <point x="1795.8427099841529" y="554.0" />
+      <point x="1849.840233755946" y="554.0" />
+      <point x="1849.840233755946" y="492.0" />
+      <point x="-35.75" y="15.5" />
+    </edge>
+    <edge source="uses.InventorySystemBoundary" target="users.Customer" relationship="DEPENDENCY">
+      <point x="0.0" y="-15.5" />
+      <point x="1198.8447378116994" y="524.0" />
+      <point x="914.9022715266781" y="524.0" />
+      <point x="-46.25" y="39.0" />
+    </edge>
+    <edge source="uses.ApplyMembership" target="uses.GoldMember" relationship="CREATE">
+      <point x="-43.5" y="-28.0" />
+      <point x="251.0" y="554.0" />
+      <point x="304.84587251828634" y="554.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="ui.MenuUI" target="controllers.UseCaseInjector" relationship="CREATE">
+      <point x="0.0" y="-39.0" />
+      <point x="1432.6313416597843" y="1870.0" />
+      <point x="1696.5208333333333" y="1870.0" />
+      <point x="1696.5208333333333" y="1370.0" />
+      <point x="1786.6110670892792" y="1370.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="uses.InventorySystem" target="entities.Product" relationship="CREATE">
+      <point x="-77.25" y="-28.0" />
+      <point x="1460.037036539617" y="1056.0" />
+      <point x="0.0" y="1056.0" />
+      <point x="0.0" y="121.0" />
+      <point x="983.5294920073469" y="121.0" />
+      <point x="-38.33333333333337" y="50.0" />
+    </edge>
+    <edge source="ui.SystemInputOutput" target="ui.InputOutput" relationship="REALIZATION">
+      <point x="69.375" y="-39.0" />
+      <point x="1857.277271526678" y="1744.0" />
+      <point x="2376.333333333333" y="1744.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="controllers.TransactionSystem" target="controllers.AdministratorTransaction" relationship="CREATE">
+      <point x="-110.0" y="-50.0" />
+      <point x="1127.5808571051261" y="1570.0" />
+      <point x="1071.652733755946" y="1570.0" />
+      <point x="1071.652733755946" y="1550.0" />
+      <point x="1500.8636170467078" y="1550.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="uses.ApplyMembership" target="uses.PlatinumMember" relationship="CREATE">
+      <point x="-43.5" y="-28.0" />
+      <point x="251.0" y="554.0" />
+      <point x="277.5" y="554.0" />
+      <point x="277.5" y="544.0" />
+      <point x="124.5" y="544.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="controllers.TransactionSystem" target="uses.InventorySystemBoundary" relationship="TO_ONE">
+      <point x="0.0" y="-50.0" />
+      <point x="1237.5808571051261" y="1570.0" />
+      <point x="1271.2177099841529" y="1570.0" />
+      <point x="1271.2177099841529" y="1560.0" />
+      <point x="584.2772715266781" y="1560.0" />
+      <point x="584.2772715266781" y="1066.0" />
+      <point x="691.2712955626012" y="1066.0" />
+      <point x="691.2712955626012" y="1046.0" />
+      <point x="1124.5114044783659" y="1046.0" />
+      <point x="-74.33333333333337" y="15.5" />
+    </edge>
+    <edge source="controllers.CustomerTransaction" target="entities.Product" relationship="DEPENDENCY">
+      <point x="0.0" y="-15.5" />
+      <point x="1247.5940869429887" y="1400.0" />
+      <point x="11.0" y="1400.0" />
+      <point x="11.0" y="131.0" />
+      <point x="1021.8628253406803" y="131.0" />
+      <point x="0.0" y="50.0" />
+    </edge>
+    <edge source="ui.ProductList" target="uses.InventorySystemBoundary" relationship="TO_ONE">
+      <point x="-60.25" y="-39.0" />
+      <point x="979.2772715266781" y="1246.5" />
+      <point x="979.2772715266781" y="1198.0" />
+      <point x="712.4022715266781" y="1198.0" />
+      <point x="712.4022715266781" y="1066.0" />
+      <point x="691.2712955626012" y="1066.0" />
+      <point x="691.2712955626012" y="1046.0" />
+      <point x="1124.5114044783659" y="1046.0" />
+      <point x="-74.33333333333337" y="15.5" />
+    </edge>
+    <edge source="uses.ApplyMembership" target="uses.Membership" relationship="DEPENDENCY">
+      <point x="43.5" y="-28.0" />
+      <point x="338.0" y="554.0" />
+      <point x="521.9999999999999" y="554.0" />
+      <point x="521.9999999999999" y="339.25" />
+      <point x="0.0" y="94.0" />
+    </edge>
+    <edge source="controllers.UseCaseInjector" target="uses.UserManagerBoundary" relationship="DEPENDENCY">
+      <point x="-52.33333333333337" y="-15.5" />
+      <point x="1734.277733755946" y="1248.0" />
+      <point x="1791.2058571051261" y="1248.0" />
+      <point x="1791.2058571051261" y="1218.0" />
+      <point x="1856.902271526678" y="1218.0" />
+      <point x="1856.902271526678" y="654.0" />
+      <point x="-67.66666666666669" y="15.5" />
+    </edge>
+    <edge source="controllers.CustomerTransaction" target="database.DatabaseAccessBoundary" relationship="DEPENDENCY">
+      <point x="0.0" y="-15.5" />
+      <point x="1247.5940869429887" y="1400.0" />
+      <point x="1172.652271526678" y="1400.0" />
+      <point x="1172.652271526678" y="1208.0" />
+      <point x="1163.027733755946" y="1208.0" />
+      <point x="1163.027733755946" y="1188.0" />
+      <point x="1272.8447378116994" y="1188.0" />
+      <point x="74.0" y="15.5" />
+    </edge>
+    <edge source="ui.SystemInputOutput" target="controllers.TransactionSystem" relationship="DEPENDENCY">
+      <point x="-69.375" y="-39.0" />
+      <point x="1718.527271526678" y="1744.0" />
+      <point x="2093.833333333333" y="1744.0" />
+      <point x="2093.833333333333" y="1734.0" />
+      <point x="1320.0808571051261" y="1734.0" />
+      <point x="82.5" y="50.0" />
+    </edge>
+    <edge source="users.Customer" target="entities.Cart" relationship="CREATE">
+      <point x="23.125" y="-39.0" />
+      <point x="984.2772715266781" y="382.0" />
+      <point x="1294.3447378116994" y="382.0" />
+      <point x="69.0" y="28.0" />
+    </edge>
+    <edge source="uses.GoldMember" target="uses.Membership" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="304.84587251828634" y="392.0" />
+      <point x="286.527733755946" y="392.0" />
+      <point x="286.527733755946" y="382.0" />
+      <point x="698.907888036605" y="382.0" />
+      <point x="-57.33333333333334" y="94.0" />
+    </edge>
+    <edge source="controllers.AdministratorTransaction" target="uses.UserManagerBoundary" relationship="DEPENDENCY">
+      <point x="54.75" y="-15.5" />
+      <point x="1555.6136170467078" y="1380.0" />
+      <point x="1880.6110670892792" y="1380.0" />
+      <point x="1880.6110670892792" y="714.0" />
+      <point x="1856.902271526678" y="714.0" />
+      <point x="1856.902271526678" y="654.0" />
+      <point x="-67.66666666666669" y="15.5" />
+    </edge>
+    <edge source="controllers.UseCaseInjector" target="uses.InventorySystem" relationship="CREATE">
+      <point x="52.33333333333337" y="-15.5" />
+      <point x="1838.9444004226125" y="1248.0" />
+      <point x="1845.4558571051261" y="1248.0" />
+      <point x="1845.4558571051261" y="1208.0" />
+      <point x="1537.287036539617" y="1208.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="database.DatabaseAccess" target="uses.InventorySystemBoundary" relationship="DEPENDENCY">
+      <point x="-39.75" y="-15.5" />
+      <point x="637.1791510538383" y="1208.0" />
+      <point x="723.4022715266781" y="1208.0" />
+      <point x="723.4022715266781" y="1066.0" />
+      <point x="1198.8447378116994" y="1066.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="controllers.TransactionSystem" target="database.DatabaseAccessBoundary" relationship="TO_ONE">
+      <point x="0.0" y="-50.0" />
+      <point x="1237.5808571051261" y="1570.0" />
+      <point x="1271.2177099841529" y="1570.0" />
+      <point x="1271.2177099841529" y="1560.0" />
+      <point x="1161.652271526678" y="1560.0" />
+      <point x="1161.652271526678" y="1218.0" />
+      <point x="1145.4558571051261" y="1218.0" />
+      <point x="1145.4558571051261" y="1208.0" />
+      <point x="1198.8447378116994" y="1208.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="controllers.TransactionFactory" target="database.DatabaseAccessBoundary" relationship="DEPENDENCY">
+      <point x="0.0" y="-15.5" />
+      <point x="1395.875391999518" y="1198.0" />
+      <point x="1163.027733755946" y="1198.0" />
+      <point x="1163.027733755946" y="1188.0" />
+      <point x="1272.8447378116994" y="1188.0" />
+      <point x="74.0" y="15.5" />
+    </edge>
+    <edge source="ui.SystemInputOutput" target="login.LoginSystem" relationship="TO_ONE">
+      <point x="23.125" y="-39.0" />
+      <point x="1811.027271526678" y="1744.0" />
+      <point x="2243.833333333333" y="1744.0" />
+      <point x="46.5" y="28.0" />
+    </edge>
+    <edge source="users.Customer" target="uses.Membership" relationship="TO_ONE">
+      <point x="-23.125" y="-39.0" />
+      <point x="938.0272715266781" y="339.25" />
+      <point x="57.33333333333337" y="94.0" />
+    </edge>
+    <edge source="controllers.AdministratorTransaction" target="users.Administrator" relationship="DEPENDENCY">
+      <point x="54.75" y="-15.5" />
+      <point x="1555.6136170467078" y="1380.0" />
+      <point x="1682.902271526678" y="1380.0" />
+      <point x="1682.902271526678" y="694.0" />
+      <point x="1837.3308571051261" y="694.0" />
+      <point x="1837.3308571051261" y="554.0" />
+      <point x="1849.840233755946" y="554.0" />
+      <point x="1849.840233755946" y="492.0" />
+      <point x="-35.75" y="15.5" />
+    </edge>
+    <edge source="controllers.CustomerTransaction" target="users.Customer" relationship="DEPENDENCY">
+      <point x="0.0" y="-15.5" />
+      <point x="1247.5940869429887" y="1400.0" />
+      <point x="573.2772715266781" y="1400.0" />
+      <point x="573.2772715266781" y="554.0" />
+      <point x="1309.652733755946" y="554.0" />
+      <point x="1309.652733755946" y="524.0" />
+      <point x="914.9022715266781" y="524.0" />
+      <point x="-46.25" y="39.0" />
+    </edge>
+    <edge source="uses.ApplyMembership" target="uses.SilverMember" relationship="CREATE">
+      <point x="-43.5" y="-28.0" />
+      <point x="251.0" y="554.0" />
+      <point x="277.5" y="554.0" />
+      <point x="277.5" y="544.0" />
+      <point x="474.1917450365727" y="544.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="controllers.ServiceInjector" target="uses.UserManagerBoundary" relationship="DEPENDENCY">
+      <point x="0.0" y="-15.5" />
+      <point x="1769.902271526678" y="1056.0" />
+      <point x="1795.8427099841529" y="1056.0" />
+      <point x="1795.8427099841529" y="714.0" />
+      <point x="1856.902271526678" y="714.0" />
+      <point x="1856.902271526678" y="654.0" />
+      <point x="-67.66666666666669" y="15.5" />
+    </edge>
+    <edge source="uses.LoginUseCase" target="uses.UserManager" relationship="TO_ONE">
+      <point x="-71.0" y="-39.0" />
+      <point x="2104.63437665082" y="1066.0" />
+      <point x="2118.63437665082" y="1066.0" />
+      <point x="2118.63437665082" y="1016.0" />
+      <point x="1996.4235670892792" y="1016.0" />
+      <point x="1996.4235670892792" y="846.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="ui.MenuUI" target="controllers.TransactionSystem" relationship="CREATE">
+      <point x="0.0" y="-39.0" />
+      <point x="1432.6313416597843" y="1870.0" />
+      <point x="1259.6458333333333" y="1870.0" />
+      <point x="1259.6458333333333" y="1744.0" />
+      <point x="1155.0808571051261" y="1744.0" />
+      <point x="-82.5" y="50.0" />
+    </edge>
+    <edge source="controllers.UseCaseInjector" target="controllers.ServiceInjector" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="1786.6110670892792" y="1228.0" />
+      <point x="1769.902271526678" y="1228.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="controllers.LoginController" target="uses.LoginUseCase" relationship="DEPENDENCY">
+      <point x="-66.75" y="-28.0" />
+      <point x="2084.708795562601" y="1440.0" />
+      <point x="2178.75937665082" y="1440.0" />
+      <point x="2178.75937665082" y="1430.0" />
+      <point x="2136.958795562601" y="1430.0" />
+      <point x="2136.958795562601" y="1248.0" />
+      <point x="2178.75937665082" y="1248.0" />
+      <point x="2178.75937665082" y="1238.0" />
+      <point x="2175.63437665082" y="1238.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="controllers.AdministratorTransaction" target="controllers.TransactionFactory" relationship="REALIZATION">
+      <point x="-54.75" y="-15.5" />
+      <point x="1446.1136170467078" y="1440.0" />
+      <point x="1183.152271526678" y="1440.0" />
+      <point x="1183.152271526678" y="1390.0" />
+      <point x="1395.875391999518" y="1390.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="login.UserReadWriter" target="uses.UserManager" relationship="DEPENDENCY">
+      <point x="39.0" y="-15.5" />
+      <point x="2203.583333333333" y="936.0" />
+      <point x="2201.583333333333" y="936.0" />
+      <point x="2201.583333333333" y="856.0" />
+      <point x="2180.4231048600113" y="856.0" />
+      <point x="2180.4231048600113" y="846.0" />
+      <point x="59.66666666666663" y="39.0" />
+    </edge>
+    <edge source="uses.UserManager" target="users.Administrator" relationship="CREATE">
+      <point x="-67.125" y="-39.0" />
+      <point x="1985.6671288959342" y="714.0" />
+      <point x="1961.5302099841529" y="714.0" />
+      <point x="1961.5302099841529" y="664.0" />
+      <point x="2092.1641904384596" y="664.0" />
+      <point x="2092.1641904384596" y="492.0" />
+      <point x="35.75" y="15.5" />
+    </edge>
+    <edge source="uses.InventorySystem" target="users.Administrator" relationship="DEPENDENCY">
+      <point x="77.25" y="-28.0" />
+      <point x="1614.537036539617" y="1066.0" />
+      <point x="1811.3962955626012" y="1066.0" />
+      <point x="1811.3962955626012" y="1026.0" />
+      <point x="1757.777733755946" y="1026.0" />
+      <point x="1757.777733755946" y="704.0" />
+      <point x="1837.3308571051261" y="704.0" />
+      <point x="1837.3308571051261" y="554.0" />
+      <point x="1849.840233755946" y="554.0" />
+      <point x="1849.840233755946" y="492.0" />
+      <point x="-35.75" y="15.5" />
+    </edge>
+    <edge source="uses.InventorySystem" target="users.Customer" relationship="DEPENDENCY">
+      <point x="77.25" y="-28.0" />
+      <point x="1614.537036539617" y="1066.0" />
+      <point x="1811.3962955626012" y="1066.0" />
+      <point x="1811.3962955626012" y="1026.0" />
+      <point x="1569.152271526678" y="1026.0" />
+      <point x="1569.152271526678" y="554.0" />
+      <point x="1309.652733755946" y="554.0" />
+      <point x="1309.652733755946" y="524.0" />
+      <point x="914.9022715266781" y="524.0" />
+      <point x="-46.25" y="39.0" />
+    </edge>
+    <edge source="uses.UserManager" target="users.Customer" relationship="CREATE">
+      <point x="-67.125" y="-39.0" />
+      <point x="1985.6671288959342" y="714.0" />
+      <point x="1961.5302099841529" y="714.0" />
+      <point x="1961.5302099841529" y="664.0" />
+      <point x="1734.6458333333333" y="664.0" />
+      <point x="1734.6458333333333" y="544.0" />
+      <point x="1007.4022715266781" y="544.0" />
+      <point x="46.25" y="39.0" />
+    </edge>
+    <edge source="controllers.LoginInputBoundary" target="uses.LoginUseCase" relationship="DEPENDENCY">
+      <point x="-46.5" y="-15.5" />
+      <point x="2104.958795562601" y="1248.0" />
+      <point x="2178.75937665082" y="1248.0" />
+      <point x="2178.75937665082" y="1238.0" />
+      <point x="2175.63437665082" y="1238.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="login.LoginSystem" target="controllers.LoginController" relationship="TO_ONE">
+      <point x="62.0" y="-28.0" />
+      <point x="2259.333333333333" y="1570.0" />
+      <point x="2240.458795562601" y="1570.0" />
+      <point x="89.0" y="28.0" />
+    </edge>
+    <edge source="uses.LoginUseCase" target="login.UserReadWriter" relationship="TO_ONE">
+      <point x="-71.0" y="-39.0" />
+      <point x="2104.63437665082" y="1066.0" />
+      <point x="2118.63437665082" y="1066.0" />
+      <point x="2118.63437665082" y="1016.0" />
+      <point x="2125.583333333333" y="1016.0" />
+      <point x="-39.0" y="15.5" />
+    </edge>
+    <edge source="uses.InventorySystem" target="uses.InventorySystemBoundary" relationship="REALIZATION">
+      <point x="-25.75" y="-28.0" />
+      <point x="1511.537036539617" y="1046.0" />
+      <point x="1273.1780711450326" y="1046.0" />
+      <point x="74.33333333333326" y="15.5" />
+    </edge>
+    <edge source="uses.InventorySystem" target="entities.Product" relationship="TO_MANY">
+      <point x="25.75" y="-28.0" />
+      <point x="1563.037036539617" y="1066.0" />
+      <point x="1580.152271526678" y="1066.0" />
+      <point x="1580.152271526678" y="674.0" />
+      <point x="1784.215233755946" y="674.0" />
+      <point x="1784.215233755946" y="131.0" />
+      <point x="1542.965233755946" y="131.0" />
+      <point x="1542.965233755946" y="121.0" />
+      <point x="1060.1961586740135" y="121.0" />
+      <point x="38.33333333333337" y="50.0" />
+    </edge>
+    <edge source="controllers.ServiceInjector" target="uses.InventorySystemBoundary" relationship="DEPENDENCY">
+      <point x="0.0" y="-15.5" />
+      <point x="1769.902271526678" y="1036.0" />
+      <point x="1198.8447378116994" y="1036.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="controllers.CustomerTransaction" target="uses.ApplyMembership" relationship="CREATE">
+      <point x="-63.66666666666666" y="-15.5" />
+      <point x="1183.927420276322" y="1440.0" />
+      <point x="294.5" y="1440.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="controllers.TransactionSystem" target="controllers.CustomerTransaction" relationship="CREATE">
+      <point x="-110.0" y="-50.0" />
+      <point x="1127.5808571051261" y="1570.0" />
+      <point x="1071.652733755946" y="1570.0" />
+      <point x="1071.652733755946" y="1550.0" />
+      <point x="1247.5940869429887" y="1550.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="controllers.CustomerTransaction" target="controllers.TransactionFactory" relationship="REALIZATION">
+      <point x="63.66666666666666" y="-15.5" />
+      <point x="1311.2607536096555" y="1440.0" />
+      <point x="1183.152271526678" y="1440.0" />
+      <point x="1183.152271526678" y="1390.0" />
+      <point x="1395.875391999518" y="1390.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="uses.LoginUseCase" target="users.User" relationship="DEPENDENCY">
+      <point x="71.0" y="-39.0" />
+      <point x="2246.63437665082" y="1056.0" />
+      <point x="2391.458795562601" y="1056.0" />
+      <point x="2391.458795562601" y="1016.0" />
+      <point x="2396.958795562601" y="1016.0" />
+      <point x="2396.958795562601" y="392.0" />
+      <point x="2247.5272715266783" y="392.0" />
+      <point x="2247.5272715266783" y="382.0" />
+      <point x="2030.7921288959344" y="382.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="uses.ApplyMembership" target="users.Customer" relationship="DEPENDENCY">
+      <point x="43.5" y="-28.0" />
+      <point x="338.0" y="554.0" />
+      <point x="521.9999999999999" y="554.0" />
+      <point x="521.9999999999999" y="544.0" />
+      <point x="1309.652733755946" y="544.0" />
+      <point x="1309.652733755946" y="524.0" />
+      <point x="914.9022715266781" y="524.0" />
+      <point x="-46.25" y="39.0" />
+    </edge>
+    <edge source="controllers.UseCaseInjector" target="uses.UserManager" relationship="CREATE">
+      <point x="52.33333333333337" y="-15.5" />
+      <point x="1838.9444004226125" y="1248.0" />
+      <point x="1845.4558571051261" y="1248.0" />
+      <point x="1845.4558571051261" y="1208.0" />
+      <point x="1946.4235670892792" y="1208.0" />
+      <point x="1946.4235670892792" y="836.0" />
+      <point x="1993.1254622292674" y="836.0" />
+      <point x="-59.666666666666686" y="39.0" />
+    </edge>
+    <edge source="uses.InventorySystem" target="users.User" relationship="DEPENDENCY">
+      <point x="77.25" y="-28.0" />
+      <point x="1614.537036539617" y="1066.0" />
+      <point x="1811.3962955626012" y="1066.0" />
+      <point x="1811.3962955626012" y="1026.0" />
+      <point x="2396.958795562601" y="1026.0" />
+      <point x="2396.958795562601" y="392.0" />
+      <point x="2247.5272715266783" y="392.0" />
+      <point x="2247.5272715266783" y="382.0" />
+      <point x="2030.7921288959344" y="382.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="ui.SystemInputOutput" target="prompts.PromptIterator" relationship="CREATE">
+      <point x="-23.125" y="-39.0" />
+      <point x="1764.777271526678" y="1744.0" />
+      <point x="2192.333333333333" y="1744.0" />
+      <point x="2192.333333333333" y="1724.0" />
+      <point x="1791.4166666666665" y="1724.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="ui.MenuUI" target="database.DatabaseAccess" relationship="CREATE">
+      <point x="0.0" y="-39.0" />
+      <point x="1432.6313416597843" y="1870.0" />
+      <point x="676.9291510538383" y="1870.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="entities.Cart" target="entities.Product" relationship="TO_MANY">
+      <point x="69.0" y="-28.0" />
+      <point x="1294.3447378116994" y="131.0" />
+      <point x="1542.965233755946" y="131.0" />
+      <point x="1542.965233755946" y="121.0" />
+      <point x="1060.1961586740135" y="121.0" />
+      <point x="38.33333333333337" y="50.0" />
+    </edge>
+    <edge source="uses.PlatinumMember" target="uses.Membership" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="124.5" y="392.0" />
+      <point x="286.527733755946" y="392.0" />
+      <point x="286.527733755946" y="382.0" />
+      <point x="698.907888036605" y="382.0" />
+      <point x="-57.33333333333334" y="94.0" />
+    </edge>
+    <edge source="uses.LoginUseCase" target="uses.UserManager" relationship="DEPENDENCY">
+      <point x="71.0" y="-39.0" />
+      <point x="2246.63437665082" y="1056.0" />
+      <point x="2391.458795562601" y="1056.0" />
+      <point x="2391.458795562601" y="1016.0" />
+      <point x="2385.958795562601" y="1016.0" />
+      <point x="2385.958795562601" y="856.0" />
+      <point x="2180.4231048600113" y="856.0" />
+      <point x="2180.4231048600113" y="846.0" />
+      <point x="59.66666666666663" y="39.0" />
+    </edge>
+    <edge source="uses.LoginUseCase" target="login.UserReadWriter" relationship="CREATE">
+      <point x="0.0" y="-39.0" />
+      <point x="2175.63437665082" y="1066.0" />
+      <point x="2186.083333333333" y="1066.0" />
+      <point x="2186.083333333333" y="1016.0" />
+      <point x="2203.583333333333" y="1016.0" />
+      <point x="39.0" y="15.5" />
+    </edge>
+    <edge source="controllers.TransactionSystem" target="database.DatabaseAccessBoundary" relationship="DEPENDENCY">
+      <point x="110.0" y="-50.0" />
+      <point x="1347.5808571051261" y="1570.0" />
+      <point x="1439.7058571051261" y="1570.0" />
+      <point x="1439.7058571051261" y="1540.0" />
+      <point x="1172.652271526678" y="1540.0" />
+      <point x="1172.652271526678" y="1208.0" />
+      <point x="1163.027733755946" y="1208.0" />
+      <point x="1163.027733755946" y="1188.0" />
+      <point x="1272.8447378116994" y="1188.0" />
+      <point x="74.0" y="15.5" />
+    </edge>
+    <edge source="controllers.UseCaseInjector" target="uses.InventorySystemBoundary" relationship="DEPENDENCY">
+      <point x="-52.33333333333337" y="-15.5" />
+      <point x="1734.277733755946" y="1248.0" />
+      <point x="1791.2058571051261" y="1248.0" />
+      <point x="1791.2058571051261" y="1218.0" />
+      <point x="1455.902271526678" y="1218.0" />
+      <point x="1455.902271526678" y="1066.0" />
+      <point x="1198.8447378116994" y="1066.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="controllers.AdministratorTransaction" target="database.DatabaseAccessBoundary" relationship="DEPENDENCY">
+      <point x="54.75" y="-15.5" />
+      <point x="1555.6136170467078" y="1380.0" />
+      <point x="1220.777271526678" y="1380.0" />
+      <point x="1220.777271526678" y="1208.0" />
+      <point x="1163.027733755946" y="1208.0" />
+      <point x="1163.027733755946" y="1188.0" />
+      <point x="1272.8447378116994" y="1188.0" />
+      <point x="74.0" y="15.5" />
+    </edge>
+    <edge source="login.LoginSystem" target="uses.LoginUseCase" relationship="CREATE">
+      <point x="0.0" y="-28.0" />
+      <point x="2197.333333333333" y="1550.0" />
+      <point x="2067.958795562601" y="1550.0" />
+      <point x="2067.958795562601" y="1248.0" />
+      <point x="2104.63437665082" y="1248.0" />
+      <point x="-71.0" y="39.0" />
+    </edge>
+    <edge source="ui.ProductCategoryUI" target="controllers.UseCaseInjector" relationship="CREATE">
+      <point x="0.0" y="-15.5" />
+      <point x="1063.0323655705652" y="1430.0" />
+      <point x="1696.5208333333333" y="1430.0" />
+      <point x="1696.5208333333333" y="1370.0" />
+      <point x="1786.6110670892792" y="1370.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="uses.UserManagerBoundary" target="users.Administrator" relationship="DEPENDENCY">
+      <point x="0.0" y="-15.5" />
+      <point x="1834.7969588000415" y="524.0" />
+      <point x="1849.840233755946" y="524.0" />
+      <point x="1849.840233755946" y="492.0" />
+      <point x="-35.75" y="15.5" />
+    </edge>
+    <edge source="uses.LoginUseCase" target="controllers.LoginInputBoundary" relationship="REALIZATION">
+      <point x="71.0" y="39.0" />
+      <point x="2246.63437665082" y="1248.0" />
+      <point x="2197.958795562601" y="1248.0" />
+      <point x="46.5" y="-15.5" />
+    </edge>
+    <edge source="uses.UserManagerBoundary" target="users.Customer" relationship="DEPENDENCY">
+      <point x="0.0" y="-15.5" />
+      <point x="1834.7969588000415" y="534.0" />
+      <point x="1309.652733755946" y="534.0" />
+      <point x="1309.652733755946" y="524.0" />
+      <point x="914.9022715266781" y="524.0" />
+      <point x="-46.25" y="39.0" />
+    </edge>
+    <edge source="users.Administrator" target="users.User" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="1279.1894292467982" y="392.0" />
+      <point x="1877.7985670892792" y="392.0" />
+      <point x="1877.7985670892792" y="382.0" />
+      <point x="1985.7921288959344" y="382.0" />
+      <point x="-45.0" y="39.0" />
+    </edge>
+    <edge source="ui.MenuUI" target="ui.SystemInputOutput" relationship="CREATE">
+      <point x="0.0" y="-39.0" />
+      <point x="1432.6313416597843" y="1870.0" />
+      <point x="1787.902271526678" y="1870.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="ui.ProductList" target="database.DatabaseAccessBoundary" relationship="DEPENDENCY">
+      <point x="60.25" y="-39.0" />
+      <point x="989.2772715266781" y="1246.5" />
+      <point x="989.2772715266781" y="1238.0" />
+      <point x="1163.027733755946" y="1238.0" />
+      <point x="1163.027733755946" y="1188.0" />
+      <point x="1272.8447378116994" y="1188.0" />
+      <point x="74.0" y="15.5" />
+    </edge>
+    <edge source="login.UserReadWriter" target="login.ReadWriter" relationship="REALIZATION">
+      <point x="-39.0" y="-15.5" />
+      <point x="2125.583333333333" y="936.0" />
+      <point x="2127.583333333333" y="936.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="controllers.TransactionSystem" target="uses.UserManagerBoundary" relationship="TO_ONE">
+      <point x="0.0" y="-50.0" />
+      <point x="1237.5808571051261" y="1570.0" />
+      <point x="1271.2177099841529" y="1570.0" />
+      <point x="1271.2177099841529" y="1560.0" />
+      <point x="1891.6110670892795" y="1560.0" />
+      <point x="1891.6110670892795" y="704.0" />
+      <point x="1834.7969588000415" y="704.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="controllers.TransactionFactory" target="uses.UserManagerBoundary" relationship="DEPENDENCY">
+      <point x="0.0" y="-15.5" />
+      <point x="1395.875391999518" y="1238.0" />
+      <point x="1856.902271526678" y="1238.0" />
+      <point x="1856.902271526678" y="654.0" />
+      <point x="-67.66666666666669" y="15.5" />
+    </edge>
+    <edge source="entities.Cart" target="entities.Product" relationship="DEPENDENCY">
+      <point x="-69.0" y="-28.0" />
+      <point x="1156.3447378116994" y="131.0" />
+      <point x="1021.8628253406803" y="131.0" />
+      <point x="0.0" y="50.0" />
+    </edge>
+    <edge source="uses.InventorySystemBoundary" target="entities.Product" relationship="DEPENDENCY">
+      <point x="0.0" y="-15.5" />
+      <point x="1198.8447378116994" y="936.0" />
+      <point x="11.0" y="936.0" />
+      <point x="11.0" y="131.0" />
+      <point x="1021.8628253406803" y="131.0" />
+      <point x="0.0" y="50.0" />
+    </edge>
+    <edge source="uses.UserManagerBoundary" target="users.User" relationship="DEPENDENCY">
+      <point x="0.0" y="-15.5" />
+      <point x="1834.7969588000415" y="554.0" />
+      <point x="2112.655209984153" y="554.0" />
+      <point x="2112.655209984153" y="392.0" />
+      <point x="2247.5272715266783" y="392.0" />
+      <point x="2247.5272715266783" y="382.0" />
+      <point x="2030.7921288959344" y="382.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="controllers.CustomerTransaction" target="uses.UserManagerBoundary" relationship="DEPENDENCY">
+      <point x="0.0" y="-15.5" />
+      <point x="1247.5940869429887" y="1400.0" />
+      <point x="1875.6110670892792" y="1400.0" />
+      <point x="1875.6110670892792" y="714.0" />
+      <point x="1856.902271526678" y="714.0" />
+      <point x="1856.902271526678" y="654.0" />
+      <point x="-67.66666666666669" y="15.5" />
+    </edge>
+    <edge source="ui.ProductCategoryUI" target="ui.ProductList" relationship="CREATE">
+      <point x="0.0" y="-15.5" />
+      <point x="1063.0323655705652" y="1656.6917450365727" />
+      <point x="1021.4022715266781" y="1656.6917450365727" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="login.LoginSystem" target="uses.UserManager" relationship="DEPENDENCY">
+      <point x="-62.0" y="-28.0" />
+      <point x="2135.333333333333" y="1560.0" />
+      <point x="2007.4235670892792" y="1560.0" />
+      <point x="2007.4235670892792" y="856.0" />
+      <point x="2180.4231048600113" y="856.0" />
+      <point x="2180.4231048600113" y="846.0" />
+      <point x="59.66666666666663" y="39.0" />
+    </edge>
+    <edge source="login.LoginSystem" target="login.UserReadWriter" relationship="CREATE">
+      <point x="0.0" y="-28.0" />
+      <point x="2197.333333333333" y="1550.0" />
+      <point x="2355.958795562601" y="1550.0" />
+      <point x="2355.958795562601" y="1066.0" />
+      <point x="2186.083333333333" y="1066.0" />
+      <point x="2186.083333333333" y="1016.0" />
+      <point x="2203.583333333333" y="1016.0" />
+      <point x="39.0" y="15.5" />
+    </edge>
+    <edge source="controllers.TransactionSystem" target="uses.InventorySystemBoundary" relationship="DEPENDENCY">
+      <point x="110.0" y="-50.0" />
+      <point x="1347.5808571051261" y="1570.0" />
+      <point x="1439.7058571051261" y="1570.0" />
+      <point x="1439.7058571051261" y="1540.0" />
+      <point x="1502.7361273260512" y="1540.0" />
+      <point x="1502.7361273260512" y="1066.0" />
+      <point x="1198.8447378116994" y="1066.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="uses.SilverMember" target="uses.Membership" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="474.1917450365727" y="392.0" />
+      <point x="286.527733755946" y="392.0" />
+      <point x="286.527733755946" y="382.0" />
+      <point x="698.907888036605" y="382.0" />
+      <point x="-57.33333333333334" y="94.0" />
+    </edge>
+    <edge source="database.DatabaseAccessBoundary" target="uses.InventorySystemBoundary" relationship="DEPENDENCY">
+      <point x="0.0" y="-15.5" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="WholesaleMain" target="ui.MenuUI" relationship="DEPENDENCY">
+      <point x="0.0" y="-15.5" />
+      <point x="1370.747851586639" y="1999.0" />
+      <point x="1432.6313416597843" y="1999.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="controllers.LoginController" target="controllers.LoginInputBoundary" relationship="DEPENDENCY">
+      <point x="-66.75" y="-28.0" />
+      <point x="2084.708795562601" y="1440.0" />
+      <point x="2178.75937665082" y="1440.0" />
+      <point x="2178.75937665082" y="1430.0" />
+      <point x="2104.958795562601" y="1430.0" />
+      <point x="-46.5" y="15.5" />
+    </edge>
+    <edge source="uses.UserManager" target="users.User" relationship="DEPENDENCY">
+      <point x="22.375" y="-39.0" />
+      <point x="2075.167128895934" y="704.0" />
+      <point x="2141.217709984153" y="704.0" />
+      <point x="2141.217709984153" y="392.0" />
+      <point x="2247.5272715266783" y="392.0" />
+      <point x="2247.5272715266783" y="382.0" />
+      <point x="2030.7921288959344" y="382.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="ui.SystemInputOutput" target="login.LoginSystem" relationship="CREATE">
+      <point x="-23.125" y="-39.0" />
+      <point x="1764.777271526678" y="1744.0" />
+      <point x="2192.333333333333" y="1744.0" />
+      <point x="2192.333333333333" y="1714.0" />
+      <point x="2150.833333333333" y="1714.0" />
+      <point x="-46.5" y="28.0" />
+    </edge>
+    <edge source="users.Customer" target="entities.Cart" relationship="TO_ONE">
+      <point x="-23.125" y="-39.0" />
+      <point x="938.0272715266781" y="362.0" />
+      <point x="1156.3447378116994" y="362.0" />
+      <point x="-69.0" y="28.0" />
+    </edge>
+    <edge source="uses.UserManager" target="users.User" relationship="TO_MANY">
+      <point x="67.125" y="-39.0" />
+      <point x="2119.917128895934" y="714.0" />
+      <point x="2407.958795562601" y="714.0" />
+      <point x="2407.958795562601" y="382.0" />
+      <point x="2075.792128895934" y="382.0" />
+      <point x="45.0" y="39.0" />
+    </edge>
+    <edge source="controllers.TransactionSystem" target="uses.UserManagerBoundary" relationship="DEPENDENCY">
+      <point x="110.0" y="-50.0" />
+      <point x="1347.5808571051261" y="1570.0" />
+      <point x="1439.7058571051261" y="1570.0" />
+      <point x="1439.7058571051261" y="1540.0" />
+      <point x="1880.6110670892792" y="1540.0" />
+      <point x="1880.6110670892792" y="714.0" />
+      <point x="1856.902271526678" y="714.0" />
+      <point x="1856.902271526678" y="654.0" />
+      <point x="-67.66666666666669" y="15.5" />
+    </edge>
+    <edge source="ui.ProductList" target="database.DatabaseAccessBoundary" relationship="TO_ONE">
+      <point x="-60.25" y="-39.0" />
+      <point x="979.2772715266781" y="1246.5" />
+      <point x="979.2772715266781" y="1228.0" />
+      <point x="1145.4558571051261" y="1228.0" />
+      <point x="1145.4558571051261" y="1208.0" />
+      <point x="1198.8447378116994" y="1208.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="users.Customer" target="users.User" relationship="GENERALIZATION">
+      <point x="69.375" y="-39.0" />
+      <point x="1030.527271526678" y="392.0" />
+      <point x="1877.7985670892792" y="392.0" />
+      <point x="1877.7985670892792" y="382.0" />
+      <point x="1985.7921288959344" y="382.0" />
+      <point x="-45.0" y="39.0" />
+    </edge>
+    <edge source="ui.SystemInputOutput" target="controllers.LoginController" relationship="DEPENDENCY">
+      <point x="-69.375" y="-39.0" />
+      <point x="1718.527271526678" y="1744.0" />
+      <point x="2093.833333333333" y="1744.0" />
+      <point x="2093.833333333333" y="1570.0" />
+      <point x="2062.458795562601" y="1570.0" />
+      <point x="-89.0" y="28.0" />
+    </edge>
+    <edge source="controllers.CustomerTransaction" target="uses.InventorySystemBoundary" relationship="DEPENDENCY">
+      <point x="0.0" y="-15.5" />
+      <point x="1247.5940869429887" y="1400.0" />
+      <point x="780.2772715266781" y="1400.0" />
+      <point x="780.2772715266781" y="1066.0" />
+      <point x="1198.8447378116994" y="1066.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="ui.ProductCategoryUI" target="database.DatabaseAccess" relationship="CREATE">
+      <point x="0.0" y="-15.5" />
+      <point x="1063.0323655705652" y="1420.0" />
+      <point x="676.9291510538383" y="1420.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="users.Customer" target="uses.Membership" relationship="DEPENDENCY">
+      <point x="-69.375" y="-39.0" />
+      <point x="891.7772715266781" y="392.0" />
+      <point x="1339.277733755946" y="392.0" />
+      <point x="1339.277733755946" y="372.0" />
+      <point x="521.9999999999999" y="372.0" />
+      <point x="521.9999999999999" y="339.25" />
+      <point x="0.0" y="94.0" />
+    </edge>
+    <edge source="controllers.TransactionFactory" target="uses.InventorySystemBoundary" relationship="DEPENDENCY">
+      <point x="0.0" y="-15.5" />
+      <point x="1395.875391999518" y="1066.0" />
+      <point x="1198.8447378116994" y="1066.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="uses.Membership" target="users.Customer" relationship="DEPENDENCY">
+      <point x="0.0" y="94.0" />
+      <point x="521.9999999999999" y="339.25" />
+      <point x="521.9999999999999" y="372.0" />
+      <point x="1339.277733755946" y="372.0" />
+      <point x="1339.277733755946" y="392.0" />
+      <point x="891.7772715266781" y="392.0" />
+      <point x="-69.375" y="-39.0" />
+    </edge>
+    <edge source="ui.ProductList" target="uses.InventorySystemBoundary" relationship="DEPENDENCY">
+      <point x="60.25" y="-39.0" />
+      <point x="989.2772715266781" y="1246.5" />
+      <point x="989.2772715266781" y="1188.0" />
+      <point x="942.592709984153" y="1188.0" />
+      <point x="942.592709984153" y="1066.0" />
+      <point x="1198.8447378116994" y="1066.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="ui.MenuUI" target="prompts.PromptIterator" relationship="CREATE">
+      <point x="0.0" y="-39.0" />
+      <point x="1432.6313416597843" y="1870.0" />
+      <point x="1791.4166666666665" y="1870.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="controllers.AdministratorTransaction" target="uses.InventorySystemBoundary" relationship="DEPENDENCY">
+      <point x="54.75" y="-15.5" />
+      <point x="1555.6136170467078" y="1380.0" />
+      <point x="1417.777271526678" y="1380.0" />
+      <point x="1417.777271526678" y="1066.0" />
+      <point x="1198.8447378116994" y="1066.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="database.DatabaseAccess" target="database.DatabaseAccessBoundary" relationship="REALIZATION">
+      <point x="39.75" y="-15.5" />
+      <point x="716.6791510538383" y="1218.0" />
+      <point x="1124.8447378116994" y="1218.0" />
+      <point x="-74.0" y="15.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.5765060240963855" showDependencies="true" x="992.6091954022988" y="720.5548589341693" />
+  <SelectedNodes>
+    <node>uses.GoldMember</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -162,19 +162,36 @@ The accessibility report is in a separate `accessibility.md` file in the `phase2
 
 ## What each group member has been working on since Phase 1
 
-**Raguram Sivabalan:** Added a few boundary interfaces between layers of our program. Implemented the Factory design pattern for the `TransactionSystem`. Implemented the Singleton design pattern for the `MenuUI`. Created the Main Menu for the command line user interface allowing users to view product categories and individual product information in a table. Added test classes and refactored code. 
+### Raguram Sivabalan
 
-Pull Request/Github Link: https://github.com/CSC207-UofT/course-project-group-009/pull/30 
+Added a few boundary interfaces between layers of our program. Implemented the Factory design pattern for the `TransactionSystem`. Implemented the Singleton design pattern for the `MenuUI`. Created the Main Menu for the command line user interface allowing users to view product categories and individual product information in a table. Added test classes and refactored code. 
 
-This pull request was for creating the main menu of our program and allow users to view product categories in a table within the command line user interface. 
+Github Link: https://github.com/CSC207-UofT/course-project-group-009/pull/30 
 
-**Yong Tong Zhu:** Implemented the Template Design pattern for the store memberships. Added command-line prompts for the store memberships for customers. Added product categories to the database. Added test classes.
+This pull request was for creating the main menu of our program to allow users to view product categories in a table within the command line user interface. 
 
-Pull Request/Github Link: https://github.com/CSC207-UofT/course-project-group-009/pull/29
+### Yong Tong Zhu
+
+Implemented the Template Design pattern for the store memberships. Added command-line prompts for the store memberships for customers. Added product categories to the database. Added test classes.
+
+Github Link: https://github.com/CSC207-UofT/course-project-group-009/pull/29
 
 This pull request was for implementing the Template design pattern and for creating the command prompts for store memberships for customers in the command line user interface. 
 
-**Yiyang Du:**  Worked on the login system of our program which uses serialization. Added product categories to the database. 
+### Yiyang Du
 
+Worked on the login system of our program which uses serialization. Added product categories to the database. 
 
-**Shijia Ye:**  Worked on the login system of our program which uses serialization. 
+Github Links: https://github.com/CSC207-UofT/course-project-group-009/commits/LoginSystem
+
+and https://github.com/CSC207-UofT/course-project-group-009/commits?author=YiyangDu
+
+Commits showing work on LoginSystem and Database JSON files. Some files were merged manually.
+
+### Shijia Ye
+
+Worked on the login system of our program which uses serialization. 
+
+Github Link: https://github.com/CSC207-UofT/course-project-group-009/commits?author=bisbtmaFMP
+
+Commits showing work on LoginSystem and Database JSON files. Some files were merged manually. 

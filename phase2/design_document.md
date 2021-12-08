@@ -23,8 +23,19 @@ In phase 2 we expanded on our UI and added a Main Menu, where users can first br
 
 Our program now has additional **data persistence** and **serialization**. Whenever an administrator adds a product to the inventory, the product is also added to the database in `New_Products.json`. Similarly, whenever an administrator modifies the price or stock quantity of an existing product in the inventory, the database `.json` files are updated accordingly. When a customer successfully adds a product of a specified quantity to their shopping cart, the stock quantity of that product within the database is updated accordingly. We have added a login system which serializes a user's username and password and stores them in a `.ser` file. Returning users are greeted when logging back into the program. 
 
-In phase 2 we implemented store memberships for customers. After a customer adds a product of a specified quantity to their shopping cart, they are asked to purchase a membership (Silver/Gold/Platinum) which provides various store discounts. We used the Template Design Pattern to create various memberships, each providing a different store discount. 
+In phase 2 we implemented store memberships for customers. After a customer adds a product of a specified quantity to their shopping cart, they are asked to purchase a membership (Silver/Gold/Platinum) which provides various store discounts. We used the Template Design Pattern to create various memberships, each providing a different store discount.
 
+### The Main Menu
+
+![Main Menu](Images/main_menu.PNG)
+
+### The Product Category Menu
+
+![Product Menu](Images/category_menu.PNG)
+
+### Example of Product View
+
+![Main Menu](Images/category_table.PNG)
 
 ## How to Use the Program
 

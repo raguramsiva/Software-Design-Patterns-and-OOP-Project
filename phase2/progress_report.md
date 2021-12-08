@@ -45,8 +45,10 @@ Commits showing work on LoginSystem and Database JSON files. Some files were mer
 
 ### Shijia Ye
 
-Worked on the login system of our program which uses serialization.
+Worked on the login system of our program which uses serialization. Added product categories to the database.
 
-Github Link: https://github.com/CSC207-UofT/course-project-group-009/commits?author=bisbtmaFMP
+Github Link: https://github.com/CSC207-UofT/course-project-group-009/commits/LoginSystem 
+
+and https://github.com/CSC207-UofT/course-project-group-009/commits?author=bisbtmaFMP
 
 Commits showing work on LoginSystem and Database JSON files. Some files were merged manually. 

@@ -82,9 +82,6 @@ We packaged our code according to layers, and hence our import statements show t
 
 ### Single Responsibility Principle
 
-
-### Single Responsibility Principle
-
 Our classes are each responsible for a single function of our program.  Initially, our `TransactionSystem` violated the Single Responsibility Principle and had many responsibilities (creating users, inventory management, etc.). But now responsibilities are separated and delegated to the classes `UserManagerBoundary`, `DatabaseAccessBoundary`, `InventorySystemBoundary`.  Now, `TransactionSystem` serves as a facade, in accordance with the Facade Design Pattern. 
 
 ### Open/Closed Principle
@@ -120,13 +117,17 @@ We used the Iterator Design Pattern for our `PromptIterator` class. It contains 
 
 We used the Facade Design Pattern for our controller class, `TransactionSystem` . The `TransactionSystem` class was initially responsible for multiple actors and had multiple responsibilities (creating users, inventory management, etc.). Now, with the Facade Design Pattern, we now consider `TransactionSystem` class as a Facade class, and delegate responsibilities to the following classes: `InventorySystemBoundary`, `UserManagerBoundary`, and `DatabaseAccessBoundary`.  The `InventorySystemBoundary` class creates an inventory, `DatabaseAccessBoundary` injects products into this inventory, and `UserManagerBoundary` creates and manages users. 
 
-###Factory Design Pattern
+### Factory Design Pattern
 
 We have a `TransactionFactory` interface which has a `createTransaction` method. We created `CustomerTransaction` and `AdministratorTransaction` which both implement the `TransactionFactory` interface. Each implementation creates a transaction for a customer and administrator respectively. Our `TransactionSystem` class then creates instances of `CustomerTransaction` and `AdministratorTransaction` and then calls the `createTransaction` method.  In the future, if we wanted to add a new type of transaction, we would simply create a new class that implements `TransactionFactory`.
 
-**Singleton Design Pattern:** We applied the Singleton Design Pattern to our `MenuUI` class to ensure that there was a single instance of `MenuUI` for our program. Within the `MenuUI` class, we made the constructor for `MenuUI` private and created a private static instance of `MenuUI`. We have a `getInstance()` method that returns the single instance of `MenuUI`. We then call the `getInstance()` method in our `WholesaleMain` class which contains our program's main method and serves as the entrypoint to our program. 
+### Singleton Design Pattern
 
-**Template Design Pattern:** We implemented the Template Design Pattern to allow for various store memberships (Silver, Gold, Platinum) which provide customers with discounts. Memberships are related in terms of functionality, but will differ in the amount of discount provided. 
+We applied the Singleton Design Pattern to our `MenuUI` class to ensure that there was a single instance of `MenuUI` for our program. Within the `MenuUI` class, we made the constructor for `MenuUI` private and created a private static instance of `MenuUI`. We have a `getInstance()` method that returns the single instance of `MenuUI`. We then call the `getInstance()` method in our `WholesaleMain` class which contains our program's main method and serves as the entrypoint to our program. 
+
+### Template Design Pattern
+
+We implemented the Template Design Pattern to allow for various store memberships (Silver, Gold, Platinum) which provide customers with discounts. Memberships are related in terms of functionality, but will differ in the amount of discount provided. 
 
 
 ## Packaging Strategy

@@ -28,7 +28,7 @@ public class MenuUI{
     /**
      * A method to initialize the Main Menu.
      */
-    public void initializeMenu() throws IOException, ClassNotFoundException {
+    public void initializeMenu(){
 
         PromptIterator menuPrompts = new PromptIterator(new File("src/main/java/prompts/menu_prompts.txt"));
 
@@ -36,29 +36,29 @@ public class MenuUI{
             System.out.println(menuPrompts.next());
             }
 
-        int choice = -1;
+        String choice = "";
 
         Scanner scanner = new Scanner(System.in);
 
-        while (choice <= 0){
-            choice = scanner.nextInt();
-            switch (choice) {
-                case 1:
-                    initializeProductListUI();
-                    System.out.println(PRESS_ANY_KEY);
-                    scanner.next();
-                    initializeMenu();
-                    break;
+        while (!choice.equals("0") && !choice.equals("1")){
+            choice = scanner.next();
+            try{
+                int num = Integer.parseInt(choice);
+                switch (num) {
+                    case 1:
+                        initializeProductListUI();
+                        System.out.println(PRESS_ANY_KEY);
+                        scanner.next();
+                        initializeMenu();
+                        break;
 
-                case 2:
-                    initializeSystemIO();
-                    break;
+                    case 2:
+                        initializeSystemIO();
+                        break;
+                }
+            } catch (Exception ignore) {
             }
         }
-
-
-
-
     }
 
     /**

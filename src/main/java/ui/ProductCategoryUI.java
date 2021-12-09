@@ -1,7 +1,5 @@
 package ui;
 
-
-import controllers.ServiceInjector;
 import controllers.UseCaseInjector;
 import database.DatabaseAccess;
 

@@ -1,7 +1,5 @@
 package uses;
 
-import users.Customer;
-
 public abstract class Membership {
 
     private final String memberNumber;
@@ -94,17 +92,6 @@ public abstract class Membership {
         return this.address;
     }
 
-    /** If a member has product in the shopping cart, a 0.05 discount will apply to him/her.
-     * @return the discount rate
-     */
-
-    public double discount(Customer c){
-        if (c.cartTotal() != 0){
-            return 0.05;
-        }
-        return 0;
-    }
-
     public abstract double MemberDiscount();
 
     public void setMobileType(String type){
@@ -122,7 +109,3 @@ public abstract class Membership {
 
 
 }
-
-
-
-

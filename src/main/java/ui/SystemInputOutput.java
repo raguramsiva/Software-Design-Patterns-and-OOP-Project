@@ -118,9 +118,9 @@ public class SystemInputOutput implements InputOutput {
         for (String s : transaction) {
             this.sendOutput(s);
         }
+        System.exit(0);
 
 
     }
 
 }
-

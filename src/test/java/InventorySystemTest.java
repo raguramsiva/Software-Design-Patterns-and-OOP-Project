@@ -1,6 +1,5 @@
 import entities.Product;
 import users.Administrator;
-import users.Customer;
 import uses.InventorySystem;
 import org.junit.*;
 

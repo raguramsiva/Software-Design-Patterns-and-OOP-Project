@@ -19,8 +19,6 @@ We added a database class that can read and write data from JSON files which con
 
 In phase 2 we expanded on our UI and added a Main Menu, where users can first browse through our product categories, and then choose to make a trandaction. Product categories are viewable for customers and administrators in a table in our command line user interface through our `ProductList`  and `ProductCategoryUI` classes. Customers and administrators can select a category and view its corresponding products (containing name, price and stock information) prior to making a transaction. 
 
-
-
 Our program now has additional **data persistence** and **serialization**. Whenever an administrator adds a product to the inventory, the product is also added to the database in `New_Products.json`. Similarly, whenever an administrator modifies the price or stock quantity of an existing product in the inventory, the database `.json` files are updated accordingly. When a customer successfully adds a product of a specified quantity to their shopping cart, the stock quantity of that product within the database is updated accordingly. We have added a login system which serializes a user's username and password and stores them in a `.ser` file. Returning users are greeted when logging back into the program. 
 
 In phase 2 we implemented store memberships for customers. After a customer adds a product of a specified quantity to their shopping cart, they are asked to purchase a membership (Silver/Gold/Platinum) which provides various store discounts. We used the Template Design Pattern to create various memberships, each providing a different store discount.
@@ -36,6 +34,11 @@ In phase 2 we implemented store memberships for customers. After a customer adds
 ### Example of Product View
 
 ![Main Menu](Images/category_table.PNG)
+
+## Additional Changes since Phase 2 Presentation
+
+We added the interfaces `InventorySystemBoundary`, `UserManagerBoundary` and `ServiceInjector` so that more classes
+do not depend on each other directly. So our classes are now more loosely coupled and adhere more closely to Clean Architecture. 
 
 ## How to Use the Program
 
